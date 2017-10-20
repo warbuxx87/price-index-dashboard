@@ -1,22 +1,21 @@
 #!/bin/env node
- //  OpenShift sample Node application
 var express = require('express');
 var ccxt = require('ccxt');
 var fs = require('fs');
-var xbx = require('./xbx');
-var quadriga = require('./quadriga');
-var gemini = require('./gemini');
-var kraken = require('./kraken');
-var gdax = require('./gdax');
-var finex = require('./finex');
-var stamp = require('./stamp');
-var bittrex = require('./bittrex');
-var poloniex = require('./poloniex');
-var cex = require('./cex');
-var liqui = require('./liqui');
-var binance = require('./binance');
-var hitbtc = require('./hitbtc');
-var bitmex = require('./bitmex');
+var xbx = require('./exchanges/xbx');
+var quadriga = require('./exchanges/quadriga');
+var gemini = require('./exchanges/gemini');
+var kraken = require('./exchanges/kraken');
+var gdax = require('./exchanges/gdax');
+var finex = require('./exchanges/finex');
+var stamp = require('./exchanges/stamp');
+var bittrex = require('./exchanges/bittrex');
+var poloniex = require('./exchanges/poloniex');
+var cex = require('./exchanges/cex');
+var liqui = require('./exchanges/liqui');
+var binance = require('./exchanges/binance');
+var hitbtc = require('./exchanges/hitbtc');
+var bitmex = require('./exchanges/bitmex');
 
 /**
  *  Define the sample application.
