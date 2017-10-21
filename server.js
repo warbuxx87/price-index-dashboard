@@ -14,7 +14,7 @@ var cex = require('./exchanges/cex');
 var liqui = require('./exchanges/liqui');
 var binance = require('./exchanges/binance');
 var hitbtc = require('./exchanges/hitbtc');
-var bitmex = require('./exchanges/bitmex');
+//var bitmex = require('./exchanges/bitmex');
 
 /**
  *  Define the sample application.
@@ -119,7 +119,7 @@ var BtcMonitor = function() {
             res.setHeader('Content-Type', 'application/json');
             res.setHeader('Cache-Control', 'no-cache, no-store');
             res.end(JSON.stringify({
-                markets: [self.quadriga, self.gemini, self.kraken, self.gdax, self.finex, self.stamp, self.bittrex, self.poloniex, self.cex, self.liqui, self.binance, self.hitbtc, self.bitmex ],
+                markets: [self.quadriga, self.gemini, self.kraken, self.gdax, self.finex, self.stamp, self.bittrex, self.poloniex, self.cex, self.liqui, self.binance, self.hitbtc ],
                 idx: self.xbx.idx,
             }));
         };
@@ -179,8 +179,8 @@ var BtcMonitor = function() {
 	    self.liqui = new liqui();
         self.binance = new binance();
 	    self.hitbtc = new hitbtc();
-	    self.bitmex = new bitmex();
-        self.xbx = new xbx([ self.quadriga, self.gemini, self.kraken, self.gdax, self.finex, self.stamp, self.bittrex, self.poloniex, self.cex, self.liqui, self.binance, self.hitbtc, self.bitmex ]);
+	    //self.bitmex = new bitmex();
+        self.xbx = new xbx([ self.quadriga, self.gemini, self.kraken, self.gdax, self.finex, self.stamp, self.bittrex, self.poloniex, self.cex, self.liqui, self.binance, self.hitbtc ]);
     };
 
 }; /*  Sample Application.  */
