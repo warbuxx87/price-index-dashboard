@@ -1,6 +1,5 @@
 #!/bin/env node
 var express = require('express');
-var ccxt = require('ccxt');
 var fs = require('fs');
 var xbx = require('./exchanges/xbx');
 var quadriga = require('./exchanges/quadriga');
@@ -20,7 +19,7 @@ var bitmex = require('./exchanges/bitmex');
 /**
  *  Define the sample application.
  */
-var SampleApp = function() {
+var BtcMonitor = function() {
 
     //  Scope.
     var self = this;
@@ -36,7 +35,7 @@ var SampleApp = function() {
     self.setupVariables = function() {
         //  Set the environment variables we need.
         self.host = "btc.arbi.ninja"
-	self.ipaddress = "159.203.44.213";
+	    self.ipaddress = "159.203.44.213";
         self.port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
 
         if (typeof self.ipaddress === "undefined") {
@@ -122,7 +121,6 @@ var SampleApp = function() {
             res.end(JSON.stringify({
                 markets: [self.quadriga, self.gemini, self.kraken, self.gdax, self.finex, self.stamp, self.bittrex, self.poloniex, self.cex, self.liqui, self.binance, self.hitbtc, self.bitmex ],
                 idx: self.xbx.idx,
-                idx2: self.xbx.idx2
             }));
         };
 
@@ -169,21 +167,20 @@ var SampleApp = function() {
             console.log('%s: Node server started on %s:%d ...',
                 Date(Date.now()), self.ipaddress, self.port);
         });
-        //self.btce = new btce();
-            self.quadriga = new quadriga();
+        self.quadriga = new quadriga();
 	    self.gemini = new gemini();
-            self.kraken = new kraken();
+        self.kraken = new kraken();
 	    self.gdax = new gdax();
-            self.finex = new finex();
-            self.stamp = new stamp();
+        self.finex = new finex();
+        self.stamp = new stamp();
 	    self.bittrex = new bittrex();
 	    self.poloniex = new poloniex();
-            self.cex = new cex();
+        self.cex = new cex();
 	    self.liqui = new liqui();
-            self.binance = new binance();
+        self.binance = new binance();
 	    self.hitbtc = new hitbtc();
 	    self.bitmex = new bitmex();
-            self.xbx = new xbx([ self.quadriga, self.gemini, self.kraken, self.gdax, self.finex, self.stamp, self.bittrex, self.poloniex, self.cex, self.liqui, self.binance, self.hitbtc, self.bitmex ]);
+        self.xbx = new xbx([ self.quadriga, self.gemini, self.kraken, self.gdax, self.finex, self.stamp, self.bittrex, self.poloniex, self.cex, self.liqui, self.binance, self.hitbtc, self.bitmex ]);
     };
 
 }; /*  Sample Application.  */
@@ -193,6 +190,6 @@ var SampleApp = function() {
 /**
  *  main():  Main code.
  */
-var zapp = new SampleApp();
+var zapp = new BtcMonitor();
 zapp.initialize();
 zapp.start();
