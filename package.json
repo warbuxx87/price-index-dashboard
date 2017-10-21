@@ -1,33 +1,32 @@
 {
   "name": "Arbitrage Ninja",
   "version": "1.0.0",
-  "description": "OpenShift Sample Application",
+  "description": "Arbitrage Exchange Monitor Bitcoin",
   "keywords": [
-    "OpenShift",
+    "Crypto",
     "Node.js",
-    "application",
-    "openshift"
+    "Bitcoin",
+    "Exchange Monitor"
   ],
   "author": {
     "name": "Ryan Breen",
     "email": "ryan@net-critical.com",
     "url": "https://www.net-critical.com/"
   },
-  "homepage": "http://www.openshift.com/",
+  "homepage": "http://btc.arbi.ninja/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/openshift/origin-server"
+    "url": "https://bitbucket.org/netcritical/btc.arbi.ninja"
   },
   "engines": {
     "node": ">= 0.6.0",
     "npm": ">= 1.0.0"
   },
   "dependencies": {
-    "ccxt": "^1.9.178",
     "express": "~3.4.4"
   },
   "devDependencies": {},
   "bundleDependencies": [],
   "private": true,
-  "main": "server.js"
+  "main": "btcMonitor.js"
 }
