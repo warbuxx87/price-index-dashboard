@@ -2,15 +2,18 @@
 var express = require('express');
 var fs = require('fs');
 var xbx = require('./exchanges/xbx');
-var quadriga = require('./exchanges/quadriga');
-var gemini = require('./exchanges/gemini');
-var kraken = require('./exchanges/kraken');
 var gdax = require('./exchanges/gdax');
-var finex = require('./exchanges/finex');
+var gemini = require('./exchanges/gemini');
 var stamp = require('./exchanges/stamp');
+var kraken = require('./exchanges/kraken');
+var quoine = require('./exchanges/quoine');
+var quadriga = require('./exchanges/quadriga');
+var cex = require('./exchanges/cex');
+
+// USDT exchanges
+var finex = require('./exchanges/finex');
 var bittrex = require('./exchanges/bittrex');
 var poloniex = require('./exchanges/poloniex');
-var cex = require('./exchanges/cex');
 var liqui = require('./exchanges/liqui');
 var binance = require('./exchanges/binance');
 var hitbtc = require('./exchanges/hitbtc');
@@ -39,7 +42,7 @@ var BtcMonitor = function() {
         self.port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
 
         if (typeof self.ipaddress === "undefined") {
-            //  Log errors on OpenShift but continue w/ 127.0.0.1 - this
+            //  Log errors but continue w/ 127.0.0.1 - this
             //  allows us to run/test the app locally.
             console.warn('No OPENSHIFT_NODEJS_IP var, using 127.0.0.1');
             self.ipaddress = "127.0.0.1";
@@ -119,7 +122,7 @@ var BtcMonitor = function() {
             res.setHeader('Content-Type', 'application/json');
             res.setHeader('Cache-Control', 'no-cache, no-store');
             res.end(JSON.stringify({
-                markets: [self.quadriga, self.gemini, self.kraken, self.gdax, self.finex, self.stamp, self.bittrex, self.poloniex, self.cex, self.liqui, self.binance, self.hitbtc ],
+                markets: [ self.gdax, self.gemini, self.stamp, self.kraken, self.quoine, self.cex, self.quadriga, self.finex, self.bittrex, self.binance, self.poloniex, self.liqui, self.hitbtc ],
                 idx: self.xbx.idx,
             }));
         };
@@ -167,20 +170,22 @@ var BtcMonitor = function() {
             console.log('%s: Node server started on %s:%d ...',
                 Date(Date.now()), self.ipaddress, self.port);
         });
-        self.quadriga = new quadriga();
-	    self.gemini = new gemini();
-        self.kraken = new kraken();
+        
 	    self.gdax = new gdax();
-        self.finex = new finex();
+        self.gemini = new gemini();
         self.stamp = new stamp();
+        self.kraken = new kraken();
+        self.quoine = new quoine();
+        self.cex = new cex();
+        self.quadriga = new quadriga();
+        self.finex = new finex();
 	    self.bittrex = new bittrex();
 	    self.poloniex = new poloniex();
-        self.cex = new cex();
 	    self.liqui = new liqui();
         self.binance = new binance();
 	    self.hitbtc = new hitbtc();
 	    //self.bitmex = new bitmex();
-        self.xbx = new xbx([ self.quadriga, self.gemini, self.kraken, self.gdax, self.finex, self.stamp, self.bittrex, self.poloniex, self.cex, self.liqui, self.binance, self.hitbtc ]);
+        self.xbx = new xbx([  self.gdax, self.gemini, self.stamp, self.kraken, self.cex, self.quoine, self.quadriga, self.finex, self.bittrex, self.binance, self.poloniex, self.liqui,  self.hitbtc ]);
     };
 
 }; /*  Sample Application.  */
