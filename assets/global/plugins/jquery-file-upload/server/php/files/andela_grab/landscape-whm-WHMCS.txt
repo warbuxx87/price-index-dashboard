@@ -1,1 +1,0 @@
-/home/landscape/public_html/whm/WHMCS/configuration.php
