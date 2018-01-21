@@ -52,29 +52,25 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
             });
     };
 
-    var upd_sim = function() {
+    var upd_nance = function() {
         $http.get('https://data.alkemi.ai/6882c6d8-26af-4b09-813a-87a39751149d_history.json')
             .then(function(response) {
                 $scope.trades = response.data;
-                var status = response.data.SpotOrder[0].OrderStatusAsString;
-                var exchange = response.data.SpotOrder[1].Platform;
-                var order = response.data.SpotOrder.OrderTypeAsString;
-                var price = response.data.SpotOrder.Price;
-                var amount = response.data.SpotOrder.Amount;
-                var origin = response.data.SpotOrder.Origin;
-                var updated = response.data.SpotOrder.LastUpdate;
-
-                $scope.trades.status = status;
-                $scope.trades.exchange = exchange;
-                $scope.trades.order = order;
-                $scope.trades.price = price;
-                $scope.trades.amount = amount;
-                $scope.trades.origin = origin;
-                $scope.trades.updated = updated;
-                setTimeout(upd_sim, 5000);
+                setTimeout(upd_nance, 5000);
             })
             .catch(function() {
-                setTimeout(upd_sim, 5000);
+                setTimeout(upd_nance, 5000);
+            });
+    };
+
+    var upd_finex = function() {
+        $http.get('https://data.alkemi.ai/4ab7335e-8477-40d5-894e-24ed84edef56_history.json')
+            .then(function(response) {
+                $scope.trades = response.data;
+                setTimeout(upd_finex, 5000);
+            })
+            .catch(function() {
+                setTimeout(upd_finex, 5000);
             });
     };
 
@@ -91,5 +87,5 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 
     upd_btc();
     upd_eth();
-    upd_sim();
+    upd_nance();
 }]);
