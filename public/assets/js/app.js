@@ -114,7 +114,7 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
     };
 
     $scope.cleanUp = function(value) {
-      cleanValue = value.toString().replace("InterExchangeArbitrageBot","");
+      var cleanValue = value.toString().replace("InterExchangeArbitrageBot","");
       return cleanValue;
     }
 
