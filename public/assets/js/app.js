@@ -88,7 +88,7 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
         return value > 0 ? 'green' : 'red';
     };
     $scope.trades = []
-    $scope.trades = $scope.tradesBinance.SpotOrders.concat($scope.tradesBitfinex.SpotOrders);
+    $scope.trades = $scope.tradesBinance.concat($scope.tradesBitfinex);
 
     upd_btc();
     upd_eth();
