@@ -65,10 +65,10 @@
     <tbody>
       <tr data-ng-repeat="market in data.markets">
         <td>{{ market.name }}</td>
-        <td ng-class="getClass(market.buy_take) hidden-480"><b>{{ round10(market.buy_take, 2) }}%</b></td>
+        <td ng-class="hidden-480 getClass(market.buy_take)"><b>{{ round10(market.buy_take, 2) }}%</b></td>
         <td>${{ round10(market.bid, 2) }}</td>
         <td>${{ round10(market.ask, 2) }}</td>
-        <td ng-class="getClass(market.sell_take) hidden-480"><b>{{ round10(market.sell_take, 2) }}%</b></td>
+        <td ng-class="hidden-480 getClass(market.sell_take)"><b>{{ round10(market.sell_take, 2) }}%</b></td>
 	      <td>${{ round10(market.last, 2) }} </td>
         <td>{{ round10(market.volume, 2) }} BTC </td>
         <td>{{ market.updated.toString().substr(11, 8) }}</td>
