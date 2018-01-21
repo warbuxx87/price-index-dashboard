@@ -30,7 +30,7 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
     var upd_eth = function() {
         $http.get('https://eth.arbi.ninja/updates')
             .then(function(response) {
-                $scope.data = response.data2;
+                $scope.data2 = response.data2;
                 var buy_market = response.data2.markets[0];
                 var sell_market = response.data2.markets[0];
                 for (var i = 1; i < response.data2.markets.length; i++) {
