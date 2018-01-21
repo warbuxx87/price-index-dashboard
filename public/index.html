@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Alkemi - Arbitrage Monitor Bitcoin</title>
+  <title>Alkemi - Arbitrage Monitor</title>
   <script src="assets/js/angular.min.js"></script>
   <script src="assets/js/app.js"></script>
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -82,7 +82,10 @@
           </div>
           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
             <div class="strategy lead" ng-show="data.margin">
-              Strategy: Buy "{{ data.buy_market.name }}" at <b class="label-up">{{ round10(data.buy_market.ask, 2) }}</b>, Sell "{{ data.sell_market.name }}" at <b class="logo_red">{{ round10(data.sell_market.bid, 2) }}</b>, Profit: <b>{{ round10(data.margin, 2) }}%</b>.
+              Bitcoin Strategy:<br>
+              Buy "{{ data.buy_market.name }}" at <b class="label-up">{{ round10(data.buy_market.ask, 2) }}</b>,<br>
+              Sell "{{ data.sell_market.name }}" at <b class="logo_red">{{ round10(data.sell_market.bid, 2) }}</b>,<br>
+              Profit: <b>{{ round10(data.margin, 2) }}%</b>.
             </div>
             <div class="strategy note note-info" ng-hide="data.margin">
               Arbitrage strategy: None found.
@@ -152,7 +155,10 @@
           </div>
           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
             <div class="strategy lead" ng-show="data.margin">
-              Strategy: Buy "{{ data2.buy_market.name }}" at <b class="label-up">{{ round10(data2.buy_market.ask, 2) }}</b>, Sell "{{ data2.sell_market.name }}" at <b class="logo_red">{{ round10(data2.sell_market.bid, 2) }}</b>, Profit: <b>{{ round10(data2.margin, 2) }}%</b>.
+              Ethereum Strategy:<br>
+              Buy "{{ data2.buy_market.name }}" at <b class="label-up">{{ round10(data2.buy_market.ask, 2) }}</b>,<br>
+              Sell "{{ data2.sell_market.name }}" at <b class="logo_red">{{ round10(data2.sell_market.bid, 2) }}</b>,<br>
+              Profit: <b>{{ round10(data2.margin, 2) }}%</b>.
             </div>
             <div class="strategy note note-info" ng-hide="data.margin">
               Arbitrage strategy: None found.
