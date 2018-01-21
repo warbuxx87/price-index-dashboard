@@ -3,30 +3,15 @@
 <head>
   <meta charset="utf-8">
   <title>Alkemi - Arbitrage Monitor Bitcoin</title>
-  <script src="angular.min.js"></script>
-  <script src="app.js"></script>
+  <script src="assets/js/angular.min.js"></script>
+  <script src="assets/js/app.js"></script>
    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
     <link href="/assets/css/complete.css" rel="stylesheet" type="text/css"/>
     <link href="/assets/css/custom.css" rel="stylesheet" type="text/css"/>
     <!-- END THEME STYLES -->
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
-    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#2b5797">
-    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <link rel="icon" type="image/png" href="assets/images/favicon.ico" sizes="32x32">
     <meta name="theme-color" content="#ffffff">
 
 </head>
@@ -35,7 +20,7 @@
 <body ng-controller="MainCtrl" class="page-header-fixed page-quick-sidebar-over-content page-full-width page-footer">
 
 	<div class="page-logo center">
-                <span class="temp_logo">Arbitrage Monitor Bitcoin</span>   
+                <span class="temp_logo">Arbitrage Monitor Bitcoin</span>
         </div>
 
 <!-- BEGIN CONTAINER -->
@@ -61,7 +46,7 @@
 				<div class="portlet box green">
                         <div class="portlet-title">
                             <div class="caption">USD Price Index: {{data.idx}} </div>
-                            <div class="tools"><i data-original-title="live comparison of BTC/USD bid & ask prices" data-placement="top" data-container="body" class="fa fa-question tooltips"></i></div>
+                            <div class="tools"><i data-original-title="live comparison of BTC/USD bid and ask prices" data-placement="top" data-container="body" class="fa fa-question tooltips"></i></div>
                         </div>
                         <div class="portlet-body">
   <table class="table table-bordered table-hover table-striped">
@@ -76,14 +61,14 @@
     </tr>
     </thead>
     <tbody>
-    <tr data-ng-repeat="market in data.markets">
+      <tr data-ng-repeat="market in data.markets">
         <td>{{ market.name }}</td>
         <td>${{ round10(market.bid, 2) }}</td>
         <td>${{ round10(market.ask, 2) }}</td>
-	<td>${{ round10(market.last, 2) }} </td>
+	      <td>${{ round10(market.last, 2) }} </td>
         <td>{{ round10(market.volume, 2) }} BTC </td>
         <td>{{ market.updated.toString().substr(11, 8) }}</td>
-    </tr>
+      </tr>
     </tbody>
   </table>
 				</div>
@@ -179,11 +164,11 @@
                             </table>
                         </div>
                     </div>
-					 <!-- END SAMPLE TABLE PORTLET-->
+					 <!-- END TABLE PORTLET-->
 				</div>
 
 			    <div class="col-md-6">
-								 <!-- BEGIN SAMPLE TABLE PORTLET-->
+								 <!-- BEGIN  TABLE PORTLET-->
                     <div class="portlet box purple-plum">
                         <div class="portlet-title">
                             <div class="caption">CAD Market Data Summary </div>
@@ -198,7 +183,7 @@
                             </table>
                         </div>
                     </div>
-                    <!-- END SAMPLE TABLE PORTLET-->
+                    <!-- END  TABLE PORTLET-->
 
 
 				</div>
@@ -233,7 +218,7 @@
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <!-- BEGIN SAMPLE TABLE PORTLET-->
+                    <!-- BEGIN TABLE PORTLET-->
                     <div class="portlet box red">
                         <div class="portlet-title">
                             <div class="caption">Bids BTC/CAD </div>
@@ -257,7 +242,7 @@
                             </table>
                         </div>
                     </div>
-                    <!-- END SAMPLE TABLE PORTLET-->
+                    <!-- END TABLE PORTLET-->
 
                 </div>
                 <div class="col-md-6">
