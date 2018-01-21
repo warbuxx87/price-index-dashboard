@@ -6,9 +6,9 @@ var gdax = require('./exchanges/gdax');
 var gemini = require('./exchanges/gemini');
 var stamp = require('./exchanges/stamp');
 var kraken = require('./exchanges/kraken');
-var quoine = require('./exchanges/quoine');
+//var quoine = require('./exchanges/quoine');
 var quadriga = require('./exchanges/quadriga');
-var cex = require('./exchanges/cex');
+//var cex = require('./exchanges/cex');
 
 // USDT exchanges
 var finex = require('./exchanges/finex');
@@ -122,7 +122,7 @@ var BtcMonitor = function() {
             res.setHeader('Content-Type', 'application/json');
             res.setHeader('Cache-Control', 'no-cache, no-store');
             res.end(JSON.stringify({
-                markets: [ self.gdax, self.gemini, self.stamp, self.kraken, self.quoine, self.cex, self.quadriga, self.finex, self.bittrex, self.binance, self.poloniex, self.liqui, self.hitbtc ],
+                markets: [ self.gdax, self.gemini, self.stamp, self.kraken, self.quadriga, self.finex, self.bittrex, self.binance, self.poloniex, self.liqui, self.hitbtc ],
                 idx: self.xbx.idx,
             }));
         };
@@ -175,8 +175,8 @@ var BtcMonitor = function() {
         self.gemini = new gemini();
         self.stamp = new stamp();
         self.kraken = new kraken();
-        self.quoine = new quoine();
-        self.cex = new cex();
+        //self.quoine = new quoine();
+        //self.cex = new cex();
         self.quadriga = new quadriga();
         self.finex = new finex();
 	    self.bittrex = new bittrex();
@@ -185,10 +185,10 @@ var BtcMonitor = function() {
         self.binance = new binance();
 	    self.hitbtc = new hitbtc();
 	    //self.bitmex = new bitmex();
-        self.xbx = new xbx([  self.gdax, self.gemini, self.stamp, self.kraken, self.cex, self.quoine, self.quadriga, self.finex, self.bittrex, self.binance, self.poloniex, self.liqui,  self.hitbtc ]);
+        self.xbx = new xbx([  self.gdax, self.gemini, self.stamp, self.kraken, self.quadriga, self.finex, self.bittrex, self.binance, self.poloniex, self.liqui,  self.hitbtc ]);
     };
 
-}; /*  Sample Application.  */
+}; /*  BTC INDEX ARBITRAGe.  */
 
 
 
