@@ -75,6 +75,39 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
             });
     };
 
+    var upd_gem = function() {
+        $http.get('https://data.alkemi.ai/cf328bf7-1423-4c48-b3b5-cf25d5871c09_history.json')
+            .then(function(response) {
+                $scope.trades3 = response.data;
+                setTimeout(upd_gem, 5000);
+            })
+            .catch(function() {
+                setTimeout(upd_gem, 5000);
+            });
+    };
+
+    var upd_gdax = function() {
+        $http.get('https://data.alkemi.ai/1e3919ae-0caf-4cfe-b424-00b05d3d81e7_history.json')
+            .then(function(response) {
+                $scope.trades4 = response.data;
+                setTimeout(upd_gdax, 5000);
+            })
+            .catch(function() {
+                setTimeout(upd_gdax, 5000);
+            });
+    };
+
+    var upd_trex = function() {
+        $http.get('https://data.alkemi.ai/b9191497-bd4d-4a66-b887-db506ef279f4_history.json')
+            .then(function(response) {
+                $scope.trades5 = response.data;
+                setTimeout(upd_trex, 5000);
+            })
+            .catch(function() {
+                setTimeout(upd_trex, 5000);
+            });
+    };
+
     $scope.round10 = function(value, exp) {
         if ((typeof value) == "string") return value;
         return value.toFixed(exp);
@@ -90,4 +123,7 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
     upd_eth();
     upd_nance();
     upd_finex();
+    upd_gem();
+    upd_gdax();
+    upd_trex();
 }]);
