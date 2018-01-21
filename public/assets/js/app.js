@@ -113,6 +113,11 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
         return value.toFixed(exp);
     };
 
+    $scope.cleanUp = function(value) {
+      if ((typeof value) != "string") return "";
+      return value.replace('InterExchangeArbitrageBot','');
+    }
+
     $scope.getClass = function(value) {
         if ((typeof value) == "string") return "";
         if (value == 0) return "";

@@ -125,33 +125,33 @@
                     <tr data-ng-repeat="order in trades.SpotOrders | orderBy: '-LastUpdate' | limitTo: 1">
                       <td>{{ order.Pair.DisplayName }}</td>
                       <td>{{ order.OrderTypeAsString }}</td>
-                      <td>${{ order.Price }}</td>
+                      <td>${{ round10(order.Price, 2) }}</td>
                       <td>{{ order.Amount }}</td>
-                      <td class="hidden-480">{{ order.Origin }}</td>
+                      <td class="hidden-480">{{ cleanup(order.Origin) }}</td>
                       <td class="hidden-480">{{ order.LastUpdate.toString().substr(11, 8) }}</td>
                     </tr>
                     <tr data-ng-repeat="order in trades2.SpotOrders | orderBy: '-LastUpdate' | limitTo: 1">
                       <td>{{ order.Pair.DisplayName }}</td>
                       <td>{{ order.OrderTypeAsString }}</td>
-                      <td>${{ order.Price }}</td>
+                      <td>${{ round10(order.Price, 2) }}</td>
                       <td>{{ order.Amount }}</td>
-                      <td class="hidden-480">{{ order.Origin }}</td>
+                      <td class="hidden-480">{{ cleanup(order.Origin) }}</td>
                       <td class="hidden-480">{{ order.LastUpdate.toString().substr(11, 8) }}</td>
                     </tr>
                     <tr data-ng-repeat="order in trades3.SpotOrders | orderBy: '-LastUpdate' | limitTo: 1">
                       <td>{{ order.Pair.DisplayName }}</td>
                       <td>{{ order.OrderTypeAsString }}</td>
-                      <td>${{ order.Price }}</td>
+                      <td>${{ round10(order.Price, 2) }}</td>
                       <td>{{ order.Amount }}</td>
-                      <td class="hidden-480">{{ order.Origin }}</td>
+                      <td class="hidden-480">{{ cleanup(order.Origin) }}</td>
                       <td class="hidden-480">{{ order.LastUpdate.toString().substr(11, 8) }}</td>
                     </tr>
                     <tr data-ng-repeat="order in trades4.SpotOrders | orderBy: '-LastUpdate' | limitTo: 1">
                       <td>{{ order.Pair.DisplayName }}</td>
                       <td>{{ order.OrderTypeAsString }}</td>
-                      <td>${{ order.Price }}</td>
+                      <td>${{ round10(order.Price, 2) }}</td>
                       <td>{{ order.Amount }}</td>
-                      <td class="hidden-480">{{ order.Origin }}</td>
+                      <td class="hidden-480">{{ cleanup(order.Origin) }}</td>
                       <td class="hidden-480">{{ order.LastUpdate.toString().substr(11, 8) }}</td>
                     </tr>
                     <tr data-ng-repeat="order in trades5.SpotOrders | orderBy: '-LastUpdate' | limitTo: 1">
@@ -159,7 +159,7 @@
                       <td>{{ order.OrderTypeAsString }}</td>
                       <td>${{ round10(order.Price, 2) }}</td>
                       <td>{{ order.Amount }}</td>
-                      <td class="hidden-480">{{ order.Origin }}</td>
+                      <td class="hidden-480">{{ cleanup(order.Origin) }}</td>
                       <td class="hidden-480">{{ order.LastUpdate.toString().substr(11, 8) }}</td>
                     </tr>
                   </tbody>
