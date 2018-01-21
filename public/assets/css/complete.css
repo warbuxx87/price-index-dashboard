@@ -15077,7 +15077,7 @@ h1 .label, h2 .label, h3 .label, h4 .label, h5 .label, h6 .label {
 
 .green.btn {
   color: #fff;
-  background-color: #578ba6;
+  background-color: #35aa47;
   border-color: ""
 }
 
@@ -15091,20 +15091,20 @@ h1 .label, h2 .label, h3 .label, h4 .label, h5 .label, h6 .label {
 }
 
 .green.btn.disabled, .green.btn.disabled.active, .green.btn.disabled:active, .green.btn.disabled:focus, .green.btn.disabled:hover, .green.btn[disabled], .green.btn[disabled].active, .green.btn[disabled]:active, .green.btn[disabled]:focus, .green.btn[disabled]:hover, fieldset[disabled] .green.btn, fieldset[disabled] .green.btn.active, fieldset[disabled] .green.btn:active, fieldset[disabled] .green.btn:focus, fieldset[disabled] .green.btn:hover {
-  background-color: #578ba6
+  background-color: #35aa47
 }
 
 .green.btn .badge {
-  color: #578ba6;
+  color: #35aa47;
   background-color: #fff
 }
 
 .btn.green-stripe {
-  border-left: 3px solid #578ba6
+  border-left: 3px solid #35aa47
 }
 
 .portlet.green, .portlet>.portlet-body.green {
-  background-color: #578ba6
+  background-color: #35aa47
 }
 
 .portlet.solid.green>.portlet-body, .portlet.solid.green>.portlet-title {
@@ -15122,7 +15122,7 @@ h1 .label, h2 .label, h3 .label, h4 .label, h5 .label, h6 .label {
 }
 
 .portlet.box.green>.portlet-title {
-  background-color: #578ba6
+  background-color: #35aa47
 }
 
 .portlet.box.green>.portlet-title>.caption, .portlet.box.green>.portlet-title>.caption>i {
@@ -15142,7 +15142,7 @@ h1 .label, h2 .label, h3 .label, h4 .label, h5 .label, h6 .label {
 }
 
 .dashboard-stat.green {
-  background-color: #578ba6
+  background-color: #35aa47
 }
 
 .dashboard-stat.green .visual>i {
@@ -15167,14 +15167,14 @@ h1 .label, h2 .label, h3 .label, h4 .label, h5 .label, h6 .label {
 }
 
 .bg-green {
-  border-color: #578ba6 !important;
+  border-color: #35aa47 !important;
   background-image: none !important;
-  background-color: #578ba6 !important;
+  background-color: #35aa47 !important;
   color: #fff !important
 }
 
 .font-green {
-  color: #578ba6 !important
+  color: #35aa47 !important
 }
 
 .green-meadow.btn {
