@@ -113,23 +113,21 @@
                 <table class="table table-bordered table-hover table-striped">
                   <thead>
                     <tr>
-                      <th>Status</th>
                       <th>Exchange</th>
                       <th>Order</th>
                       <th>Price</th>
-                      <th>Amount</th>
-                      <th>Origin</th>
-                      <th class="hidden-480">Updated</th>
+                      <th>Amount BTC</th>
+                      <th class="hidden-480">Origin</th>
+                      <th class="hidden-480">Completed</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr data-ng-repeat="order in trades.SpotOrders | orderBy: '-LastUpdate' | limitTo: 3">
-                      <td>{{ order.OrderStatusAsString }}</td>
                       <td>{{ order.Pair.DisplayName }}</td>
                       <td>{{ order.OrderTypeAsString }}</td>
                       <td>${{ order.Price }}</td>
                       <td>{{ order.Amount }}</td>
-                      <td>{{ order.Origin }}</td>
+                      <td class="hidden-480">{{ order.Origin }}</td>
                       <td class="hidden-480">{{ order.LastUpdate.toString().substr(11, 8) }}</td>
                     </tr>
                   </tbody>
