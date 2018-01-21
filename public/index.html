@@ -69,9 +69,9 @@
         <td>${{ round10(market.bid, 2) }}</td>
         <td>${{ round10(market.ask, 2) }}</td>
         <td class="hidden-480" ng-class="getClass(market.sell_take)"><b>{{ round10(market.sell_take, 2) }}%</b></td>
-	      <td>${{ round10(market.last, 2) }} </td>
-        <td>{{ round10(market.volume, 2) }} BTC </td>
-        <td>{{ market.updated.toString().substr(11, 8) }}</td>
+	      <td class="hidden-480">${{ round10(market.last, 2) }} </td>
+        <td class="hidden-480">{{ round10(market.volume, 2) }} BTC </td>
+        <td class="hidden-480">{{ market.updated.toString().substr(11, 8) }}</td>
       </tr>
     </tbody>
   </table>
