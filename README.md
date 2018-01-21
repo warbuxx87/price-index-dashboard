@@ -1,4 +1,4 @@
-# Bitcoin Arbitrage Monitor
+# Arbitrage Monitor
 Exchange monitor dashboard, connects to various exchanges through API, may be useful to find arbitrage opportunities
 
 ## Intention
@@ -11,7 +11,7 @@ Obviously, the "fairness" concept is a subjective one. This dashboard uses [a we
 We can also go further and see how much we can win if Bitcoin is purchased at the lowest market and sold on the highest one right now. We should warn, however, that such strategy has some risk involved, because it is difficult to perform two operations at the same time, and each exchange market has its own rules about moving funds.
 
 ## Demo
-https://btc.arbi.ninja/
+https://btc.alkemi.ai/
 
 ## Supported exchanges
 * http://bitfinex.com/
