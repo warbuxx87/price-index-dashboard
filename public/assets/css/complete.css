@@ -22606,6 +22606,10 @@ body {
   background-color: #2b3643
 }
 
+.page-header.navbar img {
+  max-height: 200px;
+}
+
 .page-header.navbar .top-menu .navbar-nav>li.dropdown .dropdown-toggle:hover {
   background-color: #3b4a5c
 }
