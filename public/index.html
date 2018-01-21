@@ -124,12 +124,12 @@
                   </thead>
                   <tbody>
                     <tr data-ng-repeat="order in trades.SpotOrders">
-                      <td>{{ order.status }}</td>
-                      <td>{{ order.exchange }}</td>
-                      <td>{{ order.order }}</td>
+                      <td>{{ order.Status }}</td>
+                      <td>{{ order.Platform }}</td>
+                      <td>{{ order.OrderTypeAsString }}</td>
                       <td>${{ order.price }}</td>
-                      <td>${{ order.amount }}</td>
-                      <td>${{ order.origin }}</td>
+                      <td>{{ order.amount }}</td>
+                      <td>{{ order.origin }}</td>
                       <td class="hidden-480">{{ market.updated.toString().substr(11, 8) }}</td>
                     </tr>
                   </tbody>
