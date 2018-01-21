@@ -88,4 +88,5 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
     upd_btc();
     upd_eth();
     upd_nance();
+    upd_finex();
 }]);
