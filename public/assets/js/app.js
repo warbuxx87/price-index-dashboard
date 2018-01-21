@@ -52,8 +52,6 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
             });
     };
 
-  });
-
     var upd_nance = function() {
         //$http.get('https://data.alkemi.ai/6882c6d8-26af-4b09-813a-87a39751149d_history.json')
         $http.get('https://data.alkemi.ai/trades.json')
