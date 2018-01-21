@@ -67,7 +67,7 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
     var upd_finex = function() {
         $http.get('https://data.alkemi.ai/4ab7335e-8477-40d5-894e-24ed84edef56_history.json')
             .then(function(response) {
-                $scope.trades = response.data;
+                $scope.trades2 = response.data;
                 setTimeout(upd_finex, 5000);
             })
             .catch(function() {
