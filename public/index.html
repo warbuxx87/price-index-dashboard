@@ -123,7 +123,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr data-ng-repeat="order in trades.SpotOrders">
+                    <tr data-ng-repeat="order in trades.SpotOrders | orderBy: '-LastUpdate' | limitTo: 3">
                       <td>{{ order.OrderStatusAsString }}</td>
                       <td>{{ order.Pair.DisplayName }}</td>
                       <td>{{ order.OrderTypeAsString }}</td>
