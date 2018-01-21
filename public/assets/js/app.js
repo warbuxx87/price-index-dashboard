@@ -7,7 +7,7 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
     var upd_btc = function() {
         $http.get('updates')
             .then(function(response) {
-                $scope.data = response.data;
+                $scope.btc = response.data;
                 var buy_market = response.data.markets[0];
                 var sell_market = response.data.markets[0];
                 for (var i = 1; i < response.data.markets.length; i++) {
@@ -16,11 +16,11 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
                     if (response.data.markets[i].sell_take > sell_market.sell_take)
                         sell_market = response.data.markets[i];
                 }
-                $scope.data.buy_market = buy_market;
-                $scope.data.sell_market = sell_market;
-                $scope.data.margin = 0;
+                $scope.btc.buy_market = buy_market;
+                $scope.btc.sell_market = sell_market;
+                $scope.btc.margin = 0;
                 if (buy_market.buy_take < sell_market.sell_take)
-                    $scope.data.margin = sell_market.sell_take - buy_market.buy_take;
+                    $scope.btc.margin = sell_market.sell_take - buy_market.buy_take;
                 setTimeout(upd_btc, 1500);
             })
             .catch(function() {
