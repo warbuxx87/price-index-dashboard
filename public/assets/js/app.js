@@ -114,8 +114,9 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
     };
 
     $scope.cleanUp = function(value) {
-      if ((typeof value) != "string") return "";
-      return value.replace('InterExchangeArbitrageBot','');
+      if ((typeof value) != "string") return "-";
+      value = value.replace("InterExchangeArbitrageBot","");
+      return value;
     }
 
     $scope.getClass = function(value) {
