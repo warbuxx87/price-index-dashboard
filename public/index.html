@@ -103,7 +103,44 @@
 
             </div>
 
+
+            <div class="portlet box red">
+              <div class="portlet-title">
+                <div class="caption">Completed Trades {{data.idx}} </div>
+                <div class="tools"><i data-original-title="live simulation trades" data-placement="top" data-container="body" class="fa fa-question tooltips"></i></div>
+              </div>
+              <div class="portlet-body">
+                <table class="table table-bordered table-hover table-striped">
+                  <thead>
+                    <tr>
+                      <th>Status</th>
+                      <th>Exchange</th>
+                      <th>Order</th>
+                      <th>Price</th>
+                      <th>Amount</th>
+                      <th>Origin</th>
+                      <th class="hidden-480">Updated</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr data-ng-repeat="order in trades.SpotOrders">
+                      <td>{{ order.status }}</td>
+                      <td>{{ order.exchange }}</td>
+                      <td>{{ order.order }}</td>
+                      <td>${{ order.price }}</td>
+                      <td>${{ order.amount }}</td>
+                      <td>${{ order.origin }}</td>
+                      <td class="hidden-480">{{ market.updated.toString().substr(11, 8) }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+
           </div>
+
+
 
 
 
