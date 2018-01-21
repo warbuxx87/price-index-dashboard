@@ -20320,8 +20320,8 @@ div.checker, div.radio {
   border: 0;
   padding: 0;
   box-shadow: none;
-  height: 46px;
-  min-height: 46px;
+  height: 200px;
+  min-height: 200px;
   filter: none;
   background-image: none
 }
