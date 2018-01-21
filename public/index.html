@@ -81,11 +81,19 @@
             </div>
           </div>
           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-            <div class="strategy lead" ng-show="data.margin">
-              Bitcoin Strategy:<br>
-              Buy "{{ data.buy_market.name }}" at <b class="label-up">{{ round10(data.buy_market.ask, 2) }}</b>,<br>
-              Sell "{{ data.sell_market.name }}" at <b class="logo_red">{{ round10(data.sell_market.bid, 2) }}</b>,<br>
-              Profit: <b>{{ round10(data.margin, 2) }}%</b>.
+            <div class="strategy lead dashboard-stat dashboard-stat-v2 blue" ng-show="data.margin">
+              <div class="visual">
+                <i class="fa fa-bar-chart-o"></i>
+              </div>
+              <div class="details">
+                <div class="number">
+                  Opportunity <b>{{ round10(data.margin, 2) }}%</b>.
+                  <div class="desc">
+                    Buy "{{ data.buy_market.name }}" at <b class="label-up">{{ round10(data.buy_market.ask, 2) }}</b>,
+                    Sell "{{ data.sell_market.name }}" at <b class="logo_red">{{ round10(data.sell_market.bid, 2) }}</b>,
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="strategy note note-info" ng-hide="data.margin">
               Arbitrage strategy: None found.
