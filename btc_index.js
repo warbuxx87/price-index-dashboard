@@ -3,7 +3,7 @@ var express = require('express');
 var fs = require('fs');
 var xbx = require('./exchanges/xbx');
 var gdax = require('./exchanges/gdax');
-var gemini = require('./exchanges/gemini');
+//var gemini = require('./exchanges/gemini');
 var stamp = require('./exchanges/stamp');
 var kraken = require('./exchanges/kraken');
 //var quoine = require('./exchanges/quoine');
@@ -122,7 +122,7 @@ var BtcMonitor = function() {
             res.setHeader('Content-Type', 'application/json');
             res.setHeader('Cache-Control', 'no-cache, no-store');
             res.end(JSON.stringify({
-                markets: [ self.gdax, self.gemini, self.stamp, self.kraken, self.quadriga, self.finex, self.bittrex, self.binance, self.poloniex, self.liqui, self.hitbtc ],
+                markets: [ self.gdax, self.stamp, self.kraken, self.quadriga, self.finex, self.bittrex, self.binance, self.poloniex, self.liqui, self.hitbtc ],
                 idx: self.xbx.idx,
             }));
         };
@@ -172,7 +172,7 @@ var BtcMonitor = function() {
         });
         
 	    self.gdax = new gdax();
-        self.gemini = new gemini();
+        //self.gemini = new gemini();
         self.stamp = new stamp();
         self.kraken = new kraken();
         //self.quoine = new quoine();
@@ -185,7 +185,7 @@ var BtcMonitor = function() {
         self.binance = new binance();
 	    self.hitbtc = new hitbtc();
 	    //self.bitmex = new bitmex();
-        self.xbx = new xbx([  self.gdax, self.gemini, self.stamp, self.kraken, self.quadriga, self.finex, self.bittrex, self.binance, self.poloniex, self.liqui,  self.hitbtc ]);
+        self.xbx = new xbx([  self.gdax, self.stamp, self.kraken, self.quadriga, self.finex, self.bittrex, self.binance, self.poloniex, self.liqui,  self.hitbtc ]);
     };
 
 }; /*  BTC INDEX ARBITRAGe.  */
