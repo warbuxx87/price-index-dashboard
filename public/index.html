@@ -47,7 +47,7 @@
           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
             <div class="portlet box green">
               <div class="portlet-title">
-                <div class="caption">BTC/USD Price Index: {{data.idx}} </div>
+                <div class="caption">BTC/USD Price Index: {{btc.idx}} </div>
                 <div class="tools"><i data-original-title="live comparison of BTC/USD bid and ask prices" data-placement="top" data-container="body" class="fa fa-question tooltips"></i></div>
               </div>
               <div class="portlet-body">
@@ -87,7 +87,7 @@
               </div>
               <div class="details">
                 <div class="number">
-                  Opportunity <b>{{ round10(data.margin, 2) }}%</b>
+                  Opportunity <b>{{ round10(btc.margin, 2) }}%</b>
                   <div class="desc">
                     Buy {{ btc.buy_market.name }} at <b>{{ round10(btc.buy_market.ask, 2) }}</b>,
                     Sell {{ btc.sell_market.name }} at <b>{{ round10(btc.sell_market.bid, 2) }}</b>,
