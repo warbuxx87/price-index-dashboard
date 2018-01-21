@@ -2,6 +2,8 @@ var app = angular.module('proview', []);
 
 app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
     $scope.markets = []
+    $scope.tradesBinance = []
+    $scope.tradesBitfinex = []
 
 
     var upd_btc = function() {
