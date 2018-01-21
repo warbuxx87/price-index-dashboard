@@ -31,7 +31,7 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
     var upd_eth = function() {
         $http.get('https://eth.arbi.ninja/updates')
             .then(function(response) {
-                $scope.data2 = response.data;
+                $scope.eth = response.data;
                 var buy_market = response.data.markets[0];
                 var sell_market = response.data.markets[0];
                 for (var i = 1; i < response.data.markets.length; i++) {
@@ -40,11 +40,11 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
                     if (response.data.markets[i].sell_take > sell_market.sell_take)
                         sell_market = response.data.markets[i];
                 }
-                $scope.data2.buy_market = buy_market;
-                $scope.data2.sell_market = sell_market;
-                $scope.data2.margin = 0;
+                $scope.eth.buy_market = buy_market;
+                $scope.eth.sell_market = sell_market;
+                $scope.eth.margin = 0;
                 if (buy_market.buy_take < sell_market.sell_take)
-                    $scope.data2.margin = sell_market.sell_take - buy_market.buy_take;
+                    $scope.eth.margin = sell_market.sell_take - buy_market.buy_take;
                 setTimeout(upd_eth, 1500);
             })
             .catch(function() {
@@ -112,11 +112,6 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
         if ((typeof value) == "string") return value;
         return value.toFixed(exp);
     };
-
-    $scope.cleanUp = function(value) {
-      var cleanValue = value.toString().replace("InterExchangeArbitrageBot","");
-      return cleanValue;
-    }
 
     $scope.getClass = function(value) {
         if ((typeof value) == "string") return "";
