@@ -195,7 +195,7 @@
           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
             <div class="portlet box green">
               <div class="portlet-title">
-                <div class="caption">ETH/USD Price Index: {{data2.idx}} </div>
+                <div class="caption">ETH/USD Price Index: {{eth.idx}} </div>
                 <div class="tools"><i data-original-title="live comparison of ETH/USD bid and ask prices" data-placement="top" data-container="body" class="fa fa-question tooltips"></i></div>
               </div>
               <div class="portlet-body">
@@ -213,7 +213,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr data-ng-repeat="market in data2.markets">
+                    <tr data-ng-repeat="market in eth.markets">
                       <td>{{ market.name }}</td>
                       <td class="hidden-480" ng-class="getClass(market.buy_take)"><b>{{ round10(market.buy_take, 2) }}%</b></td>
                       <td>${{ round10(market.bid, 2) }}</td>
@@ -235,15 +235,15 @@
               </div>
               <div class="details">
                 <div class="number">
-                  Opportunity <b>{{ round10(data2.margin, 2) }}%</b>
+                  Opportunity <b>{{ round10(eth.margin, 2) }}%</b>
                   <div class="desc">
-                    Buy {{ data2.buy_market.name }} at <b>{{ round10(data2.buy_market.ask, 2) }}</b>,
-                    Sell {{ data2.sell_market.name }} at <b>{{ round10(data2.sell_market.bid, 2) }}</b>,
+                    Buy {{ eth.buy_market.name }} at <b>{{ round10(eth.buy_market.ask, 2) }}</b>,
+                    Sell {{ eth.sell_market.name }} at <b>{{ round10(eth.sell_market.bid, 2) }}</b>,
                   </div>
                 </div>
               </div>
             </div>
-            <div class="strategy note note-info" ng-hide="data2.margin">
+            <div class="strategy note note-info" ng-hide="eth.margin">
               Arbitrage strategy: None found.
             </div>
             <div class="note note-info">
