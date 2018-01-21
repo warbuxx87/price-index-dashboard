@@ -56,13 +56,13 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
         $http.get('https://data.alkemi.ai/6882c6d8-26af-4b09-813a-87a39751149d_history.json')
             .then(function(response) {
                 $scope.trades = response.data;
-                var status = response.data.SpotOrder.OrderStatusAsString[0];
-                var exchange = response.data.SpotOrder.Platform[0];
-                var order = response.data.SpotOrder.OrderTypeAsString[0];
-                var price = response.data.SpotOrder.Price[0];
-                var amount = response.data.SpotOrder.Amount[0];
-                var origin = response.data.SpotOrder.Origin[0];
-                var updated = response.data.SpotOrder.LastUpdate[0];
+                var status = response.data.SpotOrder.OrderStatusAsString;
+                var exchange = response.data.SpotOrder.Platform;
+                var order = response.data.SpotOrder.OrderTypeAsString;
+                var price = response.data.SpotOrder.Price;
+                var amount = response.data.SpotOrder.Amount;
+                var origin = response.data.SpotOrder.Origin;
+                var updated = response.data.SpotOrder.LastUpdate;
 
                 $scope.trades.status = status;
                 $scope.trades.exchange = exchange;
