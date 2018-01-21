@@ -159,7 +159,7 @@
                       <td>{{ order.OrderTypeAsString }}</td>
                       <td>${{ round10(order.Price, 2) }}</td>
                       <td>{{ order.Amount }}</td>
-                      <td class="hidden-480">{{ cleanup(order.Origin) }}</td>
+                      <td class="hidden-480">{{ order.Origin.toString().substr(28) }}</td>
                       <td class="hidden-480">{{ order.LastUpdate.toString().substr(11, 8) }}</td>
                     </tr>
                   </tbody>
