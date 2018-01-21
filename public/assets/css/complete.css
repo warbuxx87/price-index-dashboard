@@ -22606,7 +22606,7 @@ body {
   background-color: #2b3643
 }
 
-.page-header.navbar img {
+.page-header.navbar span img {
   max-height: 200px;
 }
 
