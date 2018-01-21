@@ -2,7 +2,7 @@ var app = angular.module('proview', []);
 
 app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
     $scope.markets = []
-    $scope.trades = []
+
 
     var upd_btc = function() {
         $http.get('updates')
@@ -53,10 +53,9 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
     };
 
     var upd_nance = function() {
-        //$http.get('https://data.alkemi.ai/6882c6d8-26af-4b09-813a-87a39751149d_history.json')
-        $http.get('https://data.alkemi.ai/trades.json')
+        $http.get('https://data.alkemi.ai/6882c6d8-26af-4b09-813a-87a39751149d_history.json')
             .then(function(response) {
-                $scope.trades = response.data;
+                $scope.tradesBinance = response.data;
                 setTimeout(upd_nance, 5000);
             })
             .catch(function() {
@@ -68,7 +67,7 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
     var upd_finex = function() {
         $http.get('https://data.alkemi.ai/4ab7335e-8477-40d5-894e-24ed84edef56_history.json')
             .then(function(response) {
-                $scope.trades = response.data;
+                $scope.tradesBitfinex = response.data;
                 setTimeout(upd_finex, 5000);
             })
             .catch(function() {
@@ -86,9 +85,11 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
         if (value == 0) return "";
         return value > 0 ? 'green' : 'red';
     };
+    $scope.trades = []
+    $scope.trades = $scope.tradesBinance.concat($scope.tradesBitfinex);
 
     upd_btc();
     upd_eth();
     upd_nance();
-    //upd_finex();
+    upd_finex();
 }]);
