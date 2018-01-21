@@ -20,10 +20,10 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
                 $scope.data.margin = 0;
                 if (buy_market.buy_take < sell_market.sell_take)
                     $scope.data.margin = sell_market.sell_take - buy_market.buy_take;
-                setTimeout(upd, 1500);
+                setTimeout(upd_btc, 1500);
             })
             .catch(function() {
-                setTimeout(upd, 1500);
+                setTimeout(upd_btc, 1500);
             });
     };
 
@@ -44,10 +44,10 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
                 $scope.data.margin = 0;
                 if (buy_market.buy_take < sell_market.sell_take)
                     $scope.data.margin = sell_market.sell_take - buy_market.buy_take;
-                setTimeout(upd, 1500);
+                setTimeout(upd_eth, 1500);
             })
             .catch(function() {
-                setTimeout(upd, 1500);
+                setTimeout(upd_eth, 1500);
             });
     };
 
