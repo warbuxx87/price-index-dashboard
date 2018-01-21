@@ -46,7 +46,7 @@
           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
             <div class="portlet box green">
               <div class="portlet-title">
-                <div class="caption">USD Price Index: {{data.idx}} </div>
+                <div class="caption">BTC/USD Price Index: {{data.idx}} </div>
                 <div class="tools"><i data-original-title="live comparison of BTC/USD bid and ask prices" data-placement="top" data-container="body" class="fa fa-question tooltips"></i></div>
               </div>
               <div class="portlet-body">
@@ -116,7 +116,7 @@
           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
             <div class="portlet box green">
               <div class="portlet-title">
-                <div class="caption">USD Price Index: {{data.idx}} </div>
+                <div class="caption">ETH/USD Price Index: {{data2.idx}} </div>
                 <div class="tools"><i data-original-title="live comparison of ETH/USD bid and ask prices" data-placement="top" data-container="body" class="fa fa-question tooltips"></i></div>
               </div>
               <div class="portlet-body">
@@ -141,7 +141,7 @@
                       <td>${{ round10(market.ask, 2) }}</td>
                       <td class="hidden-480" ng-class="getClass(market.sell_take)"><b>{{ round10(market.sell_take, 2) }}%</b></td>
                       <td class="hidden-480">${{ round10(market.last, 2) }} </td>
-                      <td class="hidden-480">{{ round10(market.volume, 2) }} BTC </td>
+                      <td class="hidden-480">{{ round10(market.volume, 2) }} ETH </td>
                       <td class="hidden-480">{{ market.updated.toString().substr(11, 8) }}</td>
                     </tr>
                   </tbody>
