@@ -6,13 +6,13 @@ jQuery(document).ready(function() {
       }
       var n = t.date_time + "+0000",
         a = moment(n).fromNow(),
-        d = t.index.usd_value,
+        d = t.index.value,
         i = (t.index.change_24hour, t.index.change_percent_24hour),
         o = t.index.high_24hour,
         s = t.index.low_24hour,
         r = t.index.volume_24hour,
         l = t.index.usd_value;
-      0 > i ? ($("#index-up-down").removeClass("grey-cascade"), $("#index-up-down").addClass("red"), $("#index-up-down").removeClass("green")) : 0 == i ? ($("#index-up-down").addClass("grey-cascade"), $("#index-up-down").removeClass("green"), $("#index-up-down").removeClass("red")) : ($("#index-up-down").removeClass("grey-cascade"), $("#index-up-down").addClass("green"), $("#index-up-down").removeClass("red")), $("#index-value").html("$" + d), $("#index-change").html(i + "%"), $("#index-updated").html("Last Updated: " + a), $("#index-volume").html(r + " BTC"), $("#index-high").html("24 Hour High: $" + o), $("#index-low").html("24 Hour Low: $" + s), document.title = "$" + d + " | Arbitrage Exchange Monitor v2";
+      0 > i ? ($("#index-up-down").removeClass("grey-cascade"), $("#index-up-down").addClass("red"), $("#index-up-down").removeClass("green")) : 0 == i ? ($("#index-up-down").addClass("grey-cascade"), $("#index-up-down").removeClass("green"), $("#index-up-down").removeClass("red")) : ($("#index-up-down").removeClass("grey-cascade"), $("#index-up-down").addClass("green"), $("#index-up-down").removeClass("red")), $("#index-value").html("$" + l), $("#index-change").html(i + "%"), $("#index-updated").html("Last Updated: " + a), $("#index-volume").html(r + " BTC"), $("#index-high").html("24 Hour High: $" + o), $("#index-low").html("24 Hour Low: $" + s), document.title = "$" + d + " | Arbitrage Exchange Monitor v2";
       var u = t.exchanges,
         c = "",
         h = "",
