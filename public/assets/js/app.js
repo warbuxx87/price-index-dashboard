@@ -1,7 +1,7 @@
 var app = angular.module('proview', []);
 
 app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
-    $scope.markets = [
+    $scope.markets = []
 
     var upd_btc = function() {
         $http.get('updates')
