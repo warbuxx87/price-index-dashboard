@@ -52,7 +52,7 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
     };
 
     var upd_nance = function() {
-        $http.get('https://data.alkemi.ai/6882c6d8-26af-4b09-813a-87a39751149d_history.json')
+        $http.get('https://data.alkemi.ai/Simulations/6882c6d8-26af-4b09-813a-87a39751149d_history.json')
             .then(function(response) {
                 $scope.binance = response.data;
                 var total = response.data.SpotOrders.length;
@@ -66,7 +66,7 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
     };
 
     var upd_finex = function() {
-        $http.get('https://data.alkemi.ai/4ab7335e-8477-40d5-894e-24ed84edef56_history.json')
+        $http.get('https://data.alkemi.ai/Simulations/4ab7335e-8477-40d5-894e-24ed84edef56_history.json')
             .then(function(response) {
                 $scope.bitfinex = response.data;
                 var total = response.data.SpotOrders.length;
@@ -79,7 +79,7 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
     };
 
     var upd_gem = function() {
-        $http.get('https://data.alkemi.ai/cf328bf7-1423-4c48-b3b5-cf25d5871c09_history.json')
+        $http.get('https://data.alkemi.ai/Simulations/cf328bf7-1423-4c48-b3b5-cf25d5871c09_history.json')
             .then(function(response) {
                 $scope.gemini = response.data;
                 var total = response.data.SpotOrders.length;
@@ -92,7 +92,7 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
     };
 
     var upd_gdax = function() {
-        $http.get('https://data.alkemi.ai/1e3919ae-0caf-4cfe-b424-00b05d3d81e7_history.json')
+        $http.get('https://data.alkemi.ai/Simulations/1e3919ae-0caf-4cfe-b424-00b05d3d81e7_history.json')
             .then(function(response) {
                 $scope.gdax = response.data;
                 var total = response.data.SpotOrders.length;
@@ -105,7 +105,7 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
     };
 
     var upd_trex = function() {
-        $http.get('https://data.alkemi.ai/b9191497-bd4d-4a66-b887-db506ef279f4_history.json')
+        $http.get('https://data.alkemi.ai/Simulations/b9191497-bd4d-4a66-b887-db506ef279f4_history.json')
             .then(function(response) {
                 $scope.bittrex = response.data;
                 var total = response.data.SpotOrders.length;
@@ -118,7 +118,7 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
     };
 
     var upd_krak = function() {
-        $http.get('https://data.alkemi.ai/c426ac25-d281-456f-b952-7c57c780fb59_history.json')
+        $http.get('https://data.alkemi.ai/Simulations/c426ac25-d281-456f-b952-7c57c780fb59_history.json')
             .then(function(response) {
                 $scope.kraken = response.data;
                 var total = response.data.SpotOrders.length;
@@ -131,7 +131,7 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
     };
 
     var upd_stamp = function() {
-        $http.get('https://data.alkemi.ai/5b64b224-5b1d-4b18-aace-683260019487_history.json')
+        $http.get('https://data.alkemi.ai/Simulations/5b64b224-5b1d-4b18-aace-683260019487_history.json')
             .then(function(response) {
                 $scope.bitstamp = response.data;
                 var total = response.data.SpotOrders.length;
