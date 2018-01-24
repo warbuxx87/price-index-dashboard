@@ -108,6 +108,28 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
             });
     };
 
+    var upd_krak = function() {
+        $http.get('https://data.alkemi.ai/c426ac25-d281-456f-b952-7c57c780fb59_history.json')
+            .then(function(response) {
+                $scope.trades6 = response.data;
+                setTimeout(upd_krak, 5000);
+            })
+            .catch(function() {
+                setTimeout(upd_krak, 5000);
+            });
+    };
+
+    var upd_stamp = function() {
+        $http.get('https://data.alkemi.ai/5b64b224-5b1d-4b18-aace-683260019487_history.json')
+            .then(function(response) {
+                $scope.trades7 = response.data;
+                setTimeout(upd_stamp, 5000);
+            })
+            .catch(function() {
+                setTimeout(upd_stamp, 5000);
+            });
+    };
+
     $scope.round10 = function(value, exp) {
         if ((typeof value) == "string") return value;
         return value.toFixed(exp);
@@ -126,4 +148,6 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
     upd_gem();
     upd_gdax();
     upd_trex();
+    upd_krak();
+    upd_stamp();
 }]);
