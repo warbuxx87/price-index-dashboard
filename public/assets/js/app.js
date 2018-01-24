@@ -156,7 +156,7 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
                 $scope.bot1.trades = trades;
                 $scope.bot1.roi = roi;
                 $scope.bot1.fees = fees;
-                $scope.bot1.success = success;
+                $scope.bot1.name = name;
                 setTimeout(upd_bot1, 5000);
             })
             .catch(function() {
