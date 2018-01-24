@@ -151,7 +151,7 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
                 var trades = response.data.InterExchangeArbitrageBot.CompletedOrders.BaseOrder.length;
                 var roi = response.data.InterExchangeArbitrageBot.ROI;
                 var fees = response.data.InterExchangeArbitrageBot.TotalFeeCosts;
-                var success = response.data.InterExchangeArbitrageBot.TotalProfits;
+                var name = response.data.InterExchangeArbitrageBot.Name;
                 $scope.bot1.profits = profits;
                 $scope.bot1.trades = trades;
                 $scope.bot1.roi = roi;
@@ -172,12 +172,12 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
                 var trades = response.data.InterExchangeArbitrageBot.CompletedOrders.BaseOrder.length;
                 var roi = response.data.InterExchangeArbitrageBot.ROI;
                 var fees = response.data.InterExchangeArbitrageBot.TotalFeeCosts;
-                var success = response.data.InterExchangeArbitrageBot.TotalProfits;
+                var name = response.data.InterExchangeArbitrageBot.Name;
                 $scope.bot2.profits = profits;
                 $scope.bot2.trades = trades;
                 $scope.bot2.roi = roi;
                 $scope.bot2.fees = fees;
-                $scope.bot2.success = success;
+                $scope.bot2.name = name;
                 setTimeout(upd_bot2, 5000);
             })
             .catch(function() {
@@ -193,12 +193,12 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
                 var trades = response.data.InterExchangeArbitrageBot.CompletedOrders.BaseOrder.length;
                 var roi = response.data.InterExchangeArbitrageBot.ROI;
                 var fees = response.data.InterExchangeArbitrageBot.TotalFeeCosts;
-                var success = response.data.InterExchangeArbitrageBot.TotalProfits;
+                var name = response.data.InterExchangeArbitrageBot.Name;
                 $scope.bot3.profits = profits;
                 $scope.bot3.trades = trades;
                 $scope.bot3.roi = roi;
                 $scope.bot3.fees = fees;
-                $scope.bot3.success = success;
+                $scope.bot3.name = name;
                 setTimeout(upd_bot3, 5000);
             })
             .catch(function() {
@@ -214,12 +214,12 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
                 var trades = response.data.InterExchangeArbitrageBot.CompletedOrders.BaseOrder.length;
                 var roi = response.data.InterExchangeArbitrageBot.ROI;
                 var fees = response.data.InterExchangeArbitrageBot.TotalFeeCosts;
-                var success = response.data.InterExchangeArbitrageBot.TotalProfits;
+                var name = response.data.InterExchangeArbitrageBot.Name;
                 $scope.bot4.profits = profits;
                 $scope.bot4.trades = trades;
                 $scope.bot4.roi = roi;
                 $scope.bot4.fees = fees;
-                $scope.bot4.success = success;
+                $scope.bot4.name = name;
                 setTimeout(upd_bot4, 5000);
             })
             .catch(function() {
@@ -235,12 +235,12 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
                 var trades = response.data.InterExchangeArbitrageBot.CompletedOrders.BaseOrder.length;
                 var roi = response.data.InterExchangeArbitrageBot.ROI;
                 var fees = response.data.InterExchangeArbitrageBot.TotalFeeCosts;
-                var success = response.data.InterExchangeArbitrageBot.TotalProfits;
+                var name = response.data.InterExchangeArbitrageBot.Name;
                 $scope.bot5.profits = profits;
                 $scope.bot5.trades = trades;
                 $scope.bot5.roi = roi;
                 $scope.bot5.fees = fees;
-                $scope.bot5.success = success;
+                $scope.bot5.name = name;
                 setTimeout(upd_bot5, 5000);
             })
             .catch(function() {
@@ -256,12 +256,12 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
                 var trades = response.data.InterExchangeArbitrageBot.CompletedOrders.BaseOrder.length;
                 var roi = response.data.InterExchangeArbitrageBot.ROI;
                 var fees = response.data.InterExchangeArbitrageBot.TotalFeeCosts;
-                var success = response.data.InterExchangeArbitrageBot.TotalProfits;
+                var name = response.data.InterExchangeArbitrageBot.Name;
                 $scope.bot6.profits = profits;
                 $scope.bot6.trades = trades;
                 $scope.bot6.roi = roi;
                 $scope.bot6.fees = fees;
-                $scope.bot6.success = success;
+                $scope.bot6.name = name;
                 setTimeout(upd_bot6, 5000);
             })
             .catch(function() {
@@ -277,12 +277,12 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
                 var trades = response.data.InterExchangeArbitrageBot.CompletedOrders.BaseOrder.length;
                 var roi = response.data.InterExchangeArbitrageBot.ROI;
                 var fees = response.data.InterExchangeArbitrageBot.TotalFeeCosts;
-                var success = response.data.InterExchangeArbitrageBot.TotalProfits;
+                var name = response.data.InterExchangeArbitrageBot.Name;
                 $scope.bot7.profits = profits;
                 $scope.bot7.trades = trades;
                 $scope.bot7.roi = roi;
                 $scope.bot7.fees = fees;
-                $scope.bot7.success = success;
+                $scope.bot7.name = name;
                 setTimeout(upd_bot7, 5000);
             })
             .catch(function() {

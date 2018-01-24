@@ -201,19 +201,19 @@
                       <th>#</th>
                       <th>Trades</th>
                       <th>Profits</th>
-                      <th>ROI</th>
+                      <th>ROI %</th>
                       <th class="hidden-480">Fees</th>
-                      <th class="hidden-480">Success %</th>
+                      <th class="hidden-480">Name</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr data-ng-repeat="order in bot1.InterExchangeArbitrageBot.CompletedOrders.BaseOrder | limitTo: 1">
+                    <tr>
                       <td> #1 </td>
                       <td> {{ bot1.trades }} </td>
                       <td> {{ bot1.profits }} </td>
                       <td> {{ bot1.roi }}</td>
                       <td class="hidden-480"> {{ bot1.fees }} </td>
-                      <td class="hidden-480"> {{ bot1.success }} </td>
+                      <td class="hidden-480"> {{ bot1.name }} </td>
                     </tr>
                     <tr>
                       <td>#2</td>
@@ -221,7 +221,7 @@
                       <td> {{ bot2.profits }} </td>
                       <td> {{ bot2.roi }}</td>
                       <td class="hidden-480"> {{ bot2.fees }} </td>
-                      <td class="hidden-480"> {{ bot2.success }} </td>
+                      <td class="hidden-480"> {{ bot2.name }} </td>
                     </tr>
                     <tr>
                       <td>#3</td>
@@ -229,7 +229,7 @@
                       <td> {{ bot3.profits }} </td>
                       <td> {{ bot3.roi }}</td>
                       <td class="hidden-480"> {{ bot3.fees }} </td>
-                      <td class="hidden-480"> {{ bot3.success }} </td>
+                      <td class="hidden-480"> {{ bot3.name }} </td>
                     </tr>
                     <tr>
                       <td>#4</td>
@@ -237,7 +237,7 @@
                       <td> {{ bot4.profits }} </td>
                       <td> {{ bot4.roi }}</td>
                       <td class="hidden-480"> {{ bot4.fees }} </td>
-                      <td class="hidden-480"> {{ bot4.success }} </td>
+                      <td class="hidden-480"> {{ bot4.name }} </td>
                     </tr>
                     <tr>
                       <td>#5</td>
@@ -245,7 +245,7 @@
                       <td> {{ bot5.profits }} </td>
                       <td> {{ bot5.roi }}</td>
                       <td class="hidden-480"> {{ bot5.fees }} </td>
-                      <td class="hidden-480"> {{ bot5.success }} </td>
+                      <td class="hidden-480"> {{ bot5.name }} </td>
                     </tr>
                     <tr>
                       <td>#6</td>
@@ -253,7 +253,7 @@
                       <td> {{ bot6.profits }} </td>
                       <td> {{ bot6.roi }}</td>
                       <td class="hidden-480"> {{ bot6.fees }} </td>
-                      <td class="hidden-480"> {{ bot6.success }} </td>
+                      <td class="hidden-480"> {{ bot6.name }} </td>
                     </tr>
                     <tr>
                       <td>#7</td>
@@ -261,7 +261,7 @@
                       <td> {{ bot7.profits }} </td>
                       <td> {{ bot7.roi }}</td>
                       <td class="hidden-480"> {{ bot7.fees }} </td>
-                      <td class="hidden-480"> {{ bot7.success }} </td>
+                      <td class="hidden-480"> {{ bot7.name }} </td>
                     </tr>
                   </tbody>
                 </table>
