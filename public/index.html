@@ -184,10 +184,10 @@
                       <td class="hidden-480">{{ order.Origin.toString().substr(25) }}</td>
                       <td class="hidden-480">{{ order.LastUpdate.toString().substr(11, 8) }}</td>
                     </tr>
-                    <tr data-ng-repeat="order in bot1">
-                      <td>Bot1 {{bot1.total}}</td>
-                      <td></td>
-                      <td></td>
+                    <tr data-ng-repeat="order in bot1.orders">
+                      <td>Bot1 {{ bot1.total }}</td>
+                      <td> {{ order.Profits }}</td>
+                      <td> {{ order.FeeCosts }} </td>
                       <td></td>
                       <td class="hidden-480"></td>
                       <td class="hidden-480"></td>
