@@ -143,6 +143,18 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
             });
     };
 
+    var upd_bot1 = function() {
+        $http.get('http://data.alkemi.ai:8060/bot1')
+            .then(function(response) {
+                $scope.bot13 = response.data;
+                setTimeout(upd_bot1, 5000);
+            })
+            .catch(function() {
+                setTimeout(upd_bot1, 5000);
+            });
+    };
+
+
     $scope.round10 = function(value, exp) {
         if ((typeof value) == "string") return value;
         return value.toFixed(exp);
@@ -163,4 +175,5 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
     upd_trex();
     upd_krak();
     upd_stamp();
+    upd_bot1();
 }]);
