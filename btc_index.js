@@ -7,16 +7,16 @@ var gemini = require('./exchanges/gemini');
 var stamp = require('./exchanges/stamp');
 var kraken = require('./exchanges/kraken');
 //var quoine = require('./exchanges/quoine');
-var quadriga = require('./exchanges/quadriga');
+//var quadriga = require('./exchanges/quadriga');
 //var cex = require('./exchanges/cex');
 
 // USDT exchanges
 var finex = require('./exchanges/finex');
 var bittrex = require('./exchanges/bittrex');
-var poloniex = require('./exchanges/poloniex');
+//var poloniex = require('./exchanges/poloniex');
 //var liqui = require('./exchanges/liqui');
 var binance = require('./exchanges/binance');
-var hitbtc = require('./exchanges/hitbtc');
+//var hitbtc = require('./exchanges/hitbtc');
 //var bitmex = require('./exchanges/bitmex');
 
 /**
@@ -122,7 +122,7 @@ var BtcMonitor = function() {
             res.setHeader('Content-Type', 'application/json');
             res.setHeader('Cache-Control', 'no-cache, no-store');
             res.end(JSON.stringify({
-                markets: [ self.gemini, self.gdax, self.stamp, self.kraken, self.quadriga, self.finex, self.bittrex, self.binance, self.poloniex, self.hitbtc ],
+                markets: [ self.gemini, self.gdax, self.stamp, self.kraken, self.finex, self.bittrex, self.binance ],
                 idx: self.xbx.idx,
             }));
         };
@@ -170,25 +170,25 @@ var BtcMonitor = function() {
             console.log('%s: Node server started on %s:%d ...',
                 Date(Date.now()), self.ipaddress, self.port);
         });
-        
+
 	    self.gdax = new gdax();
         self.gemini = new gemini();
         self.stamp = new stamp();
         self.kraken = new kraken();
         //self.quoine = new quoine();
         //self.cex = new cex();
-        self.quadriga = new quadriga();
+        //self.quadriga = new quadriga();
         self.finex = new finex();
 	    self.bittrex = new bittrex();
-	    self.poloniex = new poloniex();
+	    // self.poloniex = new poloniex();
 	    //self.liqui = new liqui();
         self.binance = new binance();
-	    self.hitbtc = new hitbtc();
+	    //self.hitbtc = new hitbtc();
 	    //self.bitmex = new bitmex();
-        self.xbx = new xbx([  self.gemini, self.gdax, self.stamp, self.kraken, self.quadriga, self.finex, self.bittrex, self.binance, self.poloniex, self.hitbtc ]);
+        self.xbx = new xbx([  self.gemini, self.gdax, self.stamp, self.kraken, self.finex, self.bittrex, self.binance ]);
     };
 
-}; /*  BTC INDEX ARBITRAGe.  */
+}; /*  BTC INDEX ARBITRAGE.  */
 
 
 
