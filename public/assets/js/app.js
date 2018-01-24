@@ -147,6 +147,8 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
         $http.get('https://data.alkemi.ai/CustomBots/bot1.json')
             .then(function(response) {
                 $scope.bot1 = response.data.InterExchangeArbitrageBot.CompletedOrders;
+                var total = response.data.InterExchangeArbitrageBot.TotalProfits;
+                $scope.bot1.total = total; 
                 setTimeout(upd_bot1, 5000);
             })
             .catch(function() {
