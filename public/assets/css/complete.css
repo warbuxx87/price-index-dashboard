@@ -22605,10 +22605,9 @@ body {
 }
 
 .page-header.navbar span img {
-  max-height: 200px;
+  max-height: 100px;
   margin-top: 20px;
   margin-bottom: 20px;
-  height:100px;
 }
 
 .page-header.navbar .top-menu .navbar-nav>li.dropdown .dropdown-toggle:hover {
