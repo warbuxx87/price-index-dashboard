@@ -144,7 +144,7 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
     };
 
     var upd_bot1 = function() {
-        $http.get('http://data.alkemi.ai:8060/bot1')
+        $http.get('https://data.alkemi.ai/CustomBots/bot1.json')
             .then(function(response) {
                 $scope.bot13 = response.data;
                 setTimeout(upd_bot1, 5000);
