@@ -79,6 +79,10 @@
                 </table>
               </div>
             </div>
+            <div class="note note-info">
+              <p>All percents are calculated in comparison with the Price Index above, and take account of the exchange's fees. But they do not automatically account for exchange trade volume discounts. </p>
+
+            </div>
           </div>
           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
             <div class="lead dashboard-stat dashboard-stat-v2 blue" ng-show="btc.margin">
@@ -98,15 +102,12 @@
             <div class="strategy note note-info" ng-hide="btc.margin">
               Arbitrage strategy: None found.
             </div>
-            <div class="note note-info">
-              <p>All percents are calculated in comparison with the Price Index above, and take account of the exchange's fees. But they do not automatically account for exchange trade volume discounts. </p>
 
-            </div>
 
 
             <div class="portlet box red">
               <div class="portlet-title">
-                <div class="caption">Completed Trades Per Exchange</div>
+                <div class="caption">Recent Trades By Exchange</div>
                 <div class="tools"><i data-original-title="live simulation trades" data-placement="top" data-container="body" class="fa fa-question tooltips"></i></div>
               </div>
               <div class="portlet-body">
@@ -117,7 +118,7 @@
                       <th>Order</th>
                       <th>Price</th>
                       <th>Amount</th>
-                      <th class="hidden-480">Origin</th>
+                      <th class="hidden-480">Arbitrage</th>
                       <th class="hidden-480">Completed</th>
                     </tr>
                   </thead>
