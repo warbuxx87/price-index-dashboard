@@ -186,7 +186,7 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
     };
 
     var upd_bot3 = function() {
-        $http.get('https://data.alkemi.ai/CustomBots/bot3.json')
+        $http.get('https://data.alkemi.ai/CustomBots/bot16.json')
             .then(function(response) {
                 $scope.bot3 = response.data;
                 var profits = response.data.InterExchangeArbitrageBot.TotalProfits;
