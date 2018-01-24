@@ -157,7 +157,7 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
     };
 
 
-    $scope.round10 = function(value, exp) {
+    $scope.round2 = function(value, exp) {
         if ((typeof value) == "string") return value;
         return value.toFixed(exp);
     };

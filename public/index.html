@@ -72,12 +72,12 @@
                   <tbody>
                     <tr data-ng-repeat="market in btc.markets">
                       <td>{{ market.name }}</td>
-                      <td class="hidden-480" ng-class="getClass(market.buy_take)"><b>{{ round10(market.buy_take, 2) }}%</b></td>
-                      <td>${{ round10(market.bid, 2) }}</td>
-                      <td>${{ round10(market.ask, 2) }}</td>
-                      <td class="hidden-480" ng-class="getClass(market.sell_take)"><b>{{ round10(market.sell_take, 2) }}%</b></td>
-                      <td class="hidden-480">${{ round10(market.last, 2) }} </td>
-                      <td class="hidden-480">{{ round10(market.volume, 2) }} BTC </td>
+                      <td class="hidden-480" ng-class="getClass(market.buy_take)"><b>{{ round2(market.buy_take, 2) }}%</b></td>
+                      <td>${{ round2(market.bid, 2) }}</td>
+                      <td>${{ round2(market.ask, 2) }}</td>
+                      <td class="hidden-480" ng-class="getClass(market.sell_take)"><b>{{ round2(market.sell_take, 2) }}%</b></td>
+                      <td class="hidden-480">${{ round2(market.last, 2) }} </td>
+                      <td class="hidden-480">{{ round2(market.volume, 2) }} BTC </td>
                       <td class="hidden-480">{{ market.updated.toString().substr(11, 8) }}</td>
                     </tr>
                   </tbody>
@@ -96,10 +96,10 @@
               </div>
               <div class="details">
                 <div class="number">
-                  Opportunity <b>{{ round10(btc.margin, 2) }}%</b>
+                  Opportunity <b>{{ round2(btc.margin, 2) }}%</b>
                   <div class="desc">
-                    Buy {{ btc.buy_market.name }} at <b>{{ round10(btc.buy_market.ask, 2) }}</b>,
-                    Sell {{ btc.sell_market.name }} at <b>{{ round10(btc.sell_market.bid, 2) }}</b>,
+                    Buy {{ btc.buy_market.name }} at <b>{{ round2(btc.buy_market.ask, 2) }}</b>,
+                    Sell {{ btc.sell_market.name }} at <b>{{ round2(btc.sell_market.bid, 2) }}</b>,
                   </div>
                 </div>
               </div>
@@ -131,7 +131,7 @@
                     <tr data-ng-repeat="order in binance.SpotOrders | orderBy: '-LastUpdate' | limitTo: 1">
                       <td>Binance ({{binance.total}})</td>
                       <td>{{ order.OrderTypeAsString }}</td>
-                      <td>${{ round10(order.Price, 2) }}</td>
+                      <td>${{ round2(order.Price, 2) }}</td>
                       <td>{{ order.Amount }} BTC</td>
                       <td class="hidden-480">{{ order.Origin.toString().substr(25) }}</td>
                       <td class="hidden-480">{{ order.LastUpdate.toString().substr(11, 8) }}</td>
@@ -139,7 +139,7 @@
                     <tr data-ng-repeat="order in bitfinex.SpotOrders | orderBy: '-LastUpdate' | limitTo: 1">
                       <td>Bitfinex ({{bitfinex.total}})</td>
                       <td>{{ order.OrderTypeAsString }}</td>
-                      <td>${{ round10(order.Price, 2) }}</td>
+                      <td>${{ round2(order.Price, 2) }}</td>
                       <td>{{ order.Amount }} BTC</td>
                       <td class="hidden-480">{{ order.Origin.toString().substr(25) }}</td>
                       <td class="hidden-480">{{ order.LastUpdate.toString().substr(11, 8) }}</td>
@@ -147,7 +147,7 @@
                     <tr data-ng-repeat="order in bittrex.SpotOrders | orderBy: '-LastUpdate' | limitTo: 1">
                       <td>Bittrex ({{bittrex.total}})</td>
                       <td>{{ order.OrderTypeAsString }}</td>
-                      <td>${{ round10(order.Price, 2) }}</td>
+                      <td>${{ round2(order.Price, 2) }}</td>
                       <td>{{ order.Amount }} BTC</td>
                       <td class="hidden-480">{{ order.Origin.toString().substr(25) }}</td>
                       <td class="hidden-480">{{ order.LastUpdate.toString().substr(11, 8) }}</td>
@@ -155,7 +155,7 @@
                     <tr data-ng-repeat="order in bitstamp.SpotOrders | orderBy: '-LastUpdate' | limitTo: 1">
                       <td>Bitstamp ({{bitstamp.total}})</td>
                       <td>{{ order.OrderTypeAsString }}</td>
-                      <td>${{ round10(order.Price, 2) }}</td>
+                      <td>${{ round2(order.Price, 2) }}</td>
                       <td>{{ order.Amount }} BTC</td>
                       <td class="hidden-480">{{ order.Origin.toString().substr(25) }}</td>
                       <td class="hidden-480">{{ order.LastUpdate.toString().substr(11, 8) }}</td>
@@ -163,7 +163,7 @@
                     <tr data-ng-repeat="order in gemini.SpotOrders | orderBy: '-LastUpdate' | limitTo: 1">
                       <td>Gemini ({{gemini.total}})</td>
                       <td>{{ order.OrderTypeAsString }}</td>
-                      <td>${{ round10(order.Price, 2) }}</td>
+                      <td>${{ round2(order.Price, 2) }}</td>
                       <td>{{ order.Amount }} BTC</td>
                       <td class="hidden-480">{{ order.Origin.toString().substr(25) }}</td>
                       <td class="hidden-480">{{ order.LastUpdate.toString().substr(11, 8) }}</td>
@@ -171,7 +171,7 @@
                     <tr data-ng-repeat="order in gdax.SpotOrders | orderBy: '-LastUpdate' | limitTo: 1">
                       <td>GDAX ({{gdax.total}})</td>
                       <td>{{ order.OrderTypeAsString }}</td>
-                      <td>${{ round10(order.Price, 2) }}</td>
+                      <td>${{ round2(order.Price, 2) }}</td>
                       <td>{{ order.Amount }} BTC</td>
                       <td class="hidden-480">{{ order.Origin.toString().substr(25) }}</td>
                       <td class="hidden-480">{{ order.LastUpdate.toString().substr(11, 8) }}</td>
@@ -179,7 +179,7 @@
                     <tr data-ng-repeat="order in kraken.SpotOrders | orderBy: '-LastUpdate' | limitTo: 1">
                       <td>Kraken ({{kraken.total}})</td>
                       <td>{{ order.OrderTypeAsString }}</td>
-                      <td>${{ round10(order.Price, 2) }}</td>
+                      <td>${{ round2(order.Price, 2) }}</td>
                       <td>{{ order.Amount }} BTC</td>
                       <td class="hidden-480">{{ order.Origin.toString().substr(25) }}</td>
                       <td class="hidden-480">{{ order.LastUpdate.toString().substr(11, 8) }}</td>
@@ -245,12 +245,12 @@
                   <tbody>
                     <tr data-ng-repeat="market in eth.markets">
                       <td>{{ market.name }}</td>
-                      <td class="hidden-480" ng-class="getClass(market.buy_take)"><b>{{ round10(market.buy_take, 2) }}%</b></td>
-                      <td>${{ round10(market.bid, 2) }}</td>
-                      <td>${{ round10(market.ask, 2) }}</td>
-                      <td class="hidden-480" ng-class="getClass(market.sell_take)"><b>{{ round10(market.sell_take, 2) }}%</b></td>
-                      <td class="hidden-480">${{ round10(market.last, 2) }} </td>
-                      <td class="hidden-480">{{ round10(market.volume, 2) }} ETH </td>
+                      <td class="hidden-480" ng-class="getClass(market.buy_take)"><b>{{ round2(market.buy_take, 2) }}%</b></td>
+                      <td>${{ round2(market.bid, 2) }}</td>
+                      <td>${{ round2(market.ask, 2) }}</td>
+                      <td class="hidden-480" ng-class="getClass(market.sell_take)"><b>{{ round2(market.sell_take, 2) }}%</b></td>
+                      <td class="hidden-480">${{ round2(market.last, 2) }} </td>
+                      <td class="hidden-480">{{ round2(market.volume, 2) }} ETH </td>
                       <td class="hidden-480">{{ market.updated.toString().substr(11, 8) }}</td>
                     </tr>
                   </tbody>
@@ -265,10 +265,10 @@
               </div>
               <div class="details">
                 <div class="number">
-                  Opportunity <b>{{ round10(eth.margin, 2) }}%</b>
+                  Opportunity <b>{{ round2(eth.margin, 2) }}%</b>
                   <div class="desc">
-                    Buy {{ eth.buy_market.name }} at <b>{{ round10(eth.buy_market.ask, 2) }}</b>,
-                    Sell {{ eth.sell_market.name }} at <b>{{ round10(eth.sell_market.bid, 2) }}</b>,
+                    Buy {{ eth.buy_market.name }} at <b>{{ round2(eth.buy_market.ask, 2) }}</b>,
+                    Sell {{ eth.sell_market.name }} at <b>{{ round2(eth.sell_market.bid, 2) }}</b>,
                   </div>
                 </div>
               </div>
