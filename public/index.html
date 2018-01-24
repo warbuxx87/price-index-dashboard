@@ -207,8 +207,8 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr data-ng-repeat="order in bot1.InterExchangeArbitrageBot.CompletedOrders.BaseOrder">
-                      <td> {{ order.TotalProfits }} </td>
+                    <tr data-ng-repeat="order in bot1.InterExchangeArbitrageBot.CompletedOrders.BaseOrder | limitTo: 1">
+                      <td> #1 </td>
                       <td> {{ bot1.trades }} </td>
                       <td> {{ bot1.profits }} </td>
                       <td> {{ bot1.roi }}</td>
