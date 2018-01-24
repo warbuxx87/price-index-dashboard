@@ -184,18 +184,91 @@
                       <td class="hidden-480">{{ order.Origin.toString().substr(25) }}</td>
                       <td class="hidden-480">{{ order.LastUpdate.toString().substr(11, 8) }}</td>
                     </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="portlet box purple">
+              <div class="portlet-title">
+                <div class="caption">Bot Performance</div>
+                <div class="tools"><i data-original-title="live simulation trades" data-placement="top" data-container="body" class="fa fa-question tooltips"></i></div>
+              </div>
+              <div class="portlet-body">
+                <table class="table table-bordered table-hover table-striped">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Trades</th>
+                      <th>Profits</th>
+                      <th>ROI</th>
+                      <th class="hidden-480">Fees</th>
+                      <th class="hidden-480">Success %</th>
+                    </tr>
+                  </thead>
+                  <tbody>
                     <tr data-ng-repeat="order in bot1.orders">
-                      <td>Bot1 {{ bot1.total }}</td>
-                      <td> {{ order.Profits }}</td>
-                      <td> {{ order.FeeCosts }} </td>
-                      <td></td>
-                      <td class="hidden-480"></td>
-                      <td class="hidden-480"></td>
+                      <td>#1</td>
+                      <td> {{ bot1.trades }}</td>
+                      <td> {{ bot1.profits }} </td>
+                      <td> {{ bot1.roi }}</td>
+                      <td class="hidden-480">bot1.fees</td>
+                      <td class="hidden-480">bot1.success</td>
+                    </tr>
+                    <tr data-ng-repeat="order in bot2.orders">
+                      <td>#2</td>
+                      <td> {{ bot2.trades }}</td>
+                      <td> {{ bot2.profits }} </td>
+                      <td> {{ bot2.roi }}</td>
+                      <td class="hidden-480">bot2.fees</td>
+                      <td class="hidden-480">bot2.success</td>
+                    </tr>
+                    <tr data-ng-repeat="order in bot2.orders">
+                      <td>#3</td>
+                      <td> {{ bot3.trades }}</td>
+                      <td> {{ bot3.profits }} </td>
+                      <td> {{ bot3.roi }}</td>
+                      <td class="hidden-480">bot3.fees</td>
+                      <td class="hidden-480">bot3.success</td>
+                    </tr>
+                    <tr data-ng-repeat="order in bot2.orders">
+                      <td>#4</td>
+                      <td> {{ bot4.trades }}</td>
+                      <td> {{ bot4.profits }} </td>
+                      <td> {{ bot4.roi }}</td>
+                      <td class="hidden-480">bot4.fees</td>
+                      <td class="hidden-480">bot4.success</td>
+                    </tr>
+                    <tr data-ng-repeat="order in bot5.orders">
+                      <td>#5</td>
+                      <td> {{ bot5.trades }}</td>
+                      <td> {{ bot5.profits }} </td>
+                      <td> {{ bot5.roi }}</td>
+                      <td class="hidden-480">bot5.fees</td>
+                      <td class="hidden-480">bot5.success</td>
+                    </tr>
+                    <tr data-ng-repeat="order in bot6.orders">
+                      <td>#6</td>
+                      <td> {{ bot6.trades }}</td>
+                      <td> {{ bot6.profits }} </td>
+                      <td> {{ bot6.roi }}</td>
+                      <td class="hidden-480">bot6.fees</td>
+                      <td class="hidden-480">bot6.success</td>
+                    </tr>
+                    <tr data-ng-repeat="order in bot2.orders">
+                      <td>#7</td>
+                      <td> {{ bot7.trades }}</td>
+                      <td> {{ bot7.profits }} </td>
+                      <td> {{ bot7.roi }}</td>
+                      <td class="hidden-480">bot7.fees</td>
+                      <td class="hidden-480">bot7.success</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
             </div>
+
+
 
 
           </div>

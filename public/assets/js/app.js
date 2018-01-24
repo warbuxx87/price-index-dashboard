@@ -147,8 +147,16 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
         $http.get('https://data.alkemi.ai/CustomBots/bot1.json')
             .then(function(response) {
                 $scope.bot1.orders = response.data.InterExchangeArbitrageBot.CompletedOrders.BaseOrder;
-                var total = response.data.InterExchangeArbitrageBot.TotalProfits;
-                $scope.bot1.total = total;
+                var profits = response.data.InterExchangeArbitrageBot.TotalProfits;
+                var trades = response.data.InterExchangeArbitrageBot.CompletedOrders.BaseOrder.length;
+                var roi = response.data.InterExchangeArbitrageBot.ROI;
+                var fees = response.data.InterExchangeArbitrageBot.TotalFeeCosts;
+                var success = response.data.InterExchangeArbitrageBot.TotalProfits;
+                $scope.bot1.profits = profits;
+                $scope.bot1.trades = trades;
+                $scope.bot1.roi = roi;
+                $scope.bot1.fees = fees;
+                $scope.bot1.success = success;
                 setTimeout(upd_bot1, 5000);
             })
             .catch(function() {
