@@ -6,7 +6,7 @@ jQuery(document).ready(function() {
       }
       var n = t.date_time + "+0000",
         a = moment(n).fromNow(),
-        d = t.index.value,
+        d = t.index.usd_value,
         i = (t.index.change_24hour, t.index.change_percent_24hour),
         o = t.index.high_24hour,
         s = t.index.low_24hour,
@@ -37,7 +37,7 @@ jQuery(document).ready(function() {
       }), $("#exchange_table tbody").html(c), $("#index-value").toggleClick(function() {
         $("#index-value").html("$" + l + '<span class="usd">USD</span>')
       }, function() {
-        $("#index-value").html("$" + d)
+        $("#index-value").html("$" + d + '<span class="usd">CAD</span>')
       })
     })
   }
