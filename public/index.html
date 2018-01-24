@@ -106,7 +106,7 @@
 
             <div class="portlet box red">
               <div class="portlet-title">
-                <div class="caption">Completed Trades </div>
+                <div class="caption">Completed Trades Per Exchange</div>
                 <div class="tools"><i data-original-title="live simulation trades" data-placement="top" data-container="body" class="fa fa-question tooltips"></i></div>
               </div>
               <div class="portlet-body">
@@ -122,56 +122,56 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr data-ng-repeat="order in trades.SpotOrders | orderBy: '-LastUpdate' | limitTo: 1">
-                      <td>{{ order.Pair.DisplayName }}</td>
+                    <tr data-ng-repeat="order in binance.SpotOrders | orderBy: '-LastUpdate' | limitTo: 1">
+                      <td>Binance ({{binance.total}})</td>
                       <td>{{ order.OrderTypeAsString }}</td>
                       <td>${{ round10(order.Price, 2) }}</td>
                       <td>{{ order.Amount }} BTC</td>
                       <td class="hidden-480">{{ order.Origin.toString().substr(25) }}</td>
                       <td class="hidden-480">{{ order.LastUpdate.toString().substr(11, 8) }}</td>
                     </tr>
-                    <tr data-ng-repeat="order in trades2.SpotOrders | orderBy: '-LastUpdate' | limitTo: 1">
-                      <td>{{ order.Pair.DisplayName }}</td>
+                    <tr data-ng-repeat="order in bitfinex.SpotOrders | orderBy: '-LastUpdate' | limitTo: 1">
+                      <td>Bitfinex ({{bitfinex.total}})</td>
                       <td>{{ order.OrderTypeAsString }}</td>
                       <td>${{ round10(order.Price, 2) }}</td>
                       <td>{{ order.Amount }} BTC</td>
                       <td class="hidden-480">{{ order.Origin.toString().substr(25) }}</td>
                       <td class="hidden-480">{{ order.LastUpdate.toString().substr(11, 8) }}</td>
                     </tr>
-                    <tr data-ng-repeat="order in trades3.SpotOrders | orderBy: '-LastUpdate' | limitTo: 1">
-                      <td>{{ order.Pair.DisplayName }}</td>
+                    <tr data-ng-repeat="order in bittrex.SpotOrders | orderBy: '-LastUpdate' | limitTo: 1">
+                      <td>Bittrex ({{bittrex.total}})</td>
                       <td>{{ order.OrderTypeAsString }}</td>
                       <td>${{ round10(order.Price, 2) }}</td>
                       <td>{{ order.Amount }} BTC</td>
                       <td class="hidden-480">{{ order.Origin.toString().substr(25) }}</td>
                       <td class="hidden-480">{{ order.LastUpdate.toString().substr(11, 8) }}</td>
                     </tr>
-                    <tr data-ng-repeat="order in trades4.SpotOrders | orderBy: '-LastUpdate' | limitTo: 1">
-                      <td>{{ order.Pair.DisplayName }}</td>
+                    <tr data-ng-repeat="order in bitstamp.SpotOrders | orderBy: '-LastUpdate' | limitTo: 1">
+                      <td>Bitstamp ({{bitstamp.total}})</td>
                       <td>{{ order.OrderTypeAsString }}</td>
                       <td>${{ round10(order.Price, 2) }}</td>
                       <td>{{ order.Amount }} BTC</td>
                       <td class="hidden-480">{{ order.Origin.toString().substr(25) }}</td>
                       <td class="hidden-480">{{ order.LastUpdate.toString().substr(11, 8) }}</td>
                     </tr>
-                    <tr data-ng-repeat="order in trades5.SpotOrders | orderBy: '-LastUpdate' | limitTo: 1">
-                      <td>{{ order.Pair.DisplayName }}</td>
+                    <tr data-ng-repeat="order in gemini.SpotOrders | orderBy: '-LastUpdate' | limitTo: 1">
+                      <td>Gemini ({{gemini.total}})</td>
                       <td>{{ order.OrderTypeAsString }}</td>
                       <td>${{ round10(order.Price, 2) }}</td>
                       <td>{{ order.Amount }} BTC</td>
                       <td class="hidden-480">{{ order.Origin.toString().substr(25) }}</td>
                       <td class="hidden-480">{{ order.LastUpdate.toString().substr(11, 8) }}</td>
                     </tr>
-                    <tr data-ng-repeat="order in trades6.SpotOrders | orderBy: '-LastUpdate' | limitTo: 1">
-                      <td>{{ order.Pair.DisplayName }}</td>
+                    <tr data-ng-repeat="order in gdax.SpotOrders | orderBy: '-LastUpdate' | limitTo: 1">
+                      <td>GDAX ({{gdax.total}})</td>
                       <td>{{ order.OrderTypeAsString }}</td>
                       <td>${{ round10(order.Price, 2) }}</td>
                       <td>{{ order.Amount }} BTC</td>
                       <td class="hidden-480">{{ order.Origin.toString().substr(25) }}</td>
                       <td class="hidden-480">{{ order.LastUpdate.toString().substr(11, 8) }}</td>
                     </tr>
-                    <tr data-ng-repeat="order in trades7.SpotOrders | orderBy: '-LastUpdate' | limitTo: 1">
-                      <td>{{ order.Pair.DisplayName }}</td>
+                    <tr data-ng-repeat="order in kraken.SpotOrders | orderBy: '-LastUpdate' | limitTo: 1">
+                      <td>Kraken ({{kraken.total}})</td>
                       <td>{{ order.OrderTypeAsString }}</td>
                       <td>${{ round10(order.Price, 2) }}</td>
                       <td>{{ order.Amount }} BTC</td>
