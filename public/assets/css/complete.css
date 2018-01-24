@@ -20320,8 +20320,6 @@ div.checker, div.radio {
   border: 0;
   padding: 0;
   box-shadow: none;
-  height: 240px;
-  min-height: 240px;
   filter: none;
   background-image: none
 }
@@ -22610,6 +22608,7 @@ body {
   max-height: 200px;
   margin-top: 20px;
   margin-bottom: 20px;
+  height:100px;
 }
 
 .page-header.navbar .top-menu .navbar-nav>li.dropdown .dropdown-toggle:hover {
