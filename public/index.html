@@ -184,7 +184,7 @@
                       <td class="hidden-480">{{ order.Origin.toString().substr(25) }}</td>
                       <td class="hidden-480">{{ order.LastUpdate.toString().substr(11, 8) }}</td>
                     </tr>
-                    <tr data-ng-repeat="order in bot1.InterExchangeArbitrageBot.CompletedOrders.BaseOrder | limitTo: 1">
+                    <tr data-ng-repeat="order in bot1.InterExchangeArbitrageBot.CompletedOrders | limitTo: 1">
                       <td>Kraken ({{order.Profits}})</td>
                       <td></td>
                       <td></td>
