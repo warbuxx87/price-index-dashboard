@@ -164,6 +164,133 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
             });
     };
 
+    var upd_bot2 = function() {
+        $http.get('https://data.alkemi.ai/CustomBots/bot2.json')
+            .then(function(response) {
+                $scope.bot2 = response.data;
+                var profits = response.data.InterExchangeArbitrageBot.TotalProfits;
+                var trades = response.data.InterExchangeArbitrageBot.CompletedOrders.BaseOrder.length;
+                var roi = response.data.InterExchangeArbitrageBot.ROI;
+                var fees = response.data.InterExchangeArbitrageBot.TotalFeeCosts;
+                var success = response.data.InterExchangeArbitrageBot.TotalProfits;
+                $scope.bot2.profits = profits;
+                $scope.bot2.trades = trades;
+                $scope.bot2.roi = roi;
+                $scope.bot2.fees = fees;
+                $scope.bot2.success = success;
+                setTimeout(upd_bot2, 5000);
+            })
+            .catch(function() {
+                setTimeout(upd_bot2, 5000);
+            });
+    };
+
+    var upd_bot3 = function() {
+        $http.get('https://data.alkemi.ai/CustomBots/bot3.json')
+            .then(function(response) {
+                $scope.bot3 = response.data;
+                var profits = response.data.InterExchangeArbitrageBot.TotalProfits;
+                var trades = response.data.InterExchangeArbitrageBot.CompletedOrders.BaseOrder.length;
+                var roi = response.data.InterExchangeArbitrageBot.ROI;
+                var fees = response.data.InterExchangeArbitrageBot.TotalFeeCosts;
+                var success = response.data.InterExchangeArbitrageBot.TotalProfits;
+                $scope.bot3.profits = profits;
+                $scope.bot3.trades = trades;
+                $scope.bot3.roi = roi;
+                $scope.bot3.fees = fees;
+                $scope.bot3.success = success;
+                setTimeout(upd_bot3, 5000);
+            })
+            .catch(function() {
+                setTimeout(upd_bot3, 5000);
+            });
+    };
+
+    var upd_bot4 = function() {
+        $http.get('https://data.alkemi.ai/CustomBots/bot4.json')
+            .then(function(response) {
+                $scope.bot4 = response.data;
+                var profits = response.data.InterExchangeArbitrageBot.TotalProfits;
+                var trades = response.data.InterExchangeArbitrageBot.CompletedOrders.BaseOrder.length;
+                var roi = response.data.InterExchangeArbitrageBot.ROI;
+                var fees = response.data.InterExchangeArbitrageBot.TotalFeeCosts;
+                var success = response.data.InterExchangeArbitrageBot.TotalProfits;
+                $scope.bot4.profits = profits;
+                $scope.bot4.trades = trades;
+                $scope.bot4.roi = roi;
+                $scope.bot4.fees = fees;
+                $scope.bot4.success = success;
+                setTimeout(upd_bot4, 5000);
+            })
+            .catch(function() {
+                setTimeout(upd_bot4, 5000);
+            });
+    };
+
+    var upd_bot5 = function() {
+        $http.get('https://data.alkemi.ai/CustomBots/bot5.json')
+            .then(function(response) {
+                $scope.bot5 = response.data;
+                var profits = response.data.InterExchangeArbitrageBot.TotalProfits;
+                var trades = response.data.InterExchangeArbitrageBot.CompletedOrders.BaseOrder.length;
+                var roi = response.data.InterExchangeArbitrageBot.ROI;
+                var fees = response.data.InterExchangeArbitrageBot.TotalFeeCosts;
+                var success = response.data.InterExchangeArbitrageBot.TotalProfits;
+                $scope.bot5.profits = profits;
+                $scope.bot5.trades = trades;
+                $scope.bot5.roi = roi;
+                $scope.bot5.fees = fees;
+                $scope.bot5.success = success;
+                setTimeout(upd_bot5, 5000);
+            })
+            .catch(function() {
+                setTimeout(upd_bot5, 5000);
+            });
+    };
+
+    var upd_bot6 = function() {
+        $http.get('https://data.alkemi.ai/CustomBots/bot6.json')
+            .then(function(response) {
+                $scope.bot6 = response.data;
+                var profits = response.data.InterExchangeArbitrageBot.TotalProfits;
+                var trades = response.data.InterExchangeArbitrageBot.CompletedOrders.BaseOrder.length;
+                var roi = response.data.InterExchangeArbitrageBot.ROI;
+                var fees = response.data.InterExchangeArbitrageBot.TotalFeeCosts;
+                var success = response.data.InterExchangeArbitrageBot.TotalProfits;
+                $scope.bot6.profits = profits;
+                $scope.bot6.trades = trades;
+                $scope.bot6.roi = roi;
+                $scope.bot6.fees = fees;
+                $scope.bot6.success = success;
+                setTimeout(upd_bot6, 5000);
+            })
+            .catch(function() {
+                setTimeout(upd_bot6, 5000);
+            });
+    };
+
+    var upd_bot7 = function() {
+        $http.get('https://data.alkemi.ai/CustomBots/bot7.json')
+            .then(function(response) {
+                $scope.bot7 = response.data;
+                var profits = response.data.InterExchangeArbitrageBot.TotalProfits;
+                var trades = response.data.InterExchangeArbitrageBot.CompletedOrders.BaseOrder.length;
+                var roi = response.data.InterExchangeArbitrageBot.ROI;
+                var fees = response.data.InterExchangeArbitrageBot.TotalFeeCosts;
+                var success = response.data.InterExchangeArbitrageBot.TotalProfits;
+                $scope.bot7.profits = profits;
+                $scope.bot7.trades = trades;
+                $scope.bot7.roi = roi;
+                $scope.bot7.fees = fees;
+                $scope.bot7.success = success;
+                setTimeout(upd_bot7, 5000);
+            })
+            .catch(function() {
+                setTimeout(upd_bot7, 5000);
+            });
+    };
+
+
 
     $scope.round2 = function(value, exp) {
         if ((typeof value) == "string") return value;
@@ -186,4 +313,10 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
     upd_krak();
     upd_stamp();
     upd_bot1();
+    upd_bot2();
+    upd_bot3();
+    upd_bot4();
+    upd_bot5();
+    upd_bot6();
+    upd_bot7();
 }]);
