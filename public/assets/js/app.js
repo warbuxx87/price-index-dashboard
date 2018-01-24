@@ -146,7 +146,7 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
     var upd_bot1 = function() {
         $http.get('https://data.alkemi.ai/CustomBots/bot1.json')
             .then(function(response) {
-                $scope.bot1.orders = response.data;
+                $scope.bot1 = response.data;
                 var profits = response.data.InterExchangeArbitrageBot.TotalProfits;
                 var trades = response.data.InterExchangeArbitrageBot.CompletedOrders.BaseOrder.length;
                 var roi = response.data.InterExchangeArbitrageBot.ROI;
