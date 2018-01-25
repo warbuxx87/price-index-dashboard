@@ -604,5 +604,5 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
     upd_bot17();
     upd_bot18();
     upd_bot19();
-    upd_bot20();
+    upd_bot20()
 }];
