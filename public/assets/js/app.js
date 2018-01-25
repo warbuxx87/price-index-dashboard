@@ -159,10 +159,10 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
         $scope.bot1.fees = fees;
         $scope.bot1.avg_earn = avg_earn;
         $scope.bot1.name = name;
-        setTimeout(upd_bot1, 5000);
+        setTimeout(upd_bot1, 10000);
       })
       .catch(function() {
-        setTimeout(upd_bot1, 5000);
+        setTimeout(upd_bot1, 10000);
       });
   };
 
@@ -182,10 +182,10 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
         $scope.bot2.fees = fees;
         $scope.bot2.avg_earn = avg_earn;
         $scope.bot2.name = name;
-        setTimeout(upd_bot2, 5000);
+        setTimeout(upd_bot2, 10000);
       })
       .catch(function() {
-        setTimeout(upd_bot2, 5000);
+        setTimeout(upd_bot2, 10000);
       });
   };
 
@@ -205,10 +205,10 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
         $scope.bot3.fees = fees;
         $scope.bot3.avg_earn = avg_earn;
         $scope.bot3.name = name;
-        setTimeout(upd_bot3, 5000);
+        setTimeout(upd_bot3, 10000);
       })
       .catch(function() {
-        setTimeout(upd_bot3, 5000);
+        setTimeout(upd_bot3, 10000);
       });
   };
 
@@ -228,10 +228,10 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
         $scope.bot4.fees = fees;
         $scope.bot4.avg_earn = avg_earn;
         $scope.bot4.name = name;
-        setTimeout(upd_bot4, 5000);
+        setTimeout(upd_bot4, 10000);
       })
       .catch(function() {
-        setTimeout(upd_bot4, 5000);
+        setTimeout(upd_bot4, 10000);
       });
   };
 
@@ -251,10 +251,10 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
         $scope.bot5.fees = fees;
         $scope.bot5.avg_earn = avg_earn;
         $scope.bot5.name = name;
-        setTimeout(upd_bot5, 5000);
+        setTimeout(upd_bot5, 10000);
       })
       .catch(function() {
-        setTimeout(upd_bot5, 5000);
+        setTimeout(upd_bot5, 10000);
       });
   };
 
@@ -274,10 +274,10 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
         $scope.bot6.fees = fees;
         $scope.bot6.avg_earn = avg_earn;
         $scope.bot6.name = name;
-        setTimeout(upd_bot6, 5000);
+        setTimeout(upd_bot6, 10000);
       })
       .catch(function() {
-        setTimeout(upd_bot6, 5000);
+        setTimeout(upd_bot6, 10000);
       });
   };
 
@@ -297,10 +297,10 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
         $scope.bot7.fees = fees;
         $scope.bot7.avg_earn = avg_earn;
         $scope.bot7.name = name;
-        setTimeout(upd_bot7, 5000);
+        setTimeout(upd_bot7, 10000);
       })
       .catch(function() {
-        setTimeout(upd_bot7, 5000);
+        setTimeout(upd_bot7, 10000);
       });
   };
 
@@ -320,10 +320,10 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
         $scope.bot8.fees = fees;
         $scope.bot8.avg_earn = avg_earn;
         $scope.bot8.name = name;
-        setTimeout(upd_bot8, 5000);
+        setTimeout(upd_bot8, 10000);
       })
       .catch(function() {
-        setTimeout(upd_bot8, 5000);
+        setTimeout(upd_bot8, 10000);
       });
   };
 
@@ -343,10 +343,10 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
         $scope.bot9.fees = fees;
         $scope.bot9.avg_earn = avg_earn;
         $scope.bot9.name = name;
-        setTimeout(upd_bot9, 5000);
+        setTimeout(upd_bot9, 10000);
       })
       .catch(function() {
-        setTimeout(upd_bot9, 5000);
+        setTimeout(upd_bot9, 10000);
       });
   };
 
@@ -366,10 +366,10 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
         $scope.bot10.fees = fees;
         $scope.bot10.avg_earn = avg_earn;
         $scope.bot10.name = name;
-        setTimeout(upd_bot10, 5000);
+        setTimeout(upd_bot10, 10000);
       })
       .catch(function() {
-        setTimeout(upd_bot10, 5000);
+        setTimeout(upd_bot10, 10000);
       });
   };
 
@@ -389,10 +389,10 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
         $scope.bot11.fees = fees;
         $scope.bot11.avg_earn = avg_earn;
         $scope.bot11.name = name;
-        setTimeout(upd_bot11, 5000);
+        setTimeout(upd_bot11, 10000);
       })
       .catch(function() {
-        setTimeout(upd_bot11, 5000);
+        setTimeout(upd_bot11, 10000);
       });
   };
 
@@ -412,10 +412,10 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
         $scope.bot12.fees = fees;
         $scope.bot12.avg_earn = avg_earn;
         $scope.bot12.name = name;
-        setTimeout(upd_bot12, 5000);
+        setTimeout(upd_bot12, 10000);
       })
       .catch(function() {
-        setTimeout(upd_bot12, 5000);
+        setTimeout(upd_bot12, 10000);
       });
   };
 
@@ -435,10 +435,10 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
         $scope.bot13.fees = fees;
         $scope.bot13.avg_earn = avg_earn;
         $scope.bot13.name = name;
-        setTimeout(upd_bot13, 5000);
+        setTimeout(upd_bot13, 10000);
       })
       .catch(function() {
-        setTimeout(upd_bot13, 5000);
+        setTimeout(upd_bot13, 10000);
       });
   };
 
@@ -458,10 +458,10 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
         $scope.bot14.fees = fees;
         $scope.bot14.avg_earn = avg_earn;
         $scope.bot14.name = name;
-        setTimeout(upd_bot14, 5000);
+        setTimeout(upd_bot14, 10000);
       })
       .catch(function() {
-        setTimeout(upd_bot14, 5000);
+        setTimeout(upd_bot14, 10000);
       });
   };
 
@@ -481,10 +481,10 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
         $scope.bot15.fees = fees;
         $scope.bot15.avg_earn = avg_earn;
         $scope.bot15.name = name;
-        setTimeout(upd_bot15, 5000);
+        setTimeout(upd_bot15, 10000);
       })
       .catch(function() {
-        setTimeout(upd_bot15, 5000);
+        setTimeout(upd_bot15, 10000);
       });
   };
 
@@ -504,10 +504,10 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
         $scope.bot16.fees = fees;
         $scope.bot16.avg_earn = avg_earn;
         $scope.bot16.name = name;
-        setTimeout(upd_bot16, 5000);
+        setTimeout(upd_bot16, 10000);
       })
       .catch(function() {
-        setTimeout(upd_bot16, 5000);
+        setTimeout(upd_bot16, 10000);
       });
   };
 
@@ -527,10 +527,10 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
         $scope.bot17.fees = fees;
         $scope.bot17.avg_earn = avg_earn;
         $scope.bot17.name = name;
-        setTimeout(upd_bot17, 5000);
+        setTimeout(upd_bot17, 10000);
       })
       .catch(function() {
-        setTimeout(upd_bot17, 5000);
+        setTimeout(upd_bot17, 10000);
       });
   };
 
@@ -550,10 +550,10 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
         $scope.bot18.fees = fees;
         $scope.bot18.avg_earn = avg_earn;
         $scope.bot18.name = name;
-        setTimeout(upd_bot18, 5000);
+        setTimeout(upd_bot18, 10000);
       })
       .catch(function() {
-        setTimeout(upd_bot18, 5000);
+        setTimeout(upd_bot18, 10000);
       });
   };
 
@@ -573,10 +573,10 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
         $scope.bot19.fees = fees;
         $scope.bot19.avg_earn = avg_earn;
         $scope.bot19.name = name;
-        setTimeout(upd_bot19, 5000);
+        setTimeout(upd_bot19, 10000);
       })
       .catch(function() {
-        setTimeout(upd_bot19, 5000);
+        setTimeout(upd_bot19, 10000);
       });
   };
 
@@ -596,16 +596,11 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
         $scope.bot20.fees = fees;
         $scope.bot20.avg_earn = avg_earn;
         $scope.bot20.name = name;
-        setTimeout(upd_bot20, 5000);
+        setTimeout(upd_bot20, 10000);
       })
       .catch(function() {
-        setTimeout(upd_bot20, 5000);
+        setTimeout(upd_bot20, 10000);
       });
-  };
-
-  $scope.round2 = function(value, exp) {
-    if ((typeof value) == "string") return value;
-    return value.toFixed(exp);
   };
 
   $scope.getClass = function(value) {

@@ -53,9 +53,9 @@
               </div>
               <div class="details">
                 <div class="number">
-                  Opportunity <b>{{ round2(btc.margin, 2) }}%</b>
+                  Opportunity <b>{{ btc.margin |number:2 }}%</b>
                   <div class="desc">
-                    Buy {{ btc.buy_market.name }} at <b>{{ round2(btc.buy_market.ask, 2) }}</b>, Sell {{ btc.sell_market.name }} at <b>{{ round2(btc.sell_market.bid, 2) }}</b>,
+                    Buy {{ btc.buy_market.name }} at <b>{{ btc.buy_market.ask | currency:"$":2 }}</b>, Sell {{ btc.sell_market.name }} at <b>{{ btc.sell_market.bid | currency:"$":2 }}</b>,
                   </div>
                 </div>
               </div>
@@ -91,12 +91,12 @@
                   <tbody>
                     <tr data-ng-repeat="market in btc.markets">
                       <td>{{ market.name }}</td>
-                      <td class="hidden-480" ng-class="getClass(market.buy_take)"><b>{{ round2(market.buy_take, 2) }}%</b></td>
-                      <td>${{ round2(market.bid, 2) }}</td>
-                      <td>${{ round2(market.ask, 2) }}</td>
-                      <td class="hidden-480" ng-class="getClass(market.sell_take)"><b>{{ round2(market.sell_take, 2) }}%</b></td>
-                      <td class="hidden-480">${{ round2(market.last, 2) }} </td>
-                      <td class="hidden-480">{{ round2(market.volume, 2) }} BTC </td>
+                      <td class="hidden-480" ng-class="getClass(market.buy_take)"><b>{{ market.buy_take | number:2 }}%</b></td>
+                      <td>{{ market.bid | currency:"$":2 }}</td>
+                      <td>{{ market.ask | currency:"$":2 }}</td>
+                      <td class="hidden-480" ng-class="getClass(market.sell_take)"><b>{{ market.sell_take | number:2 }}%</b></td>
+                      <td class="hidden-480">{{ market.last | currency:"$":2 }} </td>
+                      <td class="hidden-480">{{ market.volume | number:2 }} </td>
                       <td class="hidden-480">{{ market.updated.toString().substr(11, 8) }}</td>
                     </tr>
                   </tbody>
@@ -134,7 +134,7 @@
                     <tr data-ng-repeat="order in binance.SpotOrders | orderBy: '-LastUpdate' | limitTo: 1">
                       <td>Binance ({{binance.total}})</td>
                       <td>{{ order.OrderTypeAsString }}</td>
-                      <td>${{ round2(order.Price, 2) }}</td>
+                      <td>{{ order.Price | currency:"$":2 }}</td>
                       <td>{{ order.Amount }} BTC</td>
                       <td class="hidden-480">{{ order.Origin.toString().substr(25) }}</td>
                       <td class="hidden-480">{{ order.LastUpdate.toString().substr(11, 8) }}</td>
@@ -142,7 +142,7 @@
                     <tr data-ng-repeat="order in bitfinex.SpotOrders | orderBy: '-LastUpdate' | limitTo: 1">
                       <td>Bitfinex ({{bitfinex.total}})</td>
                       <td>{{ order.OrderTypeAsString }}</td>
-                      <td>${{ round2(order.Price, 2) }}</td>
+                      <td>{{ order.Price | currency:"$":2 }}</td>
                       <td>{{ order.Amount }} BTC</td>
                       <td class="hidden-480">{{ order.Origin.toString().substr(25) }}</td>
                       <td class="hidden-480">{{ order.LastUpdate.toString().substr(11, 8) }}</td>
@@ -150,7 +150,7 @@
                     <tr data-ng-repeat="order in bittrex.SpotOrders | orderBy: '-LastUpdate' | limitTo: 1">
                       <td>Bittrex ({{bittrex.total}})</td>
                       <td>{{ order.OrderTypeAsString }}</td>
-                      <td>${{ round2(order.Price, 2) }}</td>
+                      <td>{{ order.Price | currency:"$":2 }}</td>
                       <td>{{ order.Amount }} BTC</td>
                       <td class="hidden-480">{{ order.Origin.toString().substr(25) }}</td>
                       <td class="hidden-480">{{ order.LastUpdate.toString().substr(11, 8) }}</td>
@@ -158,7 +158,7 @@
                     <tr data-ng-repeat="order in bitstamp.SpotOrders | orderBy: '-LastUpdate' | limitTo: 1">
                       <td>Bitstamp ({{bitstamp.total}})</td>
                       <td>{{ order.OrderTypeAsString }}</td>
-                      <td>${{ round2(order.Price, 2) }}</td>
+                      <td>{{ order.Price | currency:"$":2 }}</td>
                       <td>{{ order.Amount }} BTC</td>
                       <td class="hidden-480">{{ order.Origin.toString().substr(25) }}</td>
                       <td class="hidden-480">{{ order.LastUpdate.toString().substr(11, 8) }}</td>
@@ -166,7 +166,7 @@
                     <tr data-ng-repeat="order in gemini.SpotOrders | orderBy: '-LastUpdate' | limitTo: 1">
                       <td>Gemini ({{gemini.total}})</td>
                       <td>{{ order.OrderTypeAsString }}</td>
-                      <td>${{ round2(order.Price, 2) }}</td>
+                      <td>{{ order.Price | currency:"$":2 }}</td>
                       <td>{{ order.Amount }} BTC</td>
                       <td class="hidden-480">{{ order.Origin.toString().substr(25) }}</td>
                       <td class="hidden-480">{{ order.LastUpdate.toString().substr(11, 8) }}</td>
@@ -174,7 +174,7 @@
                     <tr data-ng-repeat="order in gdax.SpotOrders | orderBy: '-LastUpdate' | limitTo: 1">
                       <td>GDAX ({{gdax.total}})</td>
                       <td>{{ order.OrderTypeAsString }}</td>
-                      <td>${{ round2(order.Price, 2) }}</td>
+                      <td>{{ order.Price | currency:"$":2 }}</td>
                       <td>{{ order.Amount }} BTC</td>
                       <td class="hidden-480">{{ order.Origin.toString().substr(25) }}</td>
                       <td class="hidden-480">{{ order.LastUpdate.toString().substr(11, 8) }}</td>
@@ -182,7 +182,7 @@
                     <tr data-ng-repeat="order in kraken.SpotOrders | orderBy: '-LastUpdate' | limitTo: 1">
                       <td>Kraken ({{kraken.total}})</td>
                       <td>{{ order.OrderTypeAsString }}</td>
-                      <td>${{ round2(order.Price, 2) }}</td>
+                      <td>{{ order.Price | currency:"$":2 }}</td>
                       <td>{{ order.Amount }} BTC</td>
                       <td class="hidden-480">{{ order.Origin.toString().substr(25) }}</td>
                       <td class="hidden-480">{{ order.LastUpdate.toString().substr(11, 8) }}</td>
@@ -213,161 +213,161 @@
                     <tr>
                       <td> #1 </td>
                       <td> {{ bot1.trades }} </td>
-                      <td> ${{ bot1.profits }} </td>
-                      <td> {{ bot1.roi }}</td>
-                      <td class="hidden-480"> ${{ round2(bot1.avg_earn) }} </td>
+                      <td> {{ bot1.profits | currency:"$":2 }} </td>
+                      <td> {{ bot1.roi | number : 2 }} %</td>
+                      <td class="hidden-480"> {{ bot1.avg_earn | currency:"$":2 }} </td>
                       <td class="hidden-480"> {{ bot1.name }} </td>
                     </tr>
                     <tr>
                       <td>#2</td>
                       <td> {{ bot2.trades }}</td>
-                      <td> ${{ bot2.profits }} </td>
-                      <td> {{ bot2.roi }}</td>
-                      <td class="hidden-480"> ${{ round2(bot2.avg_earn) }} </td>
+                      <td> {{ bot2.profits | currency:"$":2 }} </td>
+                      <td> {{ bot2.roi | number : 2 }} %</td>
+                      <td class="hidden-480"> {{ bot2.avg_earn | currency:"$":2 }} </td>
                       <td class="hidden-480"> {{ bot2.name }} </td>
                     </tr>
                     <tr>
                       <td>#3</td>
                       <td> {{ bot3.trades }}</td>
-                      <td> ${{ bot3.profits }} </td>
-                      <td> {{ bot3.roi }}</td>
-                      <td class="hidden-480"> ${{ round2(bot3.avg_earn) }} </td>
+                      <td> {{ bot3.profits | currency:"$":2 }} </td>
+                      <td> {{ bot3.roi | number : 2 }} %</td>
+                      <td class="hidden-480"> {{ bot3.avg_earn | currency:"$":2 }} </td>
                       <td class="hidden-480"> {{ bot3.name }} </td>
                     </tr>
                     <tr>
                       <td>#4</td>
                       <td> {{ bot4.trades }}</td>
-                      <td> ${{ bot4.profits }} </td>
-                      <td> {{ bot4.roi }}</td>
-                      <td class="hidden-480"> ${{ round2(bot4.avg_earn) }} </td>
+                      <td> {{ bot4.profits | currency:"$":2 }} </td>
+                      <td> {{ bot4.roi | number : 2 }} %</td>
+                      <td class="hidden-480"> {{ bot4.avg_earn | currency:"$":2 }} </td>
                       <td class="hidden-480"> {{ bot4.name }} </td>
                     </tr>
                     <tr>
                       <td>#5</td>
                       <td> {{ bot5.trades }}</td>
-                      <td> ${{ bot5.profits }} </td>
-                      <td> {{ bot5.roi }}</td>
-                      <td class="hidden-480"> ${{ round2(bot5.avg_earn) }} </td>
+                      <td> {{ bot5.profits | currency:"$":2 }} </td>
+                      <td> {{ bot5.roi | number : 2 }} %</td>
+                      <td class="hidden-480"> {{ bot5.avg_earn | currency:"$":2 }} </td>
                       <td class="hidden-480"> {{ bot5.name }} </td>
                     </tr>
                     <tr>
                       <td>#6</td>
                       <td> {{ bot6.trades }}</td>
-                      <td> ${{ bot6.profits }} </td>
-                      <td> {{ bot6.roi }}</td>
-                      <td class="hidden-480"> ${{ round2(bot6.avg_earn) }} </td>
+                      <td> {{ bot6.profits | currency:"$":2 }} </td>
+                      <td> {{ bot6.roi | number : 2 }} %</td>
+                      <td class="hidden-480"> {{ bot6.avg_earn | currency:"$":2 }} </td>
                       <td class="hidden-480"> {{ bot6.name }} </td>
                     </tr>
                     <tr>
                       <td>#7</td>
                       <td> {{ bot7.trades }}</td>
-                      <td> ${{ bot7.profits }} </td>
-                      <td> {{ bot7.roi }}</td>
-                      <td class="hidden-480"> ${{ round2(bot7.avg_earn) }} </td>
+                      <td> {{ bot7.profits | currency:"$":2 }} </td>
+                      <td> {{ bot7.roi | number : 2 }} %</td>
+                      <td class="hidden-480"> {{ bot7.avg_earn | currency:"$":2 }} </td>
                       <td class="hidden-480"> {{ bot7.name }} </td>
                     </tr>
                     <tr>
                       <td>#8</td>
                       <td> {{ bot8.trades }}</td>
-                      <td> ${{ bot8.profits }} </td>
-                      <td> {{ bot8.roi }}</td>
-                      <td class="hidden-480"> ${{ round2(bot8.avg_earn) }} </td>
+                      <td> {{ bot8.profits | currency:"$":2 }} </td>
+                      <td> {{ bot8.roi | number : 2 }} %</td>
+                      <td class="hidden-480"> {{ bot8.avg_earn | currency:"$":2 }} </td>
                       <td class="hidden-480"> {{ bot8.name }} </td>
                     </tr>
                     <tr>
                       <td>#9</td>
                       <td> {{ bot9.trades }}</td>
-                      <td> ${{ bot9.profits }} </td>
-                      <td> {{ bot9.roi }}</td>
-                      <td class="hidden-480"> ${{ round2(bot9.avg_earn) }} </td>
+                      <td> {{ bot9.profits | currency:"$":2 }} </td>
+                      <td> {{ bot9.roi | number : 2 }} %</td>
+                      <td class="hidden-480"> {{ bot9.avg_earn | currency:"$":2 }} </td>
                       <td class="hidden-480"> {{ bot9.name }} </td>
                     </tr>
                     <tr>
                       <td>#10</td>
                       <td> {{ bot10.trades }}</td>
-                      <td> ${{ bot10.profits }} </td>
-                      <td> {{ bot10.roi }}</td>
-                      <td class="hidden-480"> ${{ round2(bot10.avg_earn) }} </td>
+                      <td> {{ bot10.profits | currency:"$":2 }} </td>
+                      <td> {{ bot10.roi | number : 2 }} %</td>
+                      <td class="hidden-480"> {{ bot10.avg_earn | currency:"$":2 }} </td>
                       <td class="hidden-480"> {{ bot10.name }} </td>
                     </tr>
                     <tr>
                       <td>#11</td>
                       <td> {{ bot11.trades }}</td>
-                      <td> ${{ bot11.profits }} </td>
-                      <td> {{ bot11.roi }}</td>
-                      <td class="hidden-480"> ${{ round2(bot11.avg_earn) }} </td>
+                      <td> {{ bot11.profits | currency:"$":2 }} </td>
+                      <td> {{ bot11.roi | number : 2 }} %</td>
+                      <td class="hidden-480"> {{ bot11.avg_earn | currency:"$":2 }} </td>
                       <td class="hidden-480"> {{ bot11.name }} </td>
                     </tr>
                     <tr>
                       <td>#12</td>
                       <td> {{ bot12.trades }}</td>
-                      <td> ${{ bot12.profits }} </td>
-                      <td> {{ bot12.roi }}</td>
-                      <td class="hidden-480"> ${{ round2(bot12.avg_earn) }} </td>
+                      <td> {{ bot12.profits | currency:"$":2 }} </td>
+                      <td> {{ bot12.roi | number : 2 }} %</td>
+                      <td class="hidden-480"> {{ bot12.avg_earn | currency:"$":2 }} </td>
                       <td class="hidden-480"> {{ bot12.name }} </td>
                     </tr>
                     <tr>
                       <td>#13</td>
                       <td> {{ bot13.trades }}</td>
-                      <td> ${{ bot13.profits }} </td>
-                      <td> {{ bot13.roi }}</td>
-                      <td class="hidden-480"> ${{ round2(bot13.avg_earn,2) }} </td>
+                      <td> {{ bot13.profits | currency:"$":2 }} </td>
+                      <td> {{ bot13.roi | number : 2 }} %</td>
+                      <td class="hidden-480"> {{ bot13.avg_earn | currency:"$":2 }} </td>
                       <td class="hidden-480"> {{ bot13.name }} </td>
                     </tr>
                     <tr>
                       <td>#14</td>
                       <td> {{ bot14.trades }}</td>
-                      <td> ${{ round2(bot14.profits,2) }} </td>
-                      <td> {{ round2(bot14.roi,2) }}</td>
-                      <td class="hidden-480"> ${{ round2(bot14.avg_earn,2) }} </td>
+                      <td> {{ bot14.profits | currency:"$":2 }} </td>
+                      <td> {{ bot14.roi | number : 2 }} %</td>
+                      <td class="hidden-480"> {{ bot14.avg_earn | currency:"$":2 }} </td>
                       <td class="hidden-480"> {{ bot14.name }} </td>
                     </tr>
                     <tr>
                       <td>#15</td>
                       <td> {{ bot15.trades }}</td>
-                      <td> ${{ round2(bot15.profits,2) }} </td>
-                      <td> {{ round2(bot15.roi,2) }}</td>
-                      <td class="hidden-480"> ${{ round2(bot15.avg_earn,2) }} </td>
+                      <td> {{ bot15.profits | currency:"$":2 }} </td>
+                      <td> {{ bot15.roi | number : 2 }} %</td>
+                      <td class="hidden-480"> {{ bot15.avg_earn | currency:"$":2 }} </td>
                       <td class="hidden-480"> {{ bot15.name }} </td>
                     </tr>
                     <tr>
                       <td>#16</td>
                       <td> {{ bot16.trades }}</td>
-                      <td> ${{ round2(bot16.profits,2) }} </td>
-                      <td> {{ round2(bot16.roi,2) }}</td>
-                      <td class="hidden-480"> ${{ round2(bot16.avg_earn,2) }} </td>
+                      <td> {{ bot16.profits | currency:"$":2 }} </td>
+                      <td> {{ bot16.roi | number : 2 }} %</td>
+                      <td class="hidden-480"> {{ bot16.avg_earn | currency:"$":2 }} </td>
                       <td class="hidden-480"> {{ bot16.name }} </td>
                     </tr>
                     <tr>
                       <td>#17</td>
                       <td> {{ bot17.trades }}</td>
-                      <td> ${{ round2(bot17.profits,2) }} </td>
-                      <td> {{ round2(bot17.roi,2) }}</td>
-                      <td class="hidden-480"> ${{ round2(bot17.avg_earn,2) }} </td>
+                      <td> {{ bot17.profits | currency:"$":2 }} </td>
+                      <td> {{ bot17.roi | number : 2 }} %</td>
+                      <td class="hidden-480"> {{ bot17.avg_earn | currency:"$":2 }} </td>
                       <td class="hidden-480"> {{ bot17.name }} </td>
                     </tr>
                     <tr>
                       <td>#18</td>
                       <td> {{ bot18.trades }}</td>
-                      <td> ${{ round2(bot18.profits,2) }} </td>
-                      <td> {{ round2(bot18.roi,2) }}</td>
-                      <td class="hidden-480"> ${{ round2(bot18.avg_earn,2) }} </td>
+                      <td> {{ bot18.profits | currency:"$":2 }} </td>
+                      <td> {{ bot18.roi | number : 2 }} %</td>
+                      <td class="hidden-480"> {{ bot18.avg_earn | currency:"$":2 }} </td>
                       <td class="hidden-480"> {{ bot18.name }} </td>
                     </tr>
                     <tr>
                       <td>#19</td>
                       <td> {{ bot19.trades }}</td>
-                      <td> ${{ round2(bot19.profits, 2) }} </td>
-                      <td> {{ round2 (bot19.roi,2) }}</td>
-                      <td class="hidden-480"> ${{ round2( bot19.avg_earn, 2) }} </td>
+                      <td> {{ bot19.profits | currency:"$":2 }} </td>
+                      <td> {{ bot19.roi | number : 2 }} %</td>
+                      <td class="hidden-480"> {{ bot19.avg_earn | currency:"$":2 }} </td>
                       <td class="hidden-480"> {{ bot19.name }} </td>
                     </tr>
                     <tr>
                       <td>#20</td>
                       <td> {{ bot20.trades }}</td>
                       <td> {{ bot20.profits | currency:"$":2 }} </td>
-                      <td> {{ bot20.roi | number : 2 }}%</td>
-                      <td class="hidden-480"> ${{ bot20.avg_earn | currency:"$":2 }} </td>
+                      <td> {{ bot20.roi | number : 2 }} %</td>
+                      <td class="hidden-480"> {{ bot20.avg_earn | currency:"$":2 }} </td>
                       <td class="hidden-480"> {{ bot20.name }} </td>
                     </tr>
                   </tbody>
@@ -425,12 +425,12 @@
                   <tbody>
                     <tr data-ng-repeat="market in eth.markets">
                       <td>{{ market.name }}</td>
-                      <td class="hidden-480" ng-class="getClass(market.buy_take)"><b>{{ round2(market.buy_take, 2) }}%</b></td>
-                      <td>${{ round2(market.bid, 2) }}</td>
-                      <td>${{ round2(market.ask, 2) }}</td>
-                      <td class="hidden-480" ng-class="getClass(market.sell_take)"><b>{{ round2(market.sell_take, 2) }}%</b></td>
-                      <td class="hidden-480">${{ round2(market.last, 2) }} </td>
-                      <td class="hidden-480">{{ round2(market.volume, 2) }} ETH </td>
+                      <td class="hidden-480" ng-class="getClass(market.buy_take)"><b>{{ market.buy_take | number:2 }}%</b></td>
+                      <td>{{ market.bid | currency:"$":2 }}</td>
+                      <td>{{ market.ask | currency:"$":2 }}</td>
+                      <td class="hidden-480" ng-class="getClass(market.sell_take)"><b>{{ market.sell_take| number:2 }}%</b></td>
+                      <td class="hidden-480">{{ market.last | currency:"$":2 }} </td>
+                      <td class="hidden-480">{{ market.volume | number:2 }} ETH </td>
                       <td class="hidden-480">{{ market.updated.toString().substr(11, 8) }}</td>
                     </tr>
                   </tbody>
@@ -445,9 +445,9 @@
               </div>
               <div class="details">
                 <div class="number">
-                  Opportunity <b>{{ round2(eth.margin, 2) }}%</b>
+                  Opportunity <b>{{ eth.margin | number:2 }}%</b>
                   <div class="desc">
-                    Buy {{ eth.buy_market.name }} at <b>{{ round2(eth.buy_market.ask, 2) }}</b>, Sell {{ eth.sell_market.name }} at <b>{{ round2(eth.sell_market.bid, 2) }}</b>,
+                    Buy {{ eth.buy_market.name }} at <b>{{ eth.buy_market.ask | currency:"$":2 }}</b>, Sell {{ eth.sell_market.name }} at <b>{{ eth.sell_market.bid | currency:"$":2 }}</b>,
                   </div>
                 </div>
               </div>
