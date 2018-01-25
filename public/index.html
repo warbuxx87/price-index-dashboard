@@ -205,7 +205,7 @@
                       <th>Trades</th>
                       <th>Profits</th>
                       <th>ROI %</th>
-                      <th class="hidden-480">Fees</th>
+                      <th class="hidden-480">Avg Earn</th>
                       <th class="hidden-480">Name</th>
                     </tr>
                   </thead>
@@ -215,7 +215,7 @@
                       <td> {{ bot1.trades }} </td>
                       <td> ${{ bot1.profits }} </td>
                       <td> {{ bot1.roi }}</td>
-                      <td class="hidden-480"> {{ bot1.fees }} </td>
+                      <td class="hidden-480"> ${{ round2(bot1.avg_earn) }} </td>
                       <td class="hidden-480"> {{ bot1.name }} </td>
                     </tr>
                     <tr>
@@ -223,7 +223,7 @@
                       <td> {{ bot2.trades }}</td>
                       <td> ${{ bot2.profits }} </td>
                       <td> {{ bot2.roi }}</td>
-                      <td class="hidden-480"> {{ bot2.fees }} </td>
+                      <td class="hidden-480"> ${{ round2(bot2.avg_earn) }} </td>
                       <td class="hidden-480"> {{ bot2.name }} </td>
                     </tr>
                     <tr>
@@ -231,7 +231,7 @@
                       <td> {{ bot3.trades }}</td>
                       <td> ${{ bot3.profits }} </td>
                       <td> {{ bot3.roi }}</td>
-                      <td class="hidden-480"> {{ bot3.fees }} </td>
+                      <td class="hidden-480"> ${{ round2(bot3.avg_earn) }} </td>
                       <td class="hidden-480"> {{ bot3.name }} </td>
                     </tr>
                     <tr>
@@ -239,7 +239,7 @@
                       <td> {{ bot4.trades }}</td>
                       <td> ${{ bot4.profits }} </td>
                       <td> {{ bot4.roi }}</td>
-                      <td class="hidden-480"> {{ bot4.fees }} </td>
+                      <td class="hidden-480"> ${{ round2(bot4.avg_earn) }} </td>
                       <td class="hidden-480"> {{ bot4.name }} </td>
                     </tr>
                     <tr>
@@ -247,7 +247,7 @@
                       <td> {{ bot5.trades }}</td>
                       <td> ${{ bot5.profits }} </td>
                       <td> {{ bot5.roi }}</td>
-                      <td class="hidden-480"> {{ bot5.fees }} </td>
+                      <td class="hidden-480"> ${{ round2(bot5.avg_earn) }} </td>
                       <td class="hidden-480"> {{ bot5.name }} </td>
                     </tr>
                     <tr>
@@ -255,7 +255,7 @@
                       <td> {{ bot6.trades }}</td>
                       <td> ${{ bot6.profits }} </td>
                       <td> {{ bot6.roi }}</td>
-                      <td class="hidden-480"> {{ bot6.fees }} </td>
+                      <td class="hidden-480"> ${{ round2(bot6.avg_earn) }} </td>
                       <td class="hidden-480"> {{ bot6.name }} </td>
                     </tr>
                     <tr>
@@ -263,7 +263,7 @@
                       <td> {{ bot7.trades }}</td>
                       <td> ${{ bot7.profits }} </td>
                       <td> {{ bot7.roi }}</td>
-                      <td class="hidden-480"> {{ bot7.fees }} </td>
+                      <td class="hidden-480"> ${{ round2(bot7.avg_earn) }} </td>
                       <td class="hidden-480"> {{ bot7.name }} </td>
                     </tr>
                     <tr>
@@ -271,7 +271,7 @@
                       <td> {{ bot8.trades }}</td>
                       <td> ${{ bot8.profits }} </td>
                       <td> {{ bot8.roi }}</td>
-                      <td class="hidden-480"> {{ bot8.fees }} </td>
+                      <td class="hidden-480"> ${{ round2(bot8.avg_earn) }} </td>
                       <td class="hidden-480"> {{ bot8.name }} </td>
                     </tr>
                     <tr>
@@ -279,7 +279,7 @@
                       <td> {{ bot9.trades }}</td>
                       <td> ${{ bot9.profits }} </td>
                       <td> {{ bot9.roi }}</td>
-                      <td class="hidden-480"> {{ bot9.fees }} </td>
+                      <<td class="hidden-480"> ${{ round2(bot9.avg_earn) }} </td>
                       <td class="hidden-480"> {{ bot9.name }} </td>
                     </tr>
                     <tr>
@@ -287,7 +287,7 @@
                       <td> {{ bot10.trades }}</td>
                       <td> ${{ bot10.profits }} </td>
                       <td> {{ bot10.roi }}</td>
-                      <td class="hidden-480"> {{ bot10.fees }} </td>
+                      <td class="hidden-480"> ${{ round2(bot10.avg_earn) }} </td>
                       <td class="hidden-480"> {{ bot10.name }} </td>
                     </tr>
                     <tr>
@@ -295,7 +295,7 @@
                       <td> {{ bot11.trades }}</td>
                       <td> ${{ bot11.profits }} </td>
                       <td> {{ bot11.roi }}</td>
-                      <td class="hidden-480"> {{ bot11.fees }} </td>
+                      <td class="hidden-480"> ${{ round2(bot11.avg_earn) }} </td>
                       <td class="hidden-480"> {{ bot11.name }} </td>
                     </tr>
                     <tr>
@@ -303,7 +303,7 @@
                       <td> {{ bot12.trades }}</td>
                       <td> ${{ bot12.profits }} </td>
                       <td> {{ bot12.roi }}</td>
-                      <td class="hidden-480"> {{ bot12.fees }} </td>
+                      <td class="hidden-480"> ${{ round2(bot12.avg_earn) }} </td>
                       <td class="hidden-480"> {{ bot12.name }} </td>
                     </tr>
                     <tr>
@@ -311,7 +311,7 @@
                       <td> {{ bot13.trades }}</td>
                       <td> ${{ bot13.profits }} </td>
                       <td> {{ bot13.roi }}</td>
-                      <td class="hidden-480"> {{ bot13.fees }} </td>
+                      <td class="hidden-480"> ${{ round2(bot13.avg_earn) }} </td>
                       <td class="hidden-480"> {{ bot13.name }} </td>
                     </tr>
                     <tr>
@@ -319,7 +319,7 @@
                       <td> {{ bot14.trades }}</td>
                       <td> ${{ bot14.profits }} </td>
                       <td> {{ bot14.roi }}</td>
-                      <td class="hidden-480"> {{ bot14.fees }} </td>
+                      <td class="hidden-480"> ${{ round2(bot14.avg_earn) }} </td>
                       <td class="hidden-480"> {{ bot14.name }} </td>
                     </tr>
                     <tr>
@@ -327,7 +327,7 @@
                       <td> {{ bot15.trades }}</td>
                       <td> ${{ bot15.profits }} </td>
                       <td> {{ bot15.roi }}</td>
-                      <td class="hidden-480"> {{ bot15.fees }} </td>
+                      <td class="hidden-480"> ${{ round2(bot15.avg_earn) }} </td>
                       <td class="hidden-480"> {{ bot15.name }} </td>
                     </tr>
                     <tr>
@@ -335,7 +335,7 @@
                       <td> {{ bot16.trades }}</td>
                       <td> ${{ bot16.profits }} </td>
                       <td> {{ bot16.roi }}</td>
-                      <td class="hidden-480"> {{ bot16.fees }} </td>
+                      <td class="hidden-480"> ${{ round2(bot16.avg_earn) }} </td>
                       <td class="hidden-480"> {{ bot16.name }} </td>
                     </tr>
                     <tr>
@@ -343,31 +343,31 @@
                       <td> {{ bot17.trades }}</td>
                       <td> ${{ bot17.profits }} </td>
                       <td> {{ bot17.roi }}</td>
-                      <td class="hidden-480"> {{ bot17.fees }} </td>
+                      <td class="hidden-480"> ${{ round2(bot17.avg_earn) }} </td>
                       <td class="hidden-480"> {{ bot17.name }} </td>
                     </tr>
                     <tr>
                       <td>#18</td>
                       <td> {{ bot18.trades }}</td>
-                      <td> ${{ bot18.profits }} </td>
-                      <td> {{ bot18.roi }}</td>
-                      <td class="hidden-480"> {{ bot18.fees }} </td>
+                      <td> ${{ round2(bot18.profits) }} </td>
+                      <td> {{ bot18.roi }}</td> 
+                      <td class="hidden-480"> ${{ round2(bot18.avg_earn) }} </td>
                       <td class="hidden-480"> {{ bot18.name }} </td>
                     </tr>
                     <tr>
                       <td>#19</td>
                       <td> {{ bot19.trades }}</td>
-                      <td> ${{ bot19.profits }} </td>
+                      <td> ${{ round2(bot19.profits) }} </td>
                       <td> {{ bot19.roi }}</td>
-                      <td class="hidden-480"> {{ bot19.fees }} </td>
+                      <td class="hidden-480"> ${{ round2(bot19.avg_earn) }} </td>
                       <td class="hidden-480"> {{ bot19.name }} </td>
                     </tr>
                     <tr>
                       <td>#20</td>
                       <td> {{ bot20.trades }}</td>
-                      <td> ${{ bot20.profits }} </td>
-                      <td> {{ bot20.roi }}</td>
-                      <td class="hidden-480"> {{ bot20.fees }} </td>
+                      <td> ${{ round2(bot20.profits, 2) }} </td>
+                      <td> {{ round2(bot20.roi, 2) }}</td>
+                      <td class="hidden-480"> ${{ round2(bot20.avg_earn, 2) }} </td>
                       <td class="hidden-480"> {{ bot20.name }} </td>
                     </tr>
                   </tbody>
