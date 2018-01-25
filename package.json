@@ -10,7 +10,7 @@
   ],
   "author": {
     "name": "Ryan Breen",
-    "email": "ryan@net-critical.com",
+    "email": "ryan@alkemi.ai",
     "url": "https://www.net-critical.com/"
   },
   "homepage": "http://btc.arbi.ninja/",
@@ -29,5 +29,5 @@
   "devDependencies": {},
   "bundleDependencies": [],
   "private": true,
-  "main": "btcMonitor.js"
+  "main": "btc_index.js"
 }
