@@ -605,7 +605,6 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 
   $scope.round2 = function(value, exp) {
     if ((typeof value) == "string") return value;
-    var exp = 2;
     return value.toFixed(exp);
   };
 
