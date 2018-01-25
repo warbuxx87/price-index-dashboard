@@ -609,6 +609,13 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
     return value > 0 ? 'green' : 'red';
   };
 
+  app.filter('ceil', function() {
+    return function(input) {
+      return Math.ceil(input);
+    };
+  });
+
+
   upd_btc();
   upd_eth();
   upd_nance();
