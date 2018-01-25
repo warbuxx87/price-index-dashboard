@@ -186,7 +186,7 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
     };
 
     var upd_bot3 = function() {
-        $http.get('https://data.alkemi.ai/CustomBots/bot16.json')
+        $http.get('https://data.alkemi.ai/CustomBots/bot3.json')
             .then(function(response) {
                 $scope.bot3 = response.data;
                 var profits = response.data.InterExchangeArbitrageBot.TotalProfits;
@@ -290,6 +290,279 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
             });
     };
 
+    var upd_bot8 = function() {
+        $http.get('https://data.alkemi.ai/CustomBots/bot8.json')
+            .then(function(response) {
+                $scope.bot8 = response.data;
+                var profits = response.data.InterExchangeArbitrageBot.TotalProfits;
+                var trades = response.data.InterExchangeArbitrageBot.CompletedOrders.BaseOrder.length;
+                var roi = response.data.InterExchangeArbitrageBot.ROI;
+                var fees = response.data.InterExchangeArbitrageBot.TotalFeeCosts;
+                var name = response.data.InterExchangeArbitrageBot.Name;
+                $scope.bot8.profits = profits;
+                $scope.bot8.trades = trades;
+                $scope.bot8.roi = roi;
+                $scope.bot8.fees = fees;
+                $scope.bot8.name = name;
+                setTimeout(upd_bot8, 5000);
+            })
+            .catch(function() {
+                setTimeout(upd_bot8, 5000);
+            });
+    };
+
+    var upd_bot9 = function() {
+        $http.get('https://data.alkemi.ai/CustomBots/bot9.json')
+            .then(function(response) {
+                $scope.bot9 = response.data;
+                var profits = response.data.InterExchangeArbitrageBot.TotalProfits;
+                var trades = response.data.InterExchangeArbitrageBot.CompletedOrders.BaseOrder.length;
+                var roi = response.data.InterExchangeArbitrageBot.ROI;
+                var fees = response.data.InterExchangeArbitrageBot.TotalFeeCosts;
+                var name = response.data.InterExchangeArbitrageBot.Name;
+                $scope.bot9.profits = profits;
+                $scope.bot9.trades = trades;
+                $scope.bot9.roi = roi;
+                $scope.bot9.fees = fees;
+                $scope.bot9.name = name;
+                setTimeout(upd_bot9, 5000);
+            })
+            .catch(function() {
+                setTimeout(upd_bot9, 5000);
+            });
+    };
+
+    var upd_bot10 = function() {
+        $http.get('https://data.alkemi.ai/CustomBots/bot10.json')
+            .then(function(response) {
+                $scope.bot10 = response.data;
+                var profits = response.data.InterExchangeArbitrageBot.TotalProfits;
+                var trades = response.data.InterExchangeArbitrageBot.CompletedOrders.BaseOrder.length;
+                var roi = response.data.InterExchangeArbitrageBot.ROI;
+                var fees = response.data.InterExchangeArbitrageBot.TotalFeeCosts;
+                var name = response.data.InterExchangeArbitrageBot.Name;
+                $scope.bot10.profits = profits;
+                $scope.bot10.trades = trades;
+                $scope.bot10.roi = roi;
+                $scope.bot10.fees = fees;
+                $scope.bot10.name = name;
+                setTimeout(upd_bot10, 5000);
+            })
+            .catch(function() {
+                setTimeout(upd_bot10, 5000);
+            });
+    };
+
+    var upd_bot11 = function() {
+        $http.get('https://data.alkemi.ai/CustomBots/bot11.json')
+            .then(function(response) {
+                $scope.bot11 = response.data;
+                var profits = response.data.InterExchangeArbitrageBot.TotalProfits;
+                var trades = response.data.InterExchangeArbitrageBot.CompletedOrders.BaseOrder.length;
+                var roi = response.data.InterExchangeArbitrageBot.ROI;
+                var fees = response.data.InterExchangeArbitrageBot.TotalFeeCosts;
+                var name = response.data.InterExchangeArbitrageBot.Name;
+                $scope.bot11.profits = profits;
+                $scope.bot11.trades = trades;
+                $scope.bot11.roi = roi;
+                $scope.bot11.fees = fees;
+                $scope.bot11.name = name;
+                setTimeout(upd_bot11, 5000);
+            })
+            .catch(function() {
+                setTimeout(upd_bot11, 5000);
+            });
+    };
+
+    var upd_bot12 = function() {
+        $http.get('https://data.alkemi.ai/CustomBots/bot12.json')
+            .then(function(response) {
+                $scope.bot12 = response.data;
+                var profits = response.data.InterExchangeArbitrageBot.TotalProfits;
+                var trades = response.data.InterExchangeArbitrageBot.CompletedOrders.BaseOrder.length;
+                var roi = response.data.InterExchangeArbitrageBot.ROI;
+                var fees = response.data.InterExchangeArbitrageBot.TotalFeeCosts;
+                var name = response.data.InterExchangeArbitrageBot.Name;
+                $scope.bot12.profits = profits;
+                $scope.bot12.trades = trades;
+                $scope.bot12.roi = roi;
+                $scope.bot12.fees = fees;
+                $scope.bot12.name = name;
+                setTimeout(upd_bot12, 5000);
+            })
+            .catch(function() {
+                setTimeout(upd_bot12, 5000);
+            });
+    };
+
+    var upd_bot13 = function() {
+        $http.get('https://data.alkemi.ai/CustomBots/bot13.json')
+            .then(function(response) {
+                $scope.bot13 = response.data;
+                var profits = response.data.InterExchangeArbitrageBot.TotalProfits;
+                var trades = response.data.InterExchangeArbitrageBot.CompletedOrders.BaseOrder.length;
+                var roi = response.data.InterExchangeArbitrageBot.ROI;
+                var fees = response.data.InterExchangeArbitrageBot.TotalFeeCosts;
+                var name = response.data.InterExchangeArbitrageBot.Name;
+                $scope.bot13.profits = profits;
+                $scope.bot13.trades = trades;
+                $scope.bot13.roi = roi;
+                $scope.bot13.fees = fees;
+                $scope.bot13.name = name;
+                setTimeout(upd_bot13, 5000);
+            })
+            .catch(function() {
+                setTimeout(upd_bot13, 5000);
+            });
+    };
+
+    var upd_bot14 = function() {
+        $http.get('https://data.alkemi.ai/CustomBots/bot14.json')
+            .then(function(response) {
+                $scope.bot14 = response.data;
+                var profits = response.data.InterExchangeArbitrageBot.TotalProfits;
+                var trades = response.data.InterExchangeArbitrageBot.CompletedOrders.BaseOrder.length;
+                var roi = response.data.InterExchangeArbitrageBot.ROI;
+                var fees = response.data.InterExchangeArbitrageBot.TotalFeeCosts;
+                var name = response.data.InterExchangeArbitrageBot.Name;
+                $scope.bot14.profits = profits;
+                $scope.bot14.trades = trades;
+                $scope.bot14.roi = roi;
+                $scope.bot14.fees = fees;
+                $scope.bot14.name = name;
+                setTimeout(upd_bot14, 5000);
+            })
+            .catch(function() {
+                setTimeout(upd_bot14, 5000);
+            });
+    };
+
+    var upd_bot15 = function() {
+        $http.get('https://data.alkemi.ai/CustomBots/bot15.json')
+            .then(function(response) {
+                $scope.bot15 = response.data;
+                var profits = response.data.InterExchangeArbitrageBot.TotalProfits;
+                var trades = response.data.InterExchangeArbitrageBot.CompletedOrders.BaseOrder.length;
+                var roi = response.data.InterExchangeArbitrageBot.ROI;
+                var fees = response.data.InterExchangeArbitrageBot.TotalFeeCosts;
+                var name = response.data.InterExchangeArbitrageBot.Name;
+                $scope.bot15.profits = profits;
+                $scope.bot15.trades = trades;
+                $scope.bot15.roi = roi;
+                $scope.bot15.fees = fees;
+                $scope.bot15.name = name;
+                setTimeout(upd_bot15, 5000);
+            })
+            .catch(function() {
+                setTimeout(upd_bot15, 5000);
+            });
+    };
+
+    var upd_bot16 = function() {
+        $http.get('https://data.alkemi.ai/CustomBots/bot16.json')
+            .then(function(response) {
+                $scope.bot16 = response.data;
+                var profits = response.data.InterExchangeArbitrageBot.TotalProfits;
+                var trades = response.data.InterExchangeArbitrageBot.CompletedOrders.BaseOrder.length;
+                var roi = response.data.InterExchangeArbitrageBot.ROI;
+                var fees = response.data.InterExchangeArbitrageBot.TotalFeeCosts;
+                var name = response.data.InterExchangeArbitrageBot.Name;
+                $scope.bot16.profits = profits;
+                $scope.bot16.trades = trades;
+                $scope.bot16.roi = roi;
+                $scope.bot16.fees = fees;
+                $scope.bot16.name = name;
+                setTimeout(upd_bot16, 5000);
+            })
+            .catch(function() {
+                setTimeout(upd_bot16, 5000);
+            });
+    };
+
+    var upd_bot17 = function() {
+        $http.get('https://data.alkemi.ai/CustomBots/bot17.json')
+            .then(function(response) {
+                $scope.bot17 = response.data;
+                var profits = response.data.InterExchangeArbitrageBot.TotalProfits;
+                var trades = response.data.InterExchangeArbitrageBot.CompletedOrders.BaseOrder.length;
+                var roi = response.data.InterExchangeArbitrageBot.ROI;
+                var fees = response.data.InterExchangeArbitrageBot.TotalFeeCosts;
+                var name = response.data.InterExchangeArbitrageBot.Name;
+                $scope.bot17.profits = profits;
+                $scope.bot17.trades = trades;
+                $scope.bot17.roi = roi;
+                $scope.bot17.fees = fees;
+                $scope.bot17.name = name;
+                setTimeout(upd_bot17, 5000);
+            })
+            .catch(function() {
+                setTimeout(upd_bot17, 5000);
+            });
+    };
+
+    var upd_bot18 = function() {
+        $http.get('https://data.alkemi.ai/CustomBots/bot18.json')
+            .then(function(response) {
+                $scope.bot18 = response.data;
+                var profits = response.data.InterExchangeArbitrageBot.TotalProfits;
+                var trades = response.data.InterExchangeArbitrageBot.CompletedOrders.BaseOrder.length;
+                var roi = response.data.InterExchangeArbitrageBot.ROI;
+                var fees = response.data.InterExchangeArbitrageBot.TotalFeeCosts;
+                var name = response.data.InterExchangeArbitrageBot.Name;
+                $scope.bot18.profits = profits;
+                $scope.bot18.trades = trades;
+                $scope.bot18.roi = roi;
+                $scope.bot18.fees = fees;
+                $scope.bot18.name = name;
+                setTimeout(upd_bot18, 5000);
+            })
+            .catch(function() {
+                setTimeout(upd_bot18, 5000);
+            });
+    };
+
+    var upd_bot19 = function() {
+        $http.get('https://data.alkemi.ai/CustomBots/bot19.json')
+            .then(function(response) {
+                $scope.bot19 = response.data;
+                var profits = response.data.InterExchangeArbitrageBot.TotalProfits;
+                var trades = response.data.InterExchangeArbitrageBot.CompletedOrders.BaseOrder.length;
+                var roi = response.data.InterExchangeArbitrageBot.ROI;
+                var fees = response.data.InterExchangeArbitrageBot.TotalFeeCosts;
+                var name = response.data.InterExchangeArbitrageBot.Name;
+                $scope.bot19.profits = profits;
+                $scope.bot19.trades = trades;
+                $scope.bot19.roi = roi;
+                $scope.bot19.fees = fees;
+                $scope.bot19.name = name;
+                setTimeout(upd_bot19, 5000);
+            })
+            .catch(function() {
+                setTimeout(upd_bot19, 5000);
+            });
+    };
+
+    var upd_bot20 = function() {
+        $http.get('https://data.alkemi.ai/CustomBots/bot20.json')
+            .then(function(response) {
+                $scope.bot20 = response.data;
+                var profits = response.data.InterExchangeArbitrageBot.TotalProfits;
+                var trades = response.data.InterExchangeArbitrageBot.CompletedOrders.BaseOrder.length;
+                var roi = response.data.InterExchangeArbitrageBot.ROI;
+                var fees = response.data.InterExchangeArbitrageBot.TotalFeeCosts;
+                var name = response.data.InterExchangeArbitrageBot.Name;
+                $scope.bot20.profits = profits;
+                $scope.bot20.trades = trades;
+                $scope.bot20.roi = roi;
+                $scope.bot20.fees = fees;
+                $scope.bot19.name = name;
+                setTimeout(upd_bot20, 5000);
+            })
+            .catch(function() {
+                setTimeout(upd_bot20, 5000);
+            });
+    };
+
 
 
     $scope.round2 = function(value, exp) {
@@ -319,4 +592,17 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
     upd_bot5();
     upd_bot6();
     upd_bot7();
-}]);
+    upd_bot8();
+    upd_bot9();
+    upd_bot10();
+    upd_bot11();
+    upd_bot12();
+    upd_bot13();
+    upd_bot14();
+    upd_bot15();
+    upd_bot16();
+    upd_bot17();
+    upd_bot18();
+    upd_bot19();
+    upd_bot20();
+}];
