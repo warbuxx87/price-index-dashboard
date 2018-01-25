@@ -21,7 +21,7 @@ var binance = require('./exchanges/binance');
 //var bitmex = require('./exchanges/bitmex');
 
 /**
- *  Define the sample application.
+ *  Define the application.
  */
 var BtcMonitor = function() {
 
