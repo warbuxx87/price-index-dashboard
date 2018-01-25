@@ -11,9 +11,9 @@
   "author": {
     "name": "Ryan Breen",
     "email": "ryan@alkemi.ai",
-    "url": "https://www.net-critical.com/"
+    "url": "https://alkemi.ai/"
   },
-  "homepage": "http://btc.arbi.ninja/",
+  "homepage": "http://btc.alkemi.ai/",
   "repository": {
     "type": "git",
     "url": "https://bitbucket.org/netcritical/btc.arbi.ninja"
