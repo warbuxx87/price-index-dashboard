@@ -555,7 +555,7 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
             $scope.bot20.trades = trades;
             $scope.bot20.roi = roi;
             $scope.bot20.fees = fees;
-            $scope.bot19.name = name;
+            $scope.bot20.name = name;
             setTimeout(upd_bot20, 5000);
           })
           .catch(function() {
@@ -605,4 +605,4 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
       upd_bot18();
       upd_bot19();
       upd_bot20()
-    }];
+    }]);
