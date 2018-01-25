@@ -365,9 +365,9 @@
                     <tr>
                       <td>#20</td>
                       <td> {{ bot20.trades }}</td>
-                      <td> $ {{ round2( bot20.profits, 2) }} </td>
-                      <td> {{ round2( bot20.roi, 2) }}</td>
-                      <td class="hidden-480"> ${{ round2( bot20.avg_earn, 2) }} </td>
+                      <td> {{ bot20.profits | currency:"$":2 }} </td>
+                      <td> {{ bot20.roi | number : 2 }}%</td>
+                      <td class="hidden-480"> ${{ bot20.avg_earn | currency:"$":2 }} </td>
                       <td class="hidden-480"> {{ bot20.name }} </td>
                     </tr>
                   </tbody>
