@@ -33,12 +33,12 @@ sim1.prototype.update = function() {
         });
 
         response.on('end', function() {
-            self.order = data.SpotOrders.OrderTypeAsString;
-            self.price = parseFloat(data.SpotOrders.Price);
-            self.amount = data.SpotOrders.Amount;
+            self.order = data.SpotOrders[-1].OrderTypeAsString;
+            self.price = parseFloat(data.SpotOrders[-1].Price);
+            self.amount = data.SpotOrders[-1].Amount;
             self.total = data.SpotOrders.length;
-            self.arbitrage = data.SpotOrders.Origin.toString().substr(25);
-            self.updated = data.SpotOrders.LastUpdate;
+            self.arbitrage = data.SpotOrders[-1].Origin.toString().substr(25);
+            self.updated = data.SpotOrders[-1].LastUpdate;
         });
     }
 
