@@ -1,4 +1,4 @@
-const https = require('http');
+const https = require('https');
 
 function bot1() {
   this.profits = 0;
@@ -22,7 +22,7 @@ bot1.prototype.update = function() {
     var options = {
         host: 'data.alkemi.ai',
         path: '/CustomBots/bot1.json',
-        port: 80,
+        port: 443,
         method: 'GET'
     };
 
