@@ -62,8 +62,8 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
       .then(function(response) {
         $scope.trades = response.data;
         var total_profit = 0;
-        for (var i = 0; i < response.data.trades.bots.length; i++) {
-            total_profit = total_profit + response.data.trades.bots[i].profits;
+        for (var i = 0; i < response.data.bots.length; i++) {
+            total_profit = total_profit + response.data.bots[i].profits;
         }
         $scope.trades.total_profit = total_profit;
         setTimeout(upd_trades, 10000);
