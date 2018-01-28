@@ -13,7 +13,7 @@ function BITTREX() {
     this.sell_take = "";
     this.buy_make = "";
     this.buy_take = "";
-    this.timeout = 2000;
+    this.timeout = 6000;
     try {
         this.update();
     } catch (e) {

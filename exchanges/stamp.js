@@ -12,7 +12,7 @@ function STAMP() {
     this.sell_take = "";
     this.buy_make = "";
     this.buy_take = "";
-    this.timeout = 3000;
+    this.timeout = 6000;
     try {
         this.update();
     } catch (e) {
