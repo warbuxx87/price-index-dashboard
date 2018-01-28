@@ -34,12 +34,13 @@ sim1.prototype.update = function() {
 
         response.on('end', function() {
             var data = JSON.parse(str);
-            self.order = data.SpotOrders.pop().OrderTypeAsString;
-            self.price = parseFloat(data.SpotOrders[-1].Price);
-            self.amount = data.SpotOrders[-1].Amount;
+            var last = data.SpotOrders.pop();
+            self.order = last.OrderTypeAsString;
+            self.price = parseFloat(last.Price);
+            self.amount = last.Amount;
             self.total = data.SpotOrders.length;
-            self.arbitrage = data.SpotOrders[-1].Origin.toString().substr(25);
-            self.updated = data.SpotOrders[-1].LastUpdate;
+            self.arbitrage = last.Origin.toString().substr(25);
+            self.updated = last.SpotOrders[-1].LastUpdate;
         });
     }
 
