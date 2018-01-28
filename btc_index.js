@@ -23,6 +23,8 @@ var binance = require('./exchanges/binance');
 var bot1 = require('./trades/bot1');
 var bot2 = require('./trades/bot2');
 var bot3 = require('./trades/bot3');
+var bot4 = require('./trades/bot4');
+var bot5 = require('./trades/bot5');
 
 /**
  *  Define the application.
@@ -136,7 +138,7 @@ var BtcMonitor = function() {
       res.setHeader('Content-Type', 'application/json');
       res.setHeader('Cache-Control', 'no-cache, no-store');
       res.end(JSON.stringify({
-        bots: [self.bot1, self.bot2, self.bot3 ],
+        bots: [self.bot1, self.bot2, self.bot3, self.bot4, self.bot5],
       }));
     };
 
@@ -204,7 +206,8 @@ var BtcMonitor = function() {
     self.bot1 = new bot1();
     self.bot2 = new bot2();
     self.bot3 = new bot3();
-    //self.bot4 = new bot4();
+    self.bot4 = new bot4();
+    self.bot5 = new bot5();
 
   };
 
