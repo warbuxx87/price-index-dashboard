@@ -9,10 +9,10 @@ function BITTREX() {
     this.idx = 1;
     this.updated = new Date(2000, 1, 1);
     this.fee = 0.25;
-    this.sell_make = "";
-    this.sell_take = "";
-    this.buy_make = "";
-    this.buy_take = "";
+    this.sell_make = 0;
+    this.sell_take = 0;
+    this.buy_make = 0;
+    this.buy_take = 0;
     this.timeout = 6000;
     try {
         this.update();
