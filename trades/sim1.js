@@ -34,7 +34,7 @@ sim1.prototype.update = function() {
 
         response.on('end', function() {
             var data = JSON.parse(str);
-            self.order = data.SpotOrders[-1].OrderTypeAsString;
+            self.order = data.SpotOrders.pop().OrderTypeAsString;
             self.price = parseFloat(data.SpotOrders[-1].Price);
             self.amount = data.SpotOrders[-1].Amount;
             self.total = data.SpotOrders.length;
