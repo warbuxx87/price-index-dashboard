@@ -1,12 +1,12 @@
 const https = require('https');
 
 function bot2() {
+  this.name = "";
   this.profits = 0;
   this.trades = 0;
   this.avg_earn = 0;
   this.roi = 0;
   this.fees = 0;
-  this.name = "";
   this.updated = new Date(2000, 1, 1);
   this.timeout = 5000;
   try {
@@ -21,7 +21,7 @@ bot2.prototype.update = function() {
     var self = this;
     var options = {
         host: 'data.alkemi.ai',
-        path: '/CustomBots/bot1.json',
+        path: '/CustomBots/bot2.json',
         port: 443,
         method: 'GET'
     };
