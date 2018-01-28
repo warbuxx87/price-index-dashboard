@@ -33,9 +33,6 @@ XBX.prototype.update = function() {
             self.idx = data.xbx;
             for (var i = 0; i < self.index_acceptors.length; i++)
                 self.index_acceptors[i].idx = self.idx;
-	    self.idx2 = data.xbx;
-            for (var i = 0; i < self.index_acceptors.length; i++)
-                self.index_acceptors[i].idx2 = self.idx2;
         });
     }
 
