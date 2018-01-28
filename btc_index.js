@@ -25,6 +25,21 @@ var bot2 = require('./trades/bot2');
 var bot3 = require('./trades/bot3');
 var bot4 = require('./trades/bot4');
 var bot5 = require('./trades/bot5');
+var bot6 = require('./trades/bot6');
+var bot7 = require('./trades/bot7');
+var bot8 = require('./trades/bot8');
+var bot9 = require('./trades/bot9');
+var bot10 = require('./trades/bot10');
+var bot11 = require('./trades/bot11');
+var bot12 = require('./trades/bot12');
+var bot13 = require('./trades/bot13');
+var bot14 = require('./trades/bot14');
+var bot15 = require('./trades/bot15');
+var bot16 = require('./trades/bot16');
+var bot17 = require('./trades/bot17');
+var bot18 = require('./trades/bot18');
+var bot19 = require('./trades/bot19');
+var bot20 = require('./trades/bot20');
 
 /**
  *  Define the application.
@@ -138,7 +153,10 @@ var BtcMonitor = function() {
       res.setHeader('Content-Type', 'application/json');
       res.setHeader('Cache-Control', 'no-cache, no-store');
       res.end(JSON.stringify({
-        bots: [self.bot1, self.bot2, self.bot3, self.bot4, self.bot5],
+        bots: [self.bot1, self.bot2, self.bot3, self.bot4, self.bot5, self.bot6, self.bot7,
+               self.bot8, self.bot9, self.bot10, self.bot11, self.bot12, self.bot13, self.bot14,
+               self.bot15, self.bot16, self.bot17, self.bot18, self.bot19, self.bot20
+            ],
       }));
     };
 
@@ -208,6 +226,21 @@ var BtcMonitor = function() {
     self.bot3 = new bot3();
     self.bot4 = new bot4();
     self.bot5 = new bot5();
+    self.bot6 = new bot6();
+    self.bot7 = new bot7();
+    self.bot8 = new bot8();
+    self.bot9 = new bot9();
+    self.bot10 = new bot10();
+    self.bot11 = new bot11();
+    self.bot12 = new bot12();
+    self.bot13 = new bot13();
+    self.bot14 = new bot14();
+    self.bot15 = new bot15();
+    self.bot16 = new bot16();
+    self.bot17 = new bot17();
+    self.bot18 = new bot18();
+    self.bot19 = new bot19();
+    self.bot20 = new bot20();
 
   };
 
