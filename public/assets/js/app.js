@@ -22,7 +22,7 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
           if (response.data.markets[i].sell_take > sell_market.sell_take)
             sell_market = response.data.markets[i];
         }
-        for (var i = 0; i < response.data.markets; i++) {
+        for (var i = 0; i < response.data.markets.length; i++) {
             total_volume = total_volume + response.data.markets[i].volume;
         }
         $scope.btc.buy_market = buy_market;
