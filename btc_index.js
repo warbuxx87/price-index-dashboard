@@ -21,6 +21,7 @@ var binance = require('./exchanges/binance');
 //var bitmex = require('./exchanges/bitmex');
 
 var bot1 = require('./trades/bot1');
+var bot2 = require('./trades/bot2');
 
 /**
  *  Define the application.
@@ -134,7 +135,7 @@ var BtcMonitor = function() {
       res.setHeader('Content-Type', 'application/json');
       res.setHeader('Cache-Control', 'no-cache, no-store');
       res.end(JSON.stringify({
-        bots: [self.bot1],
+        bots: [self.bot1, self.bot2],
       }));
     };
 
@@ -200,6 +201,7 @@ var BtcMonitor = function() {
     self.xbx = new xbx([self.gemini, self.gdax, self.stamp, self.kraken, self.finex, self.bittrex, self.binance]);
     //bots
     self.bot1 = new bot1();
+    self.bot2 = new bot2();
   };
 
 }; /*  BTC INDEX ARBITRAGE.  */
