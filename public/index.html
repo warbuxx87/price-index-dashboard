@@ -127,61 +127,13 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr data-ng-repeat="order in gemini.SpotOrders | orderBy: '-LastUpdate' | limitTo: 1">
-                      <td>Binance ({{binance.total}})</td>
-                      <td>{{ order.OrderTypeAsString }}</td>
-                      <td>{{ order.Price | currency:"$":2 }}</td>
-                      <td>{{ order.Amount }} BTC</td>
-                      <td class="hidden-480">{{ order.Origin.toString().substr(25) }}</td>
-                      <td class="hidden-480">{{ order.LastUpdate | date:'HH:mm:ss' }}</td>
-                    </tr>
-                    <tr data-ng-repeat="order in gdax.SpotOrders | orderBy: '-LastUpdate' | limitTo: 1">
-                      <td>Bitfinex ({{bitfinex.total}})</td>
-                      <td>{{ order.OrderTypeAsString }}</td>
-                      <td>{{ order.Price | currency:"$":2 }}</td>
-                      <td>{{ order.Amount }} BTC</td>
-                      <td class="hidden-480">{{ order.Origin.toString().substr(25) }}</td>
-                      <td class="hidden-480">{{ order.LastUpdate | date:'HH:mm:ss' }}</td>
-                    </tr>
-                    <tr data-ng-repeat="order in bitstamp.SpotOrders | orderBy: '-LastUpdate' | limitTo: 1">
-                      <td>Bittrex ({{bittrex.total}})</td>
-                      <td>{{ order.OrderTypeAsString }}</td>
-                      <td>{{ order.Price | currency:"$":2 }}</td>
-                      <td>{{ order.Amount }} BTC</td>
-                      <td class="hidden-480">{{ order.Origin.toString().substr(25) }}</td>
-                      <td class="hidden-480">{{ order.LastUpdate | date:'HH:mm:ss' }}</td>
-                    </tr>
-                    <tr data-ng-repeat="order in kraken.SpotOrders | orderBy: '-LastUpdate' | limitTo: 1">
-                      <td>Bitstamp ({{bitstamp.total}})</td>
-                      <td>{{ order.OrderTypeAsString }}</td>
-                      <td>{{ order.Price | currency:"$":2 }}</td>
-                      <td>{{ order.Amount }} BTC</td>
-                      <td class="hidden-480">{{ order.Origin.toString().substr(25) }}</td>
-                      <td class="hidden-480">{{ order.LastUpdate | date:'HH:mm:ss' }}</td>
-                    </tr>
-                    <tr data-ng-repeat="order in bitfinex.SpotOrders | orderBy: '-LastUpdate' | limitTo: 1">
-                      <td>Gemini ({{gemini.total}})</td>
-                      <td>{{ order.OrderTypeAsString }}</td>
-                      <td>{{ order.Price | currency:"$":2 }}</td>
-                      <td>{{ order.Amount }} BTC</td>
-                      <td class="hidden-480">{{ order.Origin.toString().substr(25) }}</td>
-                      <td class="hidden-480">{{ order.LastUpdate | date:'HH:mm:ss' }}</td>
-                    </tr>
-                    <tr data-ng-repeat="order in bittrex.SpotOrders | orderBy: '-LastUpdate' | limitTo: 1">
-                      <td>GDAX ({{gdax.total}})</td>
-                      <td>{{ order.OrderTypeAsString }}</td>
-                      <td>{{ order.Price | currency:"$":2 }}</td>
-                      <td>{{ order.Amount }} BTC</td>
-                      <td class="hidden-480">{{ order.Origin.toString().substr(25) }}</td>
-                      <td class="hidden-480">{{ order.LastUpdate | date:'HH:mm:ss' }}</td>
-                    </tr>
-                    <tr data-ng-repeat="order in binance.SpotOrders | orderBy: '-LastUpdate' | limitTo: 1">
-                      <td>Kraken ({{kraken.total}})</td>
-                      <td>{{ order.OrderTypeAsString }}</td>
-                      <td>{{ order.Price | currency:"$":2 }}</td>
-                      <td>{{ order.Amount }} BTC</td>
-                      <td class="hidden-480">{{ order.Origin.toString().substr(25) }}</td>
-                      <td class="hidden-480">{{ order.LastUpdate | date:'HH:mm:ss' }}</td>
+                    <tr data-ng-repeat="exchange in trades.exchanges | orderBy: '-updated' ">
+                      <td>{{ exchange.name}} ({{exchange.total}})</td>
+                      <td>{{ exchange.order }}</td>
+                      <td>{{ exchange.price | currency:"$":2 }}</td>
+                      <td>{{ exchange.amount }} BTC</td>
+                      <td class="hidden-480">{{ exchange.arbitrage }}</td>
+                      <td class="hidden-480">{{ exchange.updated | date:'HH:mm:ss' }}</td>
                     </tr>
                   </tbody>
                 </table>

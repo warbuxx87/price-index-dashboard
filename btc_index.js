@@ -20,6 +20,7 @@ var binance = require('./exchanges/binance');
 //var hitbtc = require('./exchanges/hitbtc');
 //var bitmex = require('./exchanges/bitmex');
 
+// Bot Performance
 var bot1 = require('./trades/bot1');
 var bot2 = require('./trades/bot2');
 var bot3 = require('./trades/bot3');
@@ -40,6 +41,9 @@ var bot17 = require('./trades/bot17');
 var bot18 = require('./trades/bot18');
 var bot19 = require('./trades/bot19');
 var bot20 = require('./trades/bot20');
+
+// Simulated exchanges
+var sim1 = require('./trades/sim1');
 
 /**
  *  Define the application.
@@ -157,6 +161,7 @@ var BtcMonitor = function() {
                self.bot8, self.bot9, self.bot10, self.bot11, self.bot12, self.bot13, self.bot14,
                self.bot15, self.bot16, self.bot17, self.bot18, self.bot19, self.bot20
             ],
+        exchanges: [self.sim1],
       }));
     };
 
@@ -241,6 +246,7 @@ var BtcMonitor = function() {
     self.bot18 = new bot18();
     self.bot19 = new bot19();
     self.bot20 = new bot20();
+    self.sim1 = new sim1();
 
   };
 

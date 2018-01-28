@@ -57,106 +57,14 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
       });
   };
 
-  var upd_nance = function() {
-    $http.get('https://data.alkemi.ai/Simulations/6882c6d8-26af-4b09-813a-87a39751149d_history.json')
-      .then(function(response) {
-        $scope.binance = response.data;
-        var total = response.data.SpotOrders.length;
-        $scope.binance.total = total;
-        setTimeout(upd_nance, 5000);
-      })
-      .catch(function() {
-        setTimeout(upd_nance, 5000);
-      });
-
-  };
-
-  var upd_finex = function() {
-    $http.get('https://data.alkemi.ai/Simulations/4ab7335e-8477-40d5-894e-24ed84edef56_history.json')
-      .then(function(response) {
-        $scope.bitfinex = response.data;
-        var total = response.data.SpotOrders.length;
-        $scope.bitfinex.total = total;
-        setTimeout(upd_finex, 5000);
-      })
-      .catch(function() {
-        setTimeout(upd_finex, 5000);
-      });
-  };
-
-  var upd_gem = function() {
-    $http.get('https://data.alkemi.ai/Simulations/cf328bf7-1423-4c48-b3b5-cf25d5871c09_history.json')
-      .then(function(response) {
-        $scope.gemini = response.data;
-        var total = response.data.SpotOrders.length;
-        $scope.gemini.total = total;
-        setTimeout(upd_gem, 5000);
-      })
-      .catch(function() {
-        setTimeout(upd_gem, 5000);
-      });
-  };
-
-  var upd_gdax = function() {
-    $http.get('https://data.alkemi.ai/Simulations/1e3919ae-0caf-4cfe-b424-00b05d3d81e7_history.json')
-      .then(function(response) {
-        $scope.gdax = response.data;
-        var total = response.data.SpotOrders.length;
-        $scope.gdax.total = total;
-        setTimeout(upd_gdax, 5000);
-      })
-      .catch(function() {
-        setTimeout(upd_gdax, 5000);
-      });
-  };
-
-  var upd_trex = function() {
-    $http.get('https://data.alkemi.ai/Simulations/b9191497-bd4d-4a66-b887-db506ef279f4_history.json')
-      .then(function(response) {
-        $scope.bittrex = response.data;
-        var total = response.data.SpotOrders.length;
-        $scope.bittrex.total = total;
-        setTimeout(upd_trex, 5000);
-      })
-      .catch(function() {
-        setTimeout(upd_trex, 5000);
-      });
-  };
-
-  var upd_krak = function() {
-    $http.get('https://data.alkemi.ai/Simulations/c426ac25-d281-456f-b952-7c57c780fb59_history.json')
-      .then(function(response) {
-        $scope.kraken = response.data;
-        var total = response.data.SpotOrders.length;
-        $scope.kraken.total = total;
-        setTimeout(upd_krak, 5000);
-      })
-      .catch(function() {
-        setTimeout(upd_krak, 5000);
-      });
-  };
-
-  var upd_stamp = function() {
-    $http.get('https://data.alkemi.ai/Simulations/5b64b224-5b1d-4b18-aace-683260019487_history.json')
-      .then(function(response) {
-        $scope.bitstamp = response.data;
-        var total = response.data.SpotOrders.length;
-        $scope.bitstamp.total = total;
-        setTimeout(upd_stamp, 5000);
-      })
-      .catch(function() {
-        setTimeout(upd_stamp, 5000);
-      });
-  };
-
   var upd_trades = function() {
-    $http.get('/trades')
+    $http.get('trades')
       .then(function(response) {
         $scope.trades = response.data;
-        setTimeout(upd_bots, 10000);
+        setTimeout(upd_trades, 10000);
       })
       .catch(function() {
-        setTimeout(upd_bots, 10000);
+        setTimeout(upd_trades, 10000);
       });
   };
 
@@ -166,17 +74,7 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
     return value > 0 ? 'green' : 'red';
   };
 
-
-
-
   upd_btc();
   upd_eth();
-  upd_nance();
-  upd_finex();
-  upd_gem();
-  upd_gdax();
-  upd_trex();
-  upd_krak();
-  upd_stamp();
   upd_trades();
 }]);
