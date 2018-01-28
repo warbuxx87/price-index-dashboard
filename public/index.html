@@ -159,7 +159,7 @@
                   </thead>
                   <tbody>
                     <tr data-ng-repeat="bot in trades.bots">
-                      <td> #1 </td>
+                      <td> {{ $index + 1 }}</td>
                       <td> {{ bot.trades }} </td>
                       <td> {{ bot.profits | currency:"$":2 }} </td>
                       <td> {{ bot.roi | number : 2 }} %</td>
