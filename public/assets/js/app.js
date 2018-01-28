@@ -149,10 +149,10 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
       });
   };
 
-  var upd_bots = function() {
+  var upd_trades = function() {
     $http.get('/trades')
       .then(function(response) {
-        $scope.bots = response.data;
+        $scope.trades = response.data;
         setTimeout(upd_bots, 10000);
       })
       .catch(function() {
@@ -178,5 +178,5 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
   upd_trex();
   upd_krak();
   upd_stamp();
-  upd_bots();
+  upd_trades();
 }]);
