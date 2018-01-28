@@ -7,7 +7,7 @@ app.filter('ceil', function() {
 });
 
 app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
-  $scope.markets = []
+  $scope.btc = []
 
   var upd_btc = function() {
     $http.get('updates')
@@ -15,14 +15,19 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
         $scope.btc = response.data;
         var buy_market = response.data.markets[0];
         var sell_market = response.data.markets[0];
+        var total_volume = 0;
         for (var i = 1; i < response.data.markets.length; i++) {
           if (response.data.markets[i].buy_take < buy_market.buy_take)
             buy_market = response.data.markets[i];
           if (response.data.markets[i].sell_take > sell_market.sell_take)
             sell_market = response.data.markets[i];
         }
+        for (var i = 0; i < response.data.markets; i++) {
+            total_volume = total_volume + response.data.markets[i].volume;
+        }
         $scope.btc.buy_market = buy_market;
         $scope.btc.sell_market = sell_market;
+        $scope.btc.total_volume = total_volume;
         $scope.btc.margin = 0;
         if (buy_market.buy_take < sell_market.sell_take)
           $scope.btc.margin = sell_market.sell_take - buy_market.buy_take;

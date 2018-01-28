@@ -36,7 +36,7 @@
         <!-- BEGIN PAGE HEADER-->
         <div class="row">
           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-            <div class="dashboard-stat yellow">
+            <div class="dashboard-stat-v2 yellow">
               <div class="visual">
                 <i class="fa fa-btc"></i>
               </div>
@@ -124,9 +124,19 @@
               </div>
               <div class="details">
                 <div class="number">{{ trades.total_trades | number:0 }} BTC</div>
-                <div class="desc">Total Volume</div>
+                <div class="desc">Total Trade Volume</div>
               </div>
               <div class="more">Bitcoin USD Arbitrage - Since Jan 19, 2018</div>
+            </div>
+            <div class="dashboard-stat green">
+              <div class="visual">
+                <i class="fa fa-btc"></i>
+              </div>
+              <div class="details">
+                <div class="number">{{ btc.total_volume | number:0 }} BTC</div>
+                <div class="desc">Total Exchange Volume</div>
+              </div>
+              <div class="more">Last 24 Hours</div>
             </div>
           </div>
           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
