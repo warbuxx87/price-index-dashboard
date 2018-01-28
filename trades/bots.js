@@ -1,24 +1,57 @@
 const https = require('https');
 
-var upd_bot1 = function() {
-  $http.get('https://data.alkemi.ai/CustomBots/bot1.json')
-    .then(function(response) {
-      $scope.bot1 = response.data;
-      var profits = response.data.InterExchangeArbitrageBot.TotalProfits;
-      var trades = response.data.InterExchangeArbitrageBot.CompletedOrders.BaseOrder.length;
-      var avg_earn = profits / trades;
-      var roi = response.data.InterExchangeArbitrageBot.ROI;
-      var fees = response.data.InterExchangeArbitrageBot.TotalFeeCosts;
-      var name = response.data.InterExchangeArbitrageBot.Name;
-      $scope.bot1.profits = profits;
-      $scope.bot1.trades = trades;
-      $scope.bot1.roi = roi;
-      $scope.bot1.fees = fees;
-      $scope.bot1.avg_earn = avg_earn;
-      $scope.bot1.name = name;
-      setTimeout(upd_bot1, 10000);
-    })
-    .catch(function() {
-      setTimeout(upd_bot1, 10000);
-    });
+function bot1() {
+  this.profits = 0;
+  this.trades = 0;
+  this.avg_earn = 0;
+  this.roi = 0;
+  this.fees = 0;
+  this.name = "";
+  this.updated = new Date(2000, 1, 1);
+  this.timeout = 5000;
+  try {
+      this.update();
+  } catch (e) {
+      console.log(e);
+      setTimeout(this.update.bind(this), this.timeout);
+  }
+}
+
+bot1.prototype.update = function() {
+    var self = this;
+    var options = {
+        host: 'data.alkemi.ai',
+        path: '/CustomBots/bot1.json',
+        port: 443,
+        method: 'GET'
+    };
+
+    callback = function(response) {
+        var str = '';
+        response.on('data', function(chunk) {
+            str += chunk;
+        });
+
+        response.on('end', function() {
+            var data = JSON.parse(str);
+            var profits = data.InterExchangeArbitrageBot.TotalProfits;
+            var trades = data.InterExchangeArbitrageBot.CompletedOrders.BaseOrder.length;
+            var avg_earn = profits / trades;
+            self.profits = parseFloat(profits);
+            self.trades = parseFloat(trades);
+            self.avg_earn = parseFloat(avg_earn);
+            self.roi = parseFloat(data.volume);
+            self.fees = parseFloat(data.InterExchangeArbitrageBot.TotalFeeCosts);
+            self.name = data.InterExchangeArbitrageBot.Name;
+            self.updated = new Date();
+        });
+    }
+
+    https.request(options, callback).end();
+
+    setTimeout(function() {
+        self.update();
+    }, self.timeout);
 };
+
+module.exports = bot1;
