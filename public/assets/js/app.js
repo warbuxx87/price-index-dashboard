@@ -31,10 +31,10 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
         $scope.btc.margin = 0;
         if (buy_market.buy_take < sell_market.sell_take)
           $scope.btc.margin = sell_market.sell_take - buy_market.buy_take;
-        setTimeout(upd_btc, 6000);
+        setTimeout(upd_btc, 3000);
       })
       .catch(function() {
-        setTimeout(upd_btc, 6000);
+        setTimeout(upd_btc, 3000);
       });
   };
 

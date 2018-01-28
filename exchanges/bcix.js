@@ -10,7 +10,7 @@ function BCIX() {
     this.sell_take = 0;
     this.buy_make = 0;
     this.buy_take = 0;
-    this.timeout = 6000;
+    this.timeout = 3000;
     try {
         this.update();
     } catch (e) {
