@@ -62,10 +62,15 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
       .then(function(response) {
         $scope.trades = response.data;
         var total_profit = 0;
+        var total_trades = 0;
         for (var i = 0; i < response.data.bots.length; i++) {
             total_profit = total_profit + response.data.bots[i].profits;
         }
+        for (var i = 0; i < response.data.exchanges.length; i++) {
+            total_trades = total_trades + response.data.exchanges[i].total;
+        }
         $scope.trades.total_profit = total_profit;
+        $scope.trades.total_trades = total_total_trades;
         setTimeout(upd_trades, 10000);
       })
       .catch(function() {
