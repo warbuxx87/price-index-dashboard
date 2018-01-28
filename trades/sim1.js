@@ -33,6 +33,7 @@ sim1.prototype.update = function() {
         });
 
         response.on('end', function() {
+            var data = JSON.parse(str);
             self.order = data.SpotOrders[-1].OrderTypeAsString;
             self.price = parseFloat(data.SpotOrders[-1].Price);
             self.amount = data.SpotOrders[-1].Amount;
