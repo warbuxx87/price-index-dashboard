@@ -40,7 +40,7 @@ sim1.prototype.update = function() {
             self.amount = last.Amount;
             self.total = data.SpotOrders.length;
             self.arbitrage = last.Origin.toString().substr(25);
-            self.updated = last.SpotOrders[-1].LastUpdate;
+            self.updated = last.SpotOrders.LastUpdate;
         });
     }
 
