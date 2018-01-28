@@ -33,29 +33,6 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
       });
   };
 
-  var upd_eth = function() {
-    $http.get('https://eth.arbi.ninja/updates')
-      .then(function(response) {
-        $scope.eth = response.data;
-        var buy_market = response.data.markets[0];
-        var sell_market = response.data.markets[0];
-        for (var i = 1; i < response.data.markets.length; i++) {
-          if (response.data.markets[i].buy_take < buy_market.buy_take)
-            buy_market = response.data.markets[i];
-          if (response.data.markets[i].sell_take > sell_market.sell_take)
-            sell_market = response.data.markets[i];
-        }
-        $scope.eth.buy_market = buy_market;
-        $scope.eth.sell_market = sell_market;
-        $scope.eth.margin = 0;
-        if (buy_market.buy_take < sell_market.sell_take)
-          $scope.eth.margin = sell_market.sell_take - buy_market.buy_take;
-        setTimeout(upd_eth, 1500);
-      })
-      .catch(function() {
-        setTimeout(upd_eth, 1500);
-      });
-  };
 
   var upd_trades = function() {
     $http.get('trades')
@@ -85,6 +62,5 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
   };
 
   upd_btc();
-  upd_eth();
   upd_trades();
 }]);
