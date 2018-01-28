@@ -6,7 +6,7 @@ function BITTREX() {
     this.last = 0;
     this.volume = 0;
     this.name = 'Bittrex';
-    this.idx2 = 1;
+    this.idx = 1;
     this.updated = new Date(2000, 1, 1);
     this.fee = 0.25;
     this.sell_make = "";
@@ -46,10 +46,10 @@ BITTREX.prototype.update = function() {
             self.ask = data.result[0].Ask;
             self.last = data.result[0].Last;
             self.volume = data.result[0].Volume;
-	    self.buy_make = ((self.bid + 0.01) * 1.0025 - self.idx2) / self.idx2 * 100;
-            self.sell_make = ((self.ask - 0.01) / 1.0025 - self.idx2) / self.idx2 * 100;
-            self.buy_take = (self.ask * 1.0025 - self.idx2) / self.idx2 * 100;
-            self.sell_take = (self.bid / 1.0025 - self.idx2) / self.idx2 * 100;
+	          self.buy_make = ((self.bid + 0.01) * 1.0025 - self.idx) / self.idx * 100;
+            self.sell_make = ((self.ask - 0.01) / 1.0025 - self.idx) / self.idx * 100;
+            self.buy_take = (self.ask * 1.0025 - self.idx) / self.idx * 100;
+            self.sell_take = (self.bid / 1.0025 - self.idx) / self.idx * 100;
             self.updated = new Date();
         });
     }

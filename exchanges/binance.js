@@ -6,7 +6,7 @@ function BINANCE() {
     this.last = 0;
     this.volume = 0;
     this.name = 'Binance';
-    this.idx2 = 1;
+    this.idx = 1;
     this.updated = new Date(2000, 1, 1);
     this.sell_make = "";
     this.sell_take = "";
@@ -42,10 +42,10 @@ BINANCE.prototype.update = function() {
             self.ask = parseFloat(data.askPrice);
             self.last = parseFloat(data.lastPrice);
             self.volume = parseFloat(data.volume);
-            self.buy_make = ((self.bid + 0.01) * 1.001 - self.idx2) / self.idx2 * 100;
-            self.sell_make = ((self.ask - 0.01) / 1.001 - self.idx2) / self.idx2 * 100;
-            self.buy_take = (self.ask * 1.001 - self.idx2) / self.idx2 * 100;
-            self.sell_take = (self.bid / 1.001 - self.idx2) / self.idx2 * 100;
+            self.buy_make = ((self.bid + 0.01) * 1.001 - self.idx) / self.idx * 100;
+            self.sell_make = ((self.ask - 0.01) / 1.001 - self.idx) / self.idx * 100;
+            self.buy_take = (self.ask * 1.001 - self.idx) / self.idx * 100;
+            self.sell_take = (self.bid / 1.001 - self.idx) / self.idx * 100;
             self.updated = new Date();
         });
     }
