@@ -44,6 +44,12 @@ var bot20 = require('./trades/bot20');
 
 // Simulated exchanges
 var sim1 = require('./trades/sim1');
+var sim2 = require('./trades/sim2');
+var sim3 = require('./trades/sim3');
+var sim4 = require('./trades/sim4');
+var sim5 = require('./trades/sim5');
+var sim6 = require('./trades/sim6');
+var sim7 = require('./trades/sim7');
 
 /**
  *  Define the application.
@@ -161,7 +167,7 @@ var BtcMonitor = function() {
                self.bot8, self.bot9, self.bot10, self.bot11, self.bot12, self.bot13, self.bot14,
                self.bot15, self.bot16, self.bot17, self.bot18, self.bot19, self.bot20
             ],
-        exchanges: [self.sim1],
+        exchanges: [self.sim1, self.sim2, self.sim3, self.sim4, self.sim5, self.sim6, self.sim7 ],
       }));
     };
 
@@ -246,8 +252,14 @@ var BtcMonitor = function() {
     self.bot18 = new bot18();
     self.bot19 = new bot19();
     self.bot20 = new bot20();
+    // sim exchanges for bots
     self.sim1 = new sim1();
-
+    self.sim2 = new sim2();
+    self.sim3 = new sim3();
+    self.sim4 = new sim4();
+    self.sim5 = new sim5();
+    self.sim6 = new sim6();
+    self.sim7 = new sim7();
   };
 
 }; /*  BTC INDEX ARBITRAGE.  */
