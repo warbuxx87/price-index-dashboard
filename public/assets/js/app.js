@@ -10,7 +10,7 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
   $scope.markets = []
 
   var upd_btc = function() {
-    $http.get('updates')
+    $http.get('/api/exchange')
       .then(function(response) {
         $scope.btc = response.data;
         var buy_market = response.data.markets[0];
@@ -34,7 +34,7 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
   };
 
   var upd_eth = function() {
-    $http.get('https://eth.arbi.ninja/updates')
+    $http.get('/api/exchange')
       .then(function(response) {
         $scope.eth = response.data;
         var buy_market = response.data.markets[0];

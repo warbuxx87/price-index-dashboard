@@ -29,6 +29,7 @@ XBX.prototype.update = function() {
         });
 
         response.on('end', function() {
+            console.log(self.index_acceptors)
             var data = JSON.parse(str);
             self.idx = data.xbx;
             for (var i = 0; i < self.index_acceptors.length; i++)

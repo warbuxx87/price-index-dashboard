@@ -20,10 +20,6 @@ var binance = require('./exchanges/binance');
 //var hitbtc = require('./exchanges/hitbtc');
 //var bitmex = require('./exchanges/bitmex');
 
-var bot1 = require('./trades/bot1');
-var bot2 = require('./trades/bot2');
-var bot3 = require('./trades/bot3');
-
 /**
  *  Define the application.
  */
@@ -132,14 +128,6 @@ var BtcMonitor = function() {
       }));
     };
 
-    self.routes['/trades'] = function(req, res) {
-      res.setHeader('Content-Type', 'application/json');
-      res.setHeader('Cache-Control', 'no-cache, no-store');
-      res.end(JSON.stringify({
-        bots: [self.bot1, self.bot2, self.bot3 ],
-      }));
-    };
-
     self.routes['/'] = function(req, res) {
       res.setHeader('Content-Type', 'text/html');
       res.send(self.cache_get('index.html'));
@@ -196,16 +184,9 @@ var BtcMonitor = function() {
     // self.poloniex = new poloniex();
     //self.liqui = new liqui();
     self.binance = new binance();
-
     //self.hitbtc = new hitbtc();
     //self.bitmex = new bitmex();
     self.xbx = new xbx([self.gemini, self.gdax, self.stamp, self.kraken, self.finex, self.bittrex, self.binance]);
-    //bots
-    self.bot1 = new bot1();
-    self.bot2 = new bot2();
-    self.bot3 = new bot3();
-    //self.bot4 = new bot4();
-
   };
 
 }; /*  BTC INDEX ARBITRAGE.  */
