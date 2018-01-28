@@ -72,8 +72,8 @@
           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
             <div class="portlet box green">
               <div class="portlet-title">
-                <div class="caption">BTC/USD Exchanges </div>
-                <div class="tools"><i data-original-title="live comparison of BTC/USD bid and ask prices" data-placement="top" data-container="body" class="fa fa-question tooltips"></i></div>
+                <div class="caption">BTC/USD Markets </div>
+                <div class="tools"><i data-original-title="Live comparison of BTC/USD bid and ask prices" data-placement="top" data-container="body" class="fa fa-question tooltips"></i></div>
               </div>
               <div class="portlet-body">
                 <table class="table table-bordered table-hover table-striped">
@@ -107,6 +107,16 @@
             <div class="note note-info">
               <p>All percents are calculated in comparison with the Price Index above, and take account of the exchange's fees. But they do not automatically account for exchange trade volume discounts. </p>
 
+            </div>
+            <div class="dashboard-stat purple">
+              <div class="visual">
+                <i class="fa fa-btc"></i>
+              </div>
+              <div class="details">
+                <div class="number">{{ trades.total_profit | currency:"$":2 }}</div>
+                <div class="desc">Total Profit</div>
+              </div>
+              <div class="more">Bitcoin USD Arbitrage - Since Jan 19, 2017</div>
             </div>
           </div>
           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
