@@ -136,7 +136,7 @@ var BtcMonitor = function() {
       res.setHeader('Content-Type', 'application/json');
       res.setHeader('Cache-Control', 'no-cache, no-store');
       res.end(JSON.stringify({
-        bots: [self.bot1, self.bot2, self.bot3],
+        bots: [self.bot1, self.bot2, self.bot3 ],
       }));
     };
 
@@ -203,7 +203,8 @@ var BtcMonitor = function() {
     //bots
     self.bot1 = new bot1();
     self.bot2 = new bot2();
-    self.bot2 = new bot3();
+    self.bot3 = new bot3();
+    //self.bot4 = new bot4();
 
   };
 
