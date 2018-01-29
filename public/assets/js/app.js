@@ -40,7 +40,7 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 
 
   var upd_trades = function() {
-    $http.get('trades')
+    $http.get('https://api.alkemi.ai')
       .then(function(response) {
         $scope.trades = response.data;
         var total_profit = 0;

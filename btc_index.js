@@ -1,7 +1,7 @@
 #!/bin/env node
 var toobusy = require('toobusy-js');
 var express = require('express');
-var fs = require('fs'); 
+var fs = require('fs');
 var xbx = require('./exchanges/xbx');
 var gdax = require('./exchanges/gdax');
 var gemini = require('./exchanges/gemini');
@@ -20,36 +20,7 @@ var binance = require('./exchanges/binance');
 //var hitbtc = require('./exchanges/hitbtc');
 //var bitmex = require('./exchanges/bitmex');
 
-// Bot Performance
-var bot1 = require('./trades/bot1');
-var bot2 = require('./trades/bot2');
-var bot3 = require('./trades/bot3');
-var bot4 = require('./trades/bot4');
-var bot5 = require('./trades/bot5');
-var bot6 = require('./trades/bot6');
-var bot7 = require('./trades/bot7');
-var bot8 = require('./trades/bot8');
-var bot9 = require('./trades/bot9');
-var bot10 = require('./trades/bot10');
-var bot11 = require('./trades/bot11');
-var bot12 = require('./trades/bot12');
-var bot13 = require('./trades/bot13');
-var bot14 = require('./trades/bot14');
-var bot15 = require('./trades/bot15');
-var bot16 = require('./trades/bot16');
-var bot17 = require('./trades/bot17');
-var bot18 = require('./trades/bot18');
-var bot19 = require('./trades/bot19');
-var bot20 = require('./trades/bot20');
 
-// Simulated exchanges
-var sim1 = require('./trades/sim1');
-var sim2 = require('./trades/sim2');
-var sim3 = require('./trades/sim3');
-var sim4 = require('./trades/sim4');
-var sim5 = require('./trades/sim5');
-var sim6 = require('./trades/sim6');
-var sim7 = require('./trades/sim7');
 
 /**
  *  Define the application.
@@ -159,18 +130,6 @@ var BtcMonitor = function() {
       }));
     };
 
-    self.routes['/trades'] = function(req, res) {
-      res.setHeader('Content-Type', 'application/json');
-      res.setHeader('Cache-Control', 'no-cache, no-store');
-      res.end(JSON.stringify({
-        bots: [self.bot1, self.bot2, self.bot3, self.bot4, self.bot5, self.bot6, self.bot7,
-               self.bot8, self.bot9, self.bot10, self.bot11, self.bot12, self.bot13, self.bot14,
-               self.bot15, self.bot16, self.bot17, self.bot18, self.bot19, self.bot20
-            ],
-        exchanges: [self.sim1, self.sim2, self.sim3, self.sim4, self.sim5, self.sim6, self.sim7 ],
-      }));
-    };
-
     self.routes['/'] = function(req, res) {
       res.setHeader('Content-Type', 'text/html');
       res.send(self.cache_get('index.html'));
@@ -234,35 +193,6 @@ var BtcMonitor = function() {
     //self.hitbtc = new hitbtc();
     //self.bitmex = new bitmex();
     self.xbx = new xbx([self.gemini, self.gdax, self.stamp, self.kraken, self.finex, self.bittrex, self.binance]);
-    //bots
-    self.bot1 = new bot1();
-    self.bot2 = new bot2();
-    self.bot3 = new bot3();
-    self.bot4 = new bot4();
-    self.bot5 = new bot5();
-    self.bot6 = new bot6();
-    self.bot7 = new bot7();
-    self.bot8 = new bot8();
-    self.bot9 = new bot9();
-    self.bot10 = new bot10();
-    self.bot11 = new bot11();
-    self.bot12 = new bot12();
-    self.bot13 = new bot13();
-    self.bot14 = new bot14();
-    self.bot15 = new bot15();
-    self.bot16 = new bot16();
-    self.bot17 = new bot17();
-    self.bot18 = new bot18();
-    self.bot19 = new bot19();
-    self.bot20 = new bot20();
-    // sim exchanges for bots
-    self.sim1 = new sim1();
-    self.sim2 = new sim2();
-    self.sim3 = new sim3();
-    self.sim4 = new sim4();
-    self.sim5 = new sim5();
-    self.sim6 = new sim6();
-    self.sim7 = new sim7();
   };
 
 }; /*  BTC INDEX ARBITRAGE.  */
