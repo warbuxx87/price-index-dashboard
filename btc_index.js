@@ -184,24 +184,8 @@ var BtcMonitor = function() {
   self.initializeServer = function() {
     self.createRoutes();
     self.app = express();
-    
-    // middleware which blocks requests when we're too busy
-    self.app.use(function(req, res, next) {
-      if (toobusy()) {
-        res.send(503, "I'm busy right now, sorry.");
-      } else {
-        next();
-      }
-    });
 
     self.app.use(express.static('public'));
-    //new
-    self.app.get('/', function(req, res) {
-      // processing the request requires some work!
-      var i = 0;
-      while (i < 1e5) i++;
-      res.send("I counted to " + i);
-    });
 
     //  Add handlers for the app (from the routes).
     for (var r in self.routes) {
@@ -212,7 +196,7 @@ var BtcMonitor = function() {
 
 
   /**
-   *  Initializes the sample application.
+   *  Initializes the application.
    */
   self.initialize = function() {
     self.setupVariables();
