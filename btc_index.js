@@ -1,7 +1,7 @@
 #!/bin/env node
-var toobusy = require('toobusy-js'),
+var toobusy = require('toobusy-js');
 var express = require('express');
-var fs = require('fs');
+var fs = require('fs'); 
 var xbx = require('./exchanges/xbx');
 var gdax = require('./exchanges/gdax');
 var gemini = require('./exchanges/gemini');
