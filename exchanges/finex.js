@@ -12,7 +12,7 @@ function FINEX() {
     this.sell_take = "";
     this.buy_make = "";
     this.buy_take = "";
-    this.timeout = 5000;
+    this.timeout = 7000;
     try {
         this.update();
     } catch (e) {
