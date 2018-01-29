@@ -1,5 +1,5 @@
 #!/bin/env node
-
+var toobusy = require('toobusy-js'),
 var express = require('express');
 var fs = require('fs');
 var xbx = require('./exchanges/xbx');
@@ -69,7 +69,7 @@ var BtcMonitor = function() {
    */
   self.setupVariables = function() {
     //  Set the environment variables we need.
-    self.host = "btc.arbi.ninja"
+    self.host = "btc.alkemi.ai"
     self.ipaddress = "0.0.0.0";
     self.port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
 
@@ -184,10 +184,29 @@ var BtcMonitor = function() {
   self.initializeServer = function() {
     self.createRoutes();
     self.app = express();
+    
+    // middleware which blocks requests when we're too busy
+    self.app.use(function(req, res, next) {
+      if (toobusy()) {
+        res.send(503, "I'm busy right now, sorry.");
+      } else {
+        next();
+      }
+    });
+
     self.app.use(express.static('public'));
+    //new
+    self.app.get('/', function(req, res) {
+      // processing the request requires some work!
+      var i = 0;
+      while (i < 1e5) i++;
+      res.send("I counted to " + i);
+    });
+
     //  Add handlers for the app (from the routes).
     for (var r in self.routes) {
       self.app.get(r, self.routes[r]);
+
     }
   };
 
