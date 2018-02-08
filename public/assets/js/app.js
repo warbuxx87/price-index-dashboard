@@ -69,7 +69,7 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
   upd_btc();
   upd_trades();
 
-  proview.config(['RollbarProvider', function(RollbarProvider) {
+  app.config(['RollbarProvider', function(RollbarProvider) {
   RollbarProvider.init({
     accessToken: "***REMOVED***",
     captureUncaught: true,
