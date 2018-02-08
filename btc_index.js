@@ -148,12 +148,9 @@ var BtcMonitor = function() {
 
     self.app.use(express.static('public'));
 
-    // Use the rollbar error handler to send exceptions to your rollbar account
-    self.app.use(rollbar.errorHandler());
 
-    self.app.listen(6943);
 
-    
+
     //  Add handlers for the app (from the routes).
     for (var r in self.routes) {
       self.app.get(r, self.routes[r]);
@@ -161,7 +158,10 @@ var BtcMonitor = function() {
     }
   };
 
+  // Use the rollbar error handler to send exceptions to your rollbar account
+  app.use(rollbar.errorHandler());
 
+app.listen(6943);
 
 
 
