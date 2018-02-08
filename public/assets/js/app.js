@@ -1,4 +1,4 @@
-var app = angular.module('proview', []);
+var app = angular.module('proview', ['tandibar/ng-rollbar']);
 
 app.filter('ceil', function() {
   return function(input) {
@@ -68,4 +68,14 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 
   upd_btc();
   upd_trades();
+
+  app.proview.config(['RollbarProvider', function(RollbarProvider) {
+  RollbarProvider.init({
+    accessToken: "***REMOVED***",
+    captureUncaught: true,
+    payload: {
+      environment: 'production'
+    }
+  });
+}]);
 }]);
