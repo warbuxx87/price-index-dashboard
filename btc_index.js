@@ -1,6 +1,8 @@
 #!/bin/env node
 var toobusy = require('toobusy-js');
 var express = require('express');
+var Rollbar = require('rollbar');
+var rollbar = new Rollbar('eb365d727579462395dbbc4e18ac0275');
 var fs = require('fs');
 var xbx = require('./exchanges/xbx');
 var gdax = require('./exchanges/gdax');
@@ -152,6 +154,13 @@ var BtcMonitor = function() {
 
     }
   };
+
+
+    // Use the rollbar error handler to send exceptions to your rollbar account
+  self.app.use(rollbar.errorHandler());
+
+  self.app.listen(6943);
+
 
 
   /**
