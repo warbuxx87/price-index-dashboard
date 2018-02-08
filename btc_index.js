@@ -146,7 +146,7 @@ var BtcMonitor = function() {
     self.createRoutes();
     self.app = express();
     // Use the rollbar error handler to send exceptions to your rollbar account
-    self.app.use(self.rollbar.errorHandler());
+    self.app.use(rollbar.errorHandler());
 
     self.app.listen(6943);
 
