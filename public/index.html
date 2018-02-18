@@ -153,16 +153,7 @@
             </div>
 
 
-            <div class="dashboard-stat red">
-              <div class="visual">
-                <i class="fa fa-btc"></i>
-              </div>
-              <div class="details">
-                <div class="number">{{ trades.total_trades | number:0 }} BTC</div>
-                <div class="desc">Total Trade Volume</div>
-              </div>
-              <div class="more">Bitcoin USD Arbitrage - Since Jan 19, 2018</div>
-            </div>
+
             <div class="dashboard-stat green">
               <div class="visual">
                 <i class="fa fa-btc"></i>
@@ -206,8 +197,18 @@
               </div>
             </div>
 
+            <div class="dashboard-stat red">
+              <div class="visual">
+                <i class="fa fa-btc"></i>
+              </div>
+              <div class="details">
+                <div class="number">{{ trades.total_trades | number:0 }} BTC</div>
+                <div class="desc">Total Trade Volume</div>
+              </div>
+              <div class="more">Bitcoin USD Arbitrage - Since Jan 19, 2018</div>
+            </div>
 
-            <div class="portlet box purple">
+            <div class="portlet box red">
               <div class="portlet-title">
                 <div class="caption">Exchange Stats (currently undergoing maintenence) </div>
                 <div class="tools"><i data-original-title="live simulation trades" data-placement="top" data-container="body" class="fa fa-question tooltips"></i></div>
