@@ -38,7 +38,7 @@
         <!-- BEGIN PAGE HEADER-->
         <div class="row">
           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-            <div class="dashboard-stat yellow">
+            <div class="dashboard-stat green">
               <div class="visual">
                 <i class="fa fa-btc"></i>
               </div>
@@ -175,7 +175,7 @@
             </div>
           </div>
           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-            <div class="portlet box red">
+            <div class="portlet box blue">
               <div class="portlet-title">
                 <div class="caption">Last Order By Exchange </div>
                 <div class="tools"><i data-original-title="live simulation trades" data-placement="top" data-container="body" class="fa fa-question tooltips"></i></div>
@@ -207,7 +207,36 @@
             </div>
 
 
-
+            <div class="portlet box purple">
+              <div class="portlet-title">
+                <div class="caption">Exchange Stats (currently undergoing maintenence) </div>
+                <div class="tools"><i data-original-title="live simulation trades" data-placement="top" data-container="body" class="fa fa-question tooltips"></i></div>
+              </div>
+              <div class="portlet-body">
+                <table class="table table-bordered table-hover table-striped">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Trades</th>
+                      <th>Profits</th>
+                      <th>Fees </th>
+                      <th class="hidden-480">Avg Earn</th>
+                      <th class="hidden-480">Route</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr data-ng-repeat="bot in trades.bots">
+                      <td> {{ $index + 1 }}</td>
+                      <td> {{ bot.trades }} </td>
+                      <td> {{ bot.profits | currency:"$":2 }} </td>
+                      <td> {{ bot.fees | currency :"$":2 }}</td>
+                      <td class="hidden-480"> {{ bot.avg_earn | currency:"$":2 }} </td>
+                      <td class="hidden-480"> {{ bot.name }} </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
 
 
 
