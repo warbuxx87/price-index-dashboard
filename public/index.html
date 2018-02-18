@@ -166,7 +166,7 @@
                       <td>{{ exchange.order }}</td>
                       <td>{{ exchange.price | currency:"$":2 }}</td>
                       <td>{{ exchange.amount }} BTC</td>
-                      <td class="hidden-480">{{ exchange.arbitrage }}</td>
+                      <td class="hidden-480">{{ exchange.last_arbitrage }}</td>
                       <td class="hidden-480">{{ exchange.updated | date:'HH:mm:ss' }}</td>
                     </tr>
                   </tbody>
