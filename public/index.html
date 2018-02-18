@@ -129,7 +129,7 @@
                 <div class="number">{{ trades.total_trades | number:0 }} BTC</div>
                 <div class="desc">Total Trade Volume</div>
               </div>
-              <div class="more">Bitcoin USD Arbitrage - Since Feb 18, 2018</div>
+              <div class="more">Bitcoin USD Arbitrage - Since Jan 19, 2018</div>
             </div>
             <div class="dashboard-stat green">
               <div class="visual">
@@ -186,7 +186,7 @@
                       <th>#</th>
                       <th>Trades</th>
                       <th>Profits</th>
-                      <th>ROI %</th>
+                      <th>Fees </th>
                       <th class="hidden-480">Avg Earn</th>
                       <th class="hidden-480">Route</th>
                     </tr>
@@ -196,7 +196,7 @@
                       <td> {{ $index + 1 }}</td>
                       <td> {{ bot.trades }} </td>
                       <td> {{ bot.profits | currency:"$":2 }} </td>
-                      <td> {{ bot.roi | number : 2 }} %</td>
+                      <td> {{ bot.fees | currency : 2 }}</td>
                       <td class="hidden-480"> {{ bot.avg_earn | currency:"$":2 }} </td>
                       <td class="hidden-480"> {{ bot.name }} </td>
                     </tr>
