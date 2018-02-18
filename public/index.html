@@ -196,7 +196,7 @@
                       <td> {{ $index + 1 }}</td>
                       <td> {{ bot.trades }} </td>
                       <td> {{ bot.profits | currency:"$":2 }} </td>
-                      <td> {{ bot.fees | currency : 2 }}</td>
+                      <td> {{ bot.fees | currency :"$":2 }}</td>
                       <td class="hidden-480"> {{ bot.avg_earn | currency:"$":2 }} </td>
                       <td class="hidden-480"> {{ bot.name }} </td>
                     </tr>
