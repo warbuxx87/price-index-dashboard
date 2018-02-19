@@ -219,9 +219,9 @@
                     <tr>
                       <th>Exchange</th>
                       <th>Orders</th>
-                      <th class="hidden-480">Fill Rate</th>
-                      <th>Bought</th>
-                      <th>Sold</th>
+                      <th class="hidden-480">Fill</th>
+                      <th>Buy / Sell</th>
+
                       <th>USD</th>
                       <th>BTC</th>
                       <th>Avg Buy Price</th>
@@ -233,8 +233,7 @@
                       <td> {{ exchange.name }}</td>
                       <td> {{ exchange.total | number:0 }} </td>
                       <td class="hidden-480"> {{ exchange.success | number:2 }}% </td>
-                      <td> {{ exchange.buy_orders | number:0 }} </td>
-                      <td> {{ exchange.sell_orders | number:0 }}</td>
+                      <td> {{ exchange.buy_orders | number:0 }} / {{ exchange.sell_orders | number:0 }}</td>
                       <td> {{ exchange.usd | currency:"$":2 }} </td>
                       <td> {{ exchange.btc | number:2 }}</td>
                       <td> {{ exchange.avg_buy | currency:"$":2 }} </td>
@@ -244,8 +243,7 @@
                       <td> Totals</td>
                       <td> {{ stat.total | number:0 }} </td>
                       <td class="hidden-480"> {{ stat.success | number:2 }}% </td>
-                      <td> {{ stat.buy_orders | number:0 }} </td>
-                      <td> {{ stat.sell_orders | number:0 }}</td>
+                      <td> {{ stat.buy_orders | number:0 }} / {{ stat.sell_orders | number:0 }}</td>
                       <td> {{ stat.usd | currency:"$":2 }} </td>
                       <td> {{ stat.btc | number:2 }}</td>
                       <td> {{ stat.avg_buy | currency:"$":2 }} </td>
