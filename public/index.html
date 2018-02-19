@@ -211,7 +211,7 @@
             <div class="portlet box red">
               <div class="portlet-title">
                 <div class="caption">Exchange Stats (currently undergoing maintenence) </div>
-                <div class="tools"><i data-original-title="exchange stats" data-placement="top" data-container="body" class="fa fa-question tooltips"></i></div>
+                <div class="tools"><i data-original-title="Exchange Stats" data-placement="top" data-container="body" class="fa fa-question tooltips"></i></div>
               </div>
               <div class="portlet-body">
                 <table class="table table-bordered table-hover table-striped">
@@ -219,24 +219,22 @@
                     <tr>
                       <th>Exchange</th>
                       <th>Orders</th>
+                      <th class="hidden-480">Fill Rate</th>
                       <th>Bought</th>
                       <th>Sold</th>
                       <th>USD</th>
                       <th>BTC</th>
-                      <th class="hidden-480">Success</th>
-                      <th class="hidden-480">Route</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr data-ng-repeat="exchange in trades.exchanges">
                       <td> {{ exchange.name }}</td>
                       <td> {{ exchange.total | number:0 }} </td>
+                      <td class="hidden-480"> {{ exchange.success | number:2 }}% </td>
                       <td> {{ exchange.buy_orders | number:0 }} </td>
                       <td> {{ exchange.sell_orders | number:0 }}</td>
                       <td> {{ exchange.usd | currency:"$":2 }} </td>
                       <td> {{ exchange.btc | number:2 }}</td>
-                      <td class="hidden-480"> {{ exchange.success | number:2 }}% </td>
-                      <td class="hidden-480"> {{ exchange.last_arbitrage }} </td>
                     </tr>
                   </tbody>
                 </table>
