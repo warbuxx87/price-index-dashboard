@@ -233,20 +233,20 @@
                       <td> {{ exchange.total | number:0 }} </td>
                       <td class="hidden-480"> {{ exchange.success | number:2 }}% </td>
                       <td> {{ exchange.buy_orders | number:0 }} / {{ exchange.sell_orders | number:0 }}</td>
-                      <td> {{ exchange.usd | currency:"$":2 }} </td>
-                      <td> {{ exchange.btc | number:2 }}</td>
-                      <td> {{ exchange.avg_buy | currency:"$":2 }} </td>
-                      <td> {{ exchange.avg_sell | currency:"$":2 }}</td>
+                      <td> {{ exchange.usd | currency:"$":0 }} </td>
+                      <td> {{ exchange.btc | number:0 }}</td>
+                      <td> {{ exchange.avg_buy | currency:"$":0 }} </td>
+                      <td> {{ exchange.avg_sell | currency:"$":0 }}</td>
                     </tr>
                     <tr data-ng-repeat="stat in trades.stats">
                       <td> Totals</td>
                       <td> {{ stat.total | number:0 }} </td>
                       <td class="hidden-480"> {{ stat.success | number:2 }}% </td>
                       <td> {{ stat.buy_orders | number:0 }} / {{ stat.sell_orders | number:0 }}</td>
-                      <td> {{ stat.usd | currency:"$":2 }} </td>
+                      <td> {{ stat.usd | currency:"$":0 }} </td>
                       <td> {{ stat.btc | number:2 }}</td>
-                      <td> {{ stat.avg_buy | currency:"$":2 }} </td>
-                      <td> {{ stat.avg_sell | currency:"$":2 }}</td>
+                      <td> {{ stat.avg_buy | currency:"$":0 }} </td>
+                      <td> {{ stat.avg_sell | currency:"$":0 }}</td>
                     </tr>
                   </tbody>
                 </table>
