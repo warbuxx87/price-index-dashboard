@@ -243,10 +243,10 @@
                       <td> {{ stat.total | number:0 }} </td>
                       <td class="hidden-480"> {{ stat.success | number:2 }}% </td>
                       <td> {{ stat.buy_orders | number:0 }} / {{ stat.sell_orders | number:0 }}</td>
-                      <td> {{ stat.usd | currency:"$":0 }} </td>
-                      <td> {{ stat.btc | number:0 }}</td>
-                      <td> {{ stat.avg_buy | currency:"$":0 }} </td>
-                      <td> {{ stat.avg_sell | currency:"$":0 }}</td>
+                      <td> <span class="label label-success">{{ stat.usd | currency:"$":0 }}</span> </td>
+                      <td> <span class="label label-success">{{ stat.btc | number:0 }}</span></td>
+                      <td class="hidden-480"> {{ stat.avg_buy | currency:"$":0 }} </td>
+                      <td class="hidden-480"> {{ stat.avg_sell | currency:"$":0 }}</td>
                     </tr>
                   </tbody>
                 </table>
