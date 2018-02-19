@@ -228,9 +228,9 @@
                   <tbody>
                     <tr data-ng-repeat="exchange in trades.exchanges">
                       <td> {{ exchange.name }}</td>
-                      <td> {{ exchange.total }} </td>
-                      <td> {{ exchange.buy_orders | currency:"BTC" }} </td>
-                      <td> {{ exchange.sell_orders | currency :"BTC" }}</td>
+                      <td> {{ exchange.total | number:0 }} </td>
+                      <td> {{ exchange.buy_orders | number:0 }} </td>
+                      <td> {{ exchange.sell_orders | number:0 }}</td>
                       <td class="hidden-480"> {{ bot.avg_earn | currency:"$":2 }} </td>
                       <td class="hidden-480"> {{ bot.last_arbitrage }} </td>
                     </tr>
