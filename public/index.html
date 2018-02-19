@@ -169,7 +169,7 @@
             <div class="portlet box blue">
               <div class="portlet-title">
                 <div class="caption">Last Order By Exchange </div>
-                <div class="tools"><i data-original-title="live simulation trades" data-placement="top" data-container="body" class="fa fa-question tooltips"></i></div>
+                <div class="tools"><i data-original-title="Live Simulation Trades" data-placement="top" data-container="body" class="fa fa-question tooltips"></i></div>
               </div>
               <div class="portlet-body">
                 <table class="table table-bordered table-hover table-striped">
@@ -239,6 +239,17 @@
                       <td> {{ exchange.btc | number:2 }}</td>
                       <td> {{ exchange.avg_buy | currency:"$":2 }} </td>
                       <td> {{ exchange.avg_sell | currency:"$":2 }}</td>
+                    </tr>
+                    <tr data-ng-repeat="stat in trades.stats">
+                      <td> Totals</td>
+                      <td> {{ stat.total | number:0 }} </td>
+                      <td class="hidden-480"> {{ stat.success | number:2 }}% </td>
+                      <td> {{ stat.buy_orders | number:0 }} </td>
+                      <td> {{ stat.sell_orders | number:0 }}</td>
+                      <td> {{ stat.usd | currency:"$":2 }} </td>
+                      <td> {{ stat.btc | number:2 }}</td>
+                      <td> {{ stat.avg_buy | currency:"$":2 }} </td>
+                      <td> {{ stat.avg_sell | currency:"$":2 }}</td>
                     </tr>
                   </tbody>
                 </table>
