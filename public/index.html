@@ -231,7 +231,7 @@
                       <td> {{ exchange.total | number:0 }} </td>
                       <td> {{ exchange.buy_orders | number:0 }} </td>
                       <td> {{ exchange.sell_orders | number:0 }}</td>
-                      <td class="hidden-480"> {{ exchange.success | percent:2 }} </td>
+                      <td class="hidden-480"> {{ exchange.success | number:2 }}% </td>
                       <td class="hidden-480"> {{ exchange.last_arbitrage }} </td>
                     </tr>
                   </tbody>
