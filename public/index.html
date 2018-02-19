@@ -210,7 +210,7 @@
 
             <div class="portlet box red">
               <div class="portlet-title">
-                <div class="caption">Exchange Stats (currently undergoing maintenence) </div>
+                <div class="caption">Exchange Stats </div>
                 <div class="tools"><i data-original-title="Exchange Stats" data-placement="top" data-container="body" class="fa fa-question tooltips"></i></div>
               </div>
               <div class="portlet-body">
@@ -224,6 +224,8 @@
                       <th>Sold</th>
                       <th>USD</th>
                       <th>BTC</th>
+                      <th>Avg Buy Price</th>
+                      <th>Avg Sell Price</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -235,6 +237,8 @@
                       <td> {{ exchange.sell_orders | number:0 }}</td>
                       <td> {{ exchange.usd | currency:"$":2 }} </td>
                       <td> {{ exchange.btc | number:2 }}</td>
+                      <td> {{ exchange.avg_buy | currency:"$":2 }} </td>
+                      <td> {{ exchange.avg_sell | currency:"$":2 }}</td>
                     </tr>
                   </tbody>
                 </table>
