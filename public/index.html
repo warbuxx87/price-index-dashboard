@@ -98,7 +98,7 @@
                       <th>Bid</th>
                       <th>Ask</th>
                       <th class="hidden-480">%</th>
-                      <th class="hidden-480">Last</th>
+
                       <th class="hidden-480">Volume</th>
                       <th class="hidden-480">Updated</th>
                     </tr>
@@ -110,7 +110,7 @@
                       <td>{{ market.bid | currency:"$":2 }}</td>
                       <td>{{ market.ask | currency:"$":2 }}</td>
                       <td class="hidden-480" ng-class="getClass(market.sell_take)"><b>{{ market.sell_take | number:2 }}%</b></td>
-                      <td class="hidden-480">{{ market.last | currency:"$":2 }} </td>
+                      
                       <td class="hidden-480">{{ market.volume | number:2 }} </td>
                       <td class="hidden-480">{{ market.updated | date:'HH:mm:ss' }}</td>
                     </tr>
