@@ -72,21 +72,18 @@
               </div>
               <div class="more">Bitcoin Arbitrage Strategy</div>
             </div>
-            <div class="strategy" ng-hide="btc.margin">
-              <div class="lead dashboard-stat dashboard-stat-v2 green" ng-show="btc.margin">
-                <div class="visual">
-                  <i class="fa fa-btc"></i>
-                </div>
-                <div class="details">
-                  <div class="number">
-                    Opportunity <b>None found.</b>
-                    <div class="desc">
-                       
-                    </div>
+            <div class="lead dashboard-stat dashboard-stat-v2 green" ng-hide="btc.margin">
+              <div class="visual">
+                <i class="fa fa-btc"></i>
+              </div>
+              <div class="details">
+                <div class="number">
+                  Opportunity <b>None found.</b>
+                  <div class="desc">
                   </div>
                 </div>
-                <div class="more">Bitcoin Arbitrage Strategy</div>
               </div>
+              <div class="more">Bitcoin Arbitrage Strategy</div>
             </div>
           </div>
         </div>
@@ -103,33 +100,33 @@
               </div>
               <div class="portlet-body">
                 <div class="table-responsive">
-                <table class="table table-bordered table-hover table-striped">
-                  <thead>
-                    <tr>
-                      <th>Exchange</th>
-                      <th class="hidden-480">%</th>
-                      <th>Bid</th>
-                      <th>Ask</th>
-                      <th class="hidden-480">%</th>
+                  <table class="table table-bordered table-hover table-striped">
+                    <thead>
+                      <tr>
+                        <th>Exchange</th>
+                        <th class="hidden-480">%</th>
+                        <th>Bid</th>
+                        <th>Ask</th>
+                        <th class="hidden-480">%</th>
 
-                      <th class="hidden-480">Volume</th>
-                      <th class="hidden-480">Updated</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr data-ng-repeat="market in btc.markets">
-                      <td>{{ market.name }}</td>
-                      <td class="hidden-480" ng-class="getClass(market.buy_take)"><b>{{ market.buy_take | number:2 }}%</b></td>
-                      <td>{{ market.bid | currency:"$":2 }}</td>
-                      <td>{{ market.ask | currency:"$":2 }}</td>
-                      <td class="hidden-480" ng-class="getClass(market.sell_take)"><b>{{ market.sell_take | number:2 }}%</b></td>
+                        <th class="hidden-480">Volume</th>
+                        <th class="hidden-480">Updated</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr data-ng-repeat="market in btc.markets">
+                        <td>{{ market.name }}</td>
+                        <td class="hidden-480" ng-class="getClass(market.buy_take)"><b>{{ market.buy_take | number:2 }}%</b></td>
+                        <td>{{ market.bid | currency:"$":2 }}</td>
+                        <td>{{ market.ask | currency:"$":2 }}</td>
+                        <td class="hidden-480" ng-class="getClass(market.sell_take)"><b>{{ market.sell_take | number:2 }}%</b></td>
 
-                      <td class="hidden-480">{{ market.volume | number:2 }} </td>
-                      <td class="hidden-480">{{ market.updated | date:'HH:mm:ss' }}</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+                        <td class="hidden-480">{{ market.volume | number:2 }} </td>
+                        <td class="hidden-480">{{ market.updated | date:'HH:mm:ss' }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
             <!--  <div class="note note-info">
