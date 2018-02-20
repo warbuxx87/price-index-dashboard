@@ -72,8 +72,21 @@
               </div>
               <div class="more">Bitcoin Arbitrage Strategy</div>
             </div>
-            <div class="strategy note note-info" ng-hide="btc.margin">
-              Arbitrage strategy: None found.
+            <div class="strategy" ng-hide="btc.margin">
+              <div class="lead dashboard-stat dashboard-stat-v2 green" ng-show="btc.margin">
+                <div class="visual">
+                  <i class="fa fa-btc"></i>
+                </div>
+                <div class="details">
+                  <div class="number">
+                    Opportunity <b>None found.</b>
+                    <div class="desc">
+                      Buy {{ btc.buy_market.name }} at <b>{{ btc.buy_market.ask | currency:"$":2 }}</b>, Sell {{ btc.sell_market.name }} at <b>{{ btc.sell_market.bid | currency:"$":2 }}</b>,
+                    </div>
+                  </div>
+                </div>
+                <div class="more">Bitcoin Arbitrage Strategy</div>
+              </div>
             </div>
           </div>
         </div>
@@ -110,7 +123,7 @@
                       <td>{{ market.bid | currency:"$":2 }}</td>
                       <td>{{ market.ask | currency:"$":2 }}</td>
                       <td class="hidden-480" ng-class="getClass(market.sell_take)"><b>{{ market.sell_take | number:2 }}%</b></td>
-                      
+
                       <td class="hidden-480">{{ market.volume | number:2 }} </td>
                       <td class="hidden-480">{{ market.updated | date:'HH:mm:ss' }}</td>
                     </tr>
