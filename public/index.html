@@ -57,13 +57,13 @@
 
         <!-- BEGIN First Row -->
         <div class="row">
-          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
             <div class="dashboard-stat2 ">
               <div class="display">
                 <div class="number">
                   <h3 class="font-green-sharp">
-                   <span data-counter="counterup" data-value="{{ trades.total_profit | number:2 }}">{{ trades.total_profit | number:2 }}</span>
                    <small class="font-green-sharp">$</small>
+                   <span data-counter="counterup" data-value="{{ trades.total_profit | number:2 }}">{{ trades.total_profit | number:2 }}</span>
                   </h3>
                   <small>TOTAL PROFIT</small>
                 </div>
@@ -74,24 +74,25 @@
               <div class="progress-info">
                 <div class="progress">
                   <span style="width: 76%;" class="progress-bar progress-bar-success green-sharp">
-                                                <span class="sr-only">76% progress</span>
+                  <span class="sr-only">Cycle FEB 18, 2018</span>
                   </span>
                 </div>
                 <div class="status">
-                  <div class="status-title"> progress </div>
-                  <div class="status-number"> 76% </div>
+                  <div class="status-title"> Cycle  </div>
+                  <div class="status-number"> FEB 18, 2018 </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
             <div class="dashboard-stat2 ">
               <div class="display">
                 <div class="number">
                   <h3 class="font-red-haze">
-                    <span data-counter="counterup" data-value="1349">1349</span>
+                    <small class="font-red-haze">$</small>
+                    <span data-counter="counterup" data-value="{{ trades.usd | number:0 }}">{{ trades.usd | number:0 }}</span>
                   </h3>
-                  <small>NEW FEEDBACKS</small>
+                  <small>USD Balance</small>
                 </div>
                 <div class="icon">
                   <i class="icon-like"></i>
@@ -110,23 +111,23 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
             <div class="dashboard-stat2 ">
               <div class="display">
                 <div class="number">
                   <h3 class="font-blue-sharp">
-                                                <span data-counter="counterup" data-value="567">567</span>
-                                            </h3>
-                  <small>NEW ORDERS</small>
+                    <span data-counter="counterup" data-value="{{ trades.btc | number:0 }}">{{ trades.btc | number:0 }}</span>
+                  </h3>
+                  <small>BTC Balance</small>
                 </div>
                 <div class="icon">
-                  <i class="icon-basket"></i>
+                  <i class="fa fa-btc"></i>
                 </div>
               </div>
               <div class="progress-info">
                 <div class="progress">
                   <span style="width: 45%;" class="progress-bar progress-bar-success blue-sharp">
-                                                <span class="sr-only">45% grow</span>
+                  <span class="sr-only">45% grow</span>
                   </span>
                 </div>
                 <div class="status">
@@ -136,32 +137,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-            <div class="dashboard-stat2 ">
-              <div class="display">
-                <div class="number">
-                  <h3 class="font-purple-soft">
-                    <span data-counter="counterup" data-value="276">276</span>
-                  </h3>
-                  <small>NEW USERS</small>
-                </div>
-                <div class="icon">
-                  <i class="icon-user"></i>
-                </div>
-              </div>
-              <div class="progress-info">
-                <div class="progress">
-                  <span style="width: 57%;" class="progress-bar progress-bar-success purple-soft">
-                                                <span class="sr-only">56% change</span>
-                  </span>
-                </div>
-                <div class="status">
-                  <div class="status-title"> change </div>
-                  <div class="status-number"> 57% </div>
-                </div>
-              </div>
-            </div>
-          </div>
+
         </div>
         <!--End First Row -->
 
@@ -229,7 +205,6 @@
                         <th>Bid</th>
                         <th>Ask</th>
                         <th>%</th>
-
                         <th>Volume</th>
                         <th>Updated</th>
                       </tr>
@@ -253,22 +228,11 @@
               <p>All percents are calculated in comparison with the Price Index above, and take account of the exchange's fees. But they do not automatically account for exchange trade volume discounts. </p>
 
             </div>-->
-            <div class="dashboard-stat green">
-              <div class="visual">
-                <i class="fa fa-btc"></i>
-              </div>
-              <div class="details">
-                <div class="number">{{ trades.total_profit | currency:"$":2 }}</div>
-                <div class="desc">Total Profit</div>
-              </div>
-              <div class="more">30 Day Bitcoin USD Arbitrage - Since Feb 18, 2018<br>
-              </div>
-            </div>
             <div class="portlet box purple">
               <div class="portlet-title">
                 <div class="caption">Bot Performance</div>
                 <div class="tools">
-                  <a href="" class="fullscreen" data-original-title="" title=""> </a>
+                  <a href="" class="fullscreen" data-original-title="Bot Performance" title="Bot Performance"> </a>
                 </div>
               </div>
               <div class="portlet-body">
