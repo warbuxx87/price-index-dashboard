@@ -8,6 +8,7 @@ app.filter('ceil', function() {
 
 app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 	$scope.btc = []
+	$scope.trades = []
 
 	var upd_btc = function() {
 		$http.get('updates')
@@ -42,6 +43,8 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 	var upd_trades = function() {
 		var total_profit = 0;
 		var total_trades = 0;
+		var usd = 0;
+		var btc = 0;
 		$http.get('https://api.alkemi.ai')
 			.then(function(response) {
 				$scope.trades = response.data;
@@ -50,6 +53,12 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 				}
 				for (var i = 0; i < response.data.exchanges.length; i++) {
 					total_trades = total_trades + response.data.exchanges[i].total;
+				}
+				if (btc != 0) {
+					$scope.balance.btc = btc;
+				}
+				if (usd != 0) {
+					$scope.balance.usd = usd;
 				}
 				$scope.trades.total_profit = total_profit;
 				$scope.trades.total_trades = total_trades;
