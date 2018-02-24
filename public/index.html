@@ -92,7 +92,7 @@
                     <small class="font-red-haze">$</small>
                     <span data-counter="counterup" data-value="{{ trades.stats[0].usd | number:0 }}">{{ trades.stats[0].usd | number:0 }}</span>
                   </h3>
-                  <small>USD Balance</small>
+                  <small>USD Balance ({{trades.stats[0].usd / btc.idx | number:2 }} btc)</small>
                 </div>
                 <div class="icon ">
                   <i class="fa fa-money font-red-haze"></i>
