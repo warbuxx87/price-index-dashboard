@@ -40,11 +40,11 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 
 
 	var upd_trades = function() {
+		var total_profit = 0;
+		var total_trades = 0;
 		$http.get('https://api.alkemi.ai')
 			.then(function(response) {
 				$scope.trades = response.data;
-				var total_profit = 0;
-				var total_trades = 0;
 				for (var i = 0; i < response.data.bots.length; i++) {
 					total_profit = total_profit + response.data.bots[i].profits;
 				}
@@ -76,8 +76,12 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 	d = d.getDate();
 	d = 48 - d;
 	d = 30 - d;
+
+	// days remaining in cycle
 	$scope.d = d;
+	// percent of cycle completed
 	$scope.p = d * 3.33;
+
 
 	upd_btc();
 	upd_trades();
