@@ -45,6 +45,8 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 				$scope.trades = response.data;
 				var total_profit = 0;
 				var total_trades = 0;
+				var btc = $scope.trades.stats.btc;
+				var usd = $scope.trades.stats.usd;
 				for (var i = 0; i < response.data.bots.length; i++) {
 					total_profit = total_profit + response.data.bots[i].profits;
 				}
@@ -53,8 +55,8 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 				}
 				$scope.trades.total_profit = total_profit;
 				$scope.trades.total_trades = total_trades;
-				$scope.trades.stats.btc = $scope.trades.stats.btc;
-				$scope.trades.stats.usd = $scope.trades.stats.usd;
+				$scope.trades.stats.btc = btc;
+				$scope.trades.stats.usd = usd;
 				setTimeout(upd_trades, 10000);
 			})
 			.catch(function() {
