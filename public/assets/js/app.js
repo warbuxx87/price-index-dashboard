@@ -76,7 +76,8 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 	d = d.getDate();
 	d = 48 - d;
 	d = 30 - d;
-	$scope.d = d * 3.33;
+	$scope.d = d;
+	$scope.p = d * 3.33;
 
 	upd_btc();
 	upd_trades();
