@@ -3,14 +3,17 @@
 
 <head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114448847-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114448847-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'UA-114448847-1');
-</script>
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-114448847-1');
+  </script>
 
   <meta charset="utf-8">
   <title>Alkemi - Arbitrage Monitor</title>
@@ -75,9 +78,9 @@
               <div class="details">
                 <div class="number">
                   Opportunity <b>{{ btc.margin |number:2 }}%</b>
-                  <div class="desc">
-                    Buy {{ btc.buy_market.name }} at <b>{{ btc.buy_market.ask | currency:"$":2 }}</b>, Sell {{ btc.sell_market.name }} at <b>{{ btc.sell_market.bid | currency:"$":2 }}</b>,
-                  </div>
+                </div>
+                <div class="desc">
+                  Buy {{ btc.buy_market.name }} at <b>{{ btc.buy_market.ask | currency:"$":2 }}</b>, Sell {{ btc.sell_market.name }} at <b>{{ btc.sell_market.bid | currency:"$":2 }}</b>,
                 </div>
               </div>
               <div class="more">Bitcoin Arbitrage Strategy</div>
