@@ -78,7 +78,7 @@
                   </span>
                 </div>
                 <div class="status">
-                  <div class="status-title"> Period  </div>
+                  <div class="status-title"> Cycle Period  </div>
                   <div class="status-number"> {{ d }} Days </div>
                 </div>
               </div>
@@ -90,11 +90,11 @@
                 <div class="number">
                   <h3 class="font-red-haze">
                     <small class="font-red-haze">$</small>
-                    <span data-counter="counterup" data-value="{{ trades.stats[0].usd | number:0 }}">{{ trades.stats[0].usd | number:0 }}</span>
+                    <span data-counter="counterup" data-value="{{ balance.usd | number:0 }}">{{ balance.usd | number:0 }}</span>
                   </h3>
-                  <small>USD Balance ({{trades.stats[0].usd / btc.idx | number:2 }} btc)</small>
+                  <small>USD Balance ({{ balance.usd / btc.idx | number:2 }} btc)</small>
                 </div>
-                <div class="icon ">
+                <div class="icon">
                   <i class="fa fa-money font-red-haze"></i>
                 </div>
               </div>
@@ -116,9 +116,9 @@
               <div class="display">
                 <div class="number">
                   <h3 class="font-blue-sharp">
-                    <span data-counter="counterup" data-value="{{ trades.stats[0].btc | number:0 }}">{{ trades.stats[0].btc | number:0 }}</span>
+                    <span data-counter="counterup" data-value="{{ balance.btc | number:0 }}">{{ balance.btc | number:0 }}</span>
                   </h3>
-                  <small>BTC Balance ({{trades.stats[0].btc * btc.idx | currency:"$":2 }})</small>
+                  <small>BTC Balance ({{ balance.btc * btc.idx | currency:"$":0 }})</small>
                 </div>
                 <div class="icon">
                   <i class="fa fa-btc font-blue-sharp"></i>

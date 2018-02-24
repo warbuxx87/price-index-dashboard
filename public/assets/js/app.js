@@ -9,6 +9,7 @@ app.filter('ceil', function() {
 app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 	$scope.btc = []
 	$scope.trades = []
+	$scope.balance = []
 
 	var upd_btc = function() {
 		$http.get('updates')
@@ -54,6 +55,8 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 				for (var i = 0; i < response.data.exchanges.length; i++) {
 					total_trades = total_trades + response.data.exchanges[i].total;
 				}
+				btc = $scope.trades.stats[0].btc;
+				usd = $scope.trades.stats[0].usd;
 				if (btc != 0) {
 					$scope.balance.btc = btc;
 				}
@@ -94,6 +97,10 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 
 	upd_btc();
 	upd_trades();
+
+	// need this functions and assignments after upd_trades is called
+	//$scope.btcp = btc.idx
+	//$scope.usdp = 
 
 	app.config(['RollbarProvider', function(RollbarProvider) {
 		RollbarProvider.init({
