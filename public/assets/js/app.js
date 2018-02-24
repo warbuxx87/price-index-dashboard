@@ -61,10 +61,10 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 	};
 
 	$scope.getClass = function(value) {
-		if (value == 'Buy') {
+		if (value = 'Buy') {
 			return value 'green';
 		}
-		if (value == 'Sell') {
+		if (value = 'Sell') {
 			return value 'red';
 		}
 		if ((typeof value) == "string") return "";
