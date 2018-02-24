@@ -63,8 +63,12 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 				if (usd != 0) {
 					$scope.balance.usd = usd;
 				}
-				$scope.trades.total_profit = total_profit;
-				$scope.trades.total_trades = total_trades;
+				if (total_profit != 0) {
+					$scope.trades.total_profit = total_profit;
+				}
+				if (total_trades) {
+					$scope.trades.total_trades = total_trades;
+				}
 				setTimeout(upd_trades, 10000);
 			})
 			.catch(function() {
@@ -100,7 +104,7 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 
 	// need this functions and assignments after upd_trades is called
 	//$scope.btcp = btc.idx
-	//$scope.usdp = 
+	//$scope.usdp =
 
 	app.config(['RollbarProvider', function(RollbarProvider) {
 		RollbarProvider.init({
