@@ -117,25 +117,24 @@
                     <thead>
                       <tr>
                         <th>Exchange</th>
-                        <th class="hidden-480">%</th>
+                        <th>%</th>
                         <th>Bid</th>
                         <th>Ask</th>
-                        <th class="hidden-480">%</th>
+                        <th>%</th>
 
-                        <th class="hidden-480">Volume</th>
-                        <th class="hidden-480">Updated</th>
+                        <th>Volume</th>
+                        <th>Updated</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr data-ng-repeat="market in btc.markets">
                         <td>{{ market.name }}</td>
-                        <td class="hidden-480" ng-class="getClass(market.buy_take)"><b>{{ market.buy_take | number:2 }}%</b></td>
+                        <td ng-class="getClass(market.buy_take)"><b>{{ market.buy_take | number:2 }}%</b></td>
                         <td>{{ market.bid | currency:"$":2 }}</td>
                         <td>{{ market.ask | currency:"$":2 }}</td>
-                        <td class="hidden-480" ng-class="getClass(market.sell_take)"><b>{{ market.sell_take | number:2 }}%</b></td>
-
-                        <td class="hidden-480">{{ market.volume | number:2 }} </td>
-                        <td class="hidden-480">{{ market.updated | date:'HH:mm:ss' }}</td>
+                        <td ng-class="getClass(market.sell_take)"><b>{{ market.sell_take | number:2 }}%</b></td>
+                        <td>{{ market.volume | number:2 }} </td>
+                        <td>{{ market.updated | date:'HH:mm:ss' }}</td>
                       </tr>
                     </tbody>
                   </table>
@@ -173,8 +172,8 @@
                         <th>Trades</th>
                         <th>Profits</th>
                         <th>Fees </th>
-                        <th class="hidden-480">Avg Earn</th>
-                        <th class="hidden-480">Route</th>
+                        <th>Avg Earn</th>
+                        <th>Route</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -183,8 +182,8 @@
                         <td> {{ bot.trades }} </td>
                         <td> {{ bot.profits | currency:"$":2 }} </td>
                         <td> {{ bot.fees | currency :"$":2 }}</td>
-                        <td class="hidden-480"> {{ bot.avg_earn | currency:"$":2 }} </td>
-                        <td class="hidden-480"> {{ bot.name }} </td>
+                        <td> {{ bot.avg_earn | currency:"$":2 }} </td>
+                        <td> {{ bot.name }} </td>
                       </tr>
                     </tbody>
                   </table>
@@ -222,18 +221,18 @@
                         <th>Order</th>
                         <th>Price</th>
                         <th>Amount</th>
-                        <th class="hidden-480">Arbitrage</th>
-                        <th class="hidden-480">Completed</th>
+                        <th>Arbitrage</th>
+                        <th>Completed</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr data-ng-repeat="exchange in trades.exchanges | orderBy: '-updated' ">
                         <td>{{ exchange.name}} ({{exchange.total}})</td>
-                        <td>{{ exchange.order }}</td>
-                        <td>{{ exchange.price | currency:"$":2 }}</td>
-                        <td>{{ exchange.amount }} BTC</td>
-                        <td class="hidden-480">{{ exchange.last_arbitrage }}</td>
-                        <td class="hidden-480">{{ exchange.updated | date:'HH:mm:ss' }}</td>
+                        <td ng-class="getClass(exchange.order)">{{ exchange.order }}</td>
+                        <td ng-class="getClass(exchange.order)">{{ exchange.price | currency:"$":2 }}</td>
+                        <td ng-class="getClass(exchange.order)">{{ exchange.amount }} BTC</td>
+                        <td>{{ exchange.last_arbitrage }}</td>
+                        <td>{{ exchange.updated | date:'HH:mm:ss' }}</td>
                       </tr>
                     </tbody>
                   </table>
