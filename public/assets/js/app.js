@@ -72,6 +72,12 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 		return value > 0 ? 'green' : 'red';
 	};
 
+	var d = new Date();
+	d = d.getDate();
+	d = 48 - d;
+	d = 30 - d;
+	$scope.d = d;
+
 	upd_btc();
 	upd_trades();
 
