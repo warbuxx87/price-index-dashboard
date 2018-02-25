@@ -61,14 +61,14 @@
             <div class="dashboard-stat2 ">
               <div class="display">
                 <div class="number">
-                  <h3 class="font-green-sharp">
-                   <small class="font-green-sharp">$</small>
+                  <h3 class="font-blue-sharp">
+                   <small class="font-blue-sharp">$</small>
                    <span data-counter="counterup" data-value="{{ trades.total_profit | number:2 }}">{{ trades.total_profit | number:2 }}</span>
                   </h3>
                   <small>PROFIT THIS CYCLE</small>
                 </div>
                 <div class="icon">
-                  <i class="icon-pie-chart font-green-sharp"></i>
+                  <i class="icon-pie-chart font-blue-sharp"></i>
                 </div>
               </div>
               <div class="progress-info">
@@ -88,8 +88,8 @@
             <div class="dashboard-stat2 ">
               <div class="display">
                 <div class="number">
-                  <h3 class="font-red-haze">
-                    <small class="font-green-seagreen">$</small>
+                  <h3 class="font-green-sharp">
+                    <small class="font-green-sharp">$</small>
                     <span data-counter="counterup" data-value="{{ balance.usd | number:0 }}">{{ balance.usd | number:0 }}</span>
                   </h3>
                   <small>USD Balance ({{ balance.usd / btc.idx | number:2 }} btc)</small>
@@ -100,7 +100,7 @@
               </div>
               <div class="progress-info">
                 <div class="progress">
-                  <span style="width: {{ ((balance.usd) / ((balance.btc * btc.idx) + balance.usd)) * 100 }}%;" class="progress-bar progress-bar-success green-seagreen">
+                  <span style="width: {{ ((balance.usd) / ((balance.btc * btc.idx) + balance.usd)) * 100 }}%;" class="progress-bar progress-bar-success green-sharp">
                   <span class="sr-only"> {{ ((balance.usd) / ((balance.btc * btc.idx) + balance.usd)) * 100 | number:2 }}% weight</span>
                   </span>
                 </div>
