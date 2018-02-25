@@ -78,7 +78,7 @@
                   </span>
                 </div>
                 <div class="status">
-                  <div class="status-title"> Cycle Period  </div>
+                  <div class="status-title"> Cycle Period </div>
                   <div class="status-number"> {{ d }} Days </div>
                 </div>
               </div>
@@ -89,24 +89,24 @@
               <div class="display">
                 <div class="number">
                   <h3 class="font-red-haze">
-                    <small class="font-red-haze">$</small>
+                    <small class="font-green-seagreen">$</small>
                     <span data-counter="counterup" data-value="{{ balance.usd | number:0 }}">{{ balance.usd | number:0 }}</span>
                   </h3>
                   <small>USD Balance ({{ balance.usd / btc.idx | number:2 }} btc)</small>
                 </div>
                 <div class="icon">
-                  <i class="fa fa-money font-red-haze"></i>
+                  <i class="fa fa-money font-green-seagreen"></i>
                 </div>
               </div>
               <div class="progress-info">
                 <div class="progress">
-                  <span style="width: {{ ((balance.usd) / ((balance.btc * btc.idx) + balance.usd)) * 100 }}%;" class="progress-bar progress-bar-success red-haze">
+                  <span style="width: {{ ((balance.usd) / ((balance.btc * btc.idx) + balance.usd)) * 100 }}%;" class="progress-bar progress-bar-success green-seagreen">
                   <span class="sr-only"> {{ ((balance.usd) / ((balance.btc * btc.idx) + balance.usd)) * 100 | number:2 }}% weight</span>
                   </span>
                 </div>
                 <div class="status">
                   <div class="status-title"> weight </div>
-                  <div class="status-number"> {{ ((balance.usd) / ((balance.btc * btc.idx) + balance.usd)) * 100 | number:2 }}% </div>
+                  <div class="status-number"> {{((balance.usd) / (( balance.btc * btc.idx) + balance.usd)) * 100 | number:2 }}% </div>
                 </div>
               </div>
             </div>
@@ -115,18 +115,18 @@
             <div class="dashboard-stat2 ">
               <div class="display">
                 <div class="number">
-                  <h3 class="font-blue-sharp">
+                  <h3 class="font-yellow-gold">
                     <span data-counter="counterup" data-value="{{ balance.btc | number:0 }}">{{ balance.btc | number:0 }}</span>
                   </h3>
                   <small>BTC Balance ({{ balance.btc * btc.idx | currency:"$":0 }})</small>
                 </div>
                 <div class="icon">
-                  <i class="fa fa-btc font-blue-sharp"></i>
+                  <i class="fa fa-btc font-yellow-gold"></i>
                 </div>
               </div>
               <div class="progress-info">
                 <div class="progress">
-                  <span style="width: {{ ((balance.btc * btc.idx) / ((balance.btc * btc.idx) + balance.usd)) * 100 | number:2 }}%;" class="progress-bar progress-bar-success blue-sharp">
+                  <span style="width: {{ ((balance.btc * btc.idx) / ((balance.btc * btc.idx) + balance.usd)) * 100 | number:2 }}%;" class="progress-bar progress-bar-success yellow-gold">
                   <span class="sr-only">{{ ((balance.btc * btc.idx) / ((balance.btc * btc.idx) + balance.usd)) * 100 | number:2 }} % weight</span>
                   </span>
                 </div>
@@ -137,434 +137,508 @@
               </div>
             </div>
           </div>
-
-        </div>
-        <!--End First Row -->
-
-        <div class="row">
-          <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-            <div class="dashboard-stat purple">
-              <div class="visual">
-                <i class="fa fa-btc"></i>
-              </div>
-              <div class="details">
-                <div class="number index-value">{{btc.idx | currency:"$":2 }}</div>
-                <div class="desc">Index Value</div>
-              </div>
-              <div class="more">Bitcoin Price Index</div>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-            <div class="lead dashboard-stat dashboard-stat-v2 green" ng-show="btc.margin">
-              <div class="visual">
-                <i class="fa fa-btc"></i>
-              </div>
-              <div class="details">
-                <div class="number">
-                  Opportunity <b>{{ btc.margin |number:2 }}%</b>
-                </div>
-                <div class="desc">
-                  Buy {{ btc.buy_market.name }} at <b>{{ btc.buy_market.ask | currency:"$":2 }}</b>, Sell {{ btc.sell_market.name }} at <b>{{ btc.sell_market.bid | currency:"$":2 }}</b>,
-                </div>
-              </div>
-              <div class="more">Bitcoin Arbitrage Strategy</div>
-            </div>
-            <div class="lead dashboard-stat dashboard-stat-v2 green" ng-hide="btc.margin">
-              <div class="visual">
-                <i class="fa fa-btc"></i>
-              </div>
-              <div class="details">
-                <div class="number">
-                  0.00 %
-                </div>
-                <div class="desc">
-                  No Opportunity Found.
-                </div>
-
-              </div>
-              <div class="more">Bitcoin Arbitrage Strategy</div>
-            </div>
-          </div>
-        </div>
-        <div class="clearfix"></div>
-        <div class="row">
-          <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-            <div class="portlet box purple">
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="portlet light portlet-fit ">
               <div class="portlet-title">
-                <div class="caption">BTC/USD Markets </div>
-                <div class="tools">
-                  <a href="" class="fullscreen" data-original-title="" title=""> </a>
+                <div class="caption">
+                  <i class=" icon-layers font-dark"></i>
+                  <span class="caption-subject font-dark bold uppercase">Total Portfolio</span>
+                </div>
+                <div class="actions">
+                  <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                                                <i class="icon-cloud-upload"></i>
+                                                            </a>
+                  <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                                                <i class="icon-wrench"></i>
+                                                            </a>
+                  <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                                                <i class="icon-trash"></i>
+                                                            </a>
                 </div>
               </div>
               <div class="portlet-body">
-                <div class="table-responsive">
-                  <table class="table table-bordered table-hover table-striped">
-                    <thead>
-                      <tr>
-                        <th>Exchange</th>
-                        <th>%</th>
-                        <th>Bid</th>
-                        <th>Ask</th>
-                        <th>%</th>
-                        <th>Volume</th>
-                        <th>Updated</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr data-ng-repeat="market in btc.markets">
-                        <td>{{ market.name }}</td>
-                        <td ng-class="getClass(market.buy_take)"><b>{{ market.buy_take | number:2 }}%</b></td>
-                        <td>{{ market.bid | currency:"$":2 }}</td>
-                        <td>{{ market.ask | currency:"$":2 }}</td>
-                        <td ng-class="getClass(market.sell_take)"><b>{{ market.sell_take | number:2 }}%</b></td>
-                        <td>{{ market.volume | number:2 }} </td>
-                        <td>{{ market.updated | date:'HH:mm:ss' }}</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                <h4>A donut hole can be added.</h4>
+                <div id="donut" class="chart" style="padding: 0px; position: relative;"> <canvas class="flot-base" width="1030" height="600" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 515px; height: 300px;"></canvas><canvas class="flot-overlay" width="1030" height="600" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 515px; height: 300px;"></canvas>
+                  <div
+                    class="legend">
+                    <div style="position: absolute; width: 54px; height: 80px; top: 5px; right: 5px; background-color: rgb(255, 255, 255); opacity: 0.85;"> </div>
+                    <table style="position:absolute;top:5px;right:5px;;font-size:smaller;color:#545454">
+                      <tbody>
+                        <tr>
+                          <td class="legendColorBox">
+                            <div style="border:1px solid #ccc;padding:1px">
+                              <div style="width:4px;height:0;border:5px solid rgb(237,194,64);overflow:hidden"></div>
+                            </div>
+                          </td>
+                          <td class="legendLabel">Series1</td>
+                        </tr>
+                        <tr>
+                          <td class="legendColorBox">
+                            <div style="border:1px solid #ccc;padding:1px">
+                              <div style="width:4px;height:0;border:5px solid rgb(175,216,248);overflow:hidden"></div>
+                            </div>
+                          </td>
+                          <td class="legendLabel">Series2</td>
+                        </tr>
+                        <tr>
+                          <td class="legendColorBox">
+                            <div style="border:1px solid #ccc;padding:1px">
+                              <div style="width:4px;height:0;border:5px solid rgb(203,75,75);overflow:hidden"></div>
+                            </div>
+                          </td>
+                          <td class="legendLabel">Series3</td>
+                        </tr>
+                        <tr>
+                          <td class="legendColorBox">
+                            <div style="border:1px solid #ccc;padding:1px">
+                              <div style="width:4px;height:0;border:5px solid rgb(77,167,77);overflow:hidden"></div>
+                            </div>
+                          </td>
+                          <td class="legendLabel">Series4</td>
+                        </tr>
+                        <tr>
+                          <td class="legendColorBox">
+                            <div style="border:1px solid #ccc;padding:1px">
+                              <div style="width:4px;height:0;border:5px solid rgb(148,64,237);overflow:hidden"></div>
+                            </div>
+                          </td>
+                          <td class="legendLabel">Series5</td>
+                        </tr>
+                      </tbody>
+                    </table>
                 </div>
               </div>
-            </div>
-            <!--  <div class="note note-info">
-              <p>All percents are calculated in comparison with the Price Index above, and take account of the exchange's fees. But they do not automatically account for exchange trade volume discounts. </p>
-
-            </div>-->
-            <div class="portlet box purple">
-              <div class="portlet-title">
-                <div class="caption">Bot Performance</div>
-                <div class="tools">
-                  <a href="" class="fullscreen" data-original-title="Bot Performance" title="Bot Performance"> </a>
-                </div>
-              </div>
-              <div class="portlet-body">
-                <div class="table-responsive">
-                  <table class="table table-bordered table-hover table-striped">
-                    <thead>
-                      <tr>
-                        <th>#</th>
-                        <th>Trades</th>
-                        <th>Profits</th>
-                        <th>Fees </th>
-                        <th>Avg Earn</th>
-                        <th>Route</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr data-ng-repeat="bot in trades.bots">
-                        <td> {{ $index + 1 }}</td>
-                        <td> {{ bot.trades }} </td>
-                        <td> {{ bot.profits | currency:"$":2 }} </td>
-                        <td> {{ bot.fees | currency :"$":2 }}</td>
-                        <td> {{ bot.avg_earn | currency:"$":2 }} </td>
-                        <td> {{ bot.name }} </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-
-
-
-            <div class="dashboard-stat green">
-              <div class="visual">
-                <i class="fa fa-btc"></i>
-              </div>
-              <div class="details">
-                <div class="number">{{ btc.total_volume | number:0 }} BTC</div>
-                <div class="desc">Total Exchange Volume</div>
-              </div>
-              <div class="more">Last 24 Hours</div>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-            <div class="portlet box blue">
-              <div class="portlet-title">
-                <div class="caption">Last Order By Exchange </div>
-                <div class="tools">
-                  <a href="" class="fullscreen" data-original-title="" title=""> </a>
-                </div>
-              </div>
-              <div class="portlet-body">
-                <div class="table-responsive">
-                  <table class="table table-bordered table-hover table-striped">
-                    <thead>
-                      <tr>
-                        <th>Exchange</th>
-                        <th>Order</th>
-                        <th>Price</th>
-                        <th>Amount</th>
-                        <th>Arbitrage</th>
-                        <th>Completed</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr data-ng-repeat="exchange in trades.exchanges | orderBy: '-updated' ">
-                        <td>{{ exchange.name}} ({{exchange.total}})</td>
-                        <td ng-class="getClass(exchange.order)">{{ exchange.order }}</td>
-                        <td ng-class="getClass(exchange.order)">{{ exchange.price | currency:"$":2 }}</td>
-                        <td ng-class="getClass(exchange.order)">{{ exchange.amount }} BTC</td>
-                        <td>{{ exchange.last_arbitrage }}</td>
-                        <td>{{ exchange.updated | date:'HH:mm:ss' }}</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-
-            <div class="dashboard-stat red">
-              <div class="visual">
-                <i class="fa fa-btc"></i>
-              </div>
-              <div class="details">
-                <div class="number">{{ trades.total_trades | number:0 }} BTC</div>
-                <div class="desc">Total Trade Volume</div>
-              </div>
-              <div class="more">Bitcoin USD Arbitrage - Since Jan 19, 2018</div>
-            </div>
-
-            <div class="portlet box red">
-              <div class="portlet-title">
-                <div class="caption">Portfolio Performance by Exchange </div>
-                <div class="tools">
-                  <a href="" class="fullscreen" data-original-title="" title=""> </a>
-                </div>
-              </div>
-              <div class="portlet-body">
-                <div class="table-responsive">
-                  <table class="table table-bordered table-hover table-striped">
-                    <thead>
-                      <tr>
-                        <th>Exchange</th>
-                        <th>Orders</th>
-                        <th>Fill</th>
-                        <th>Buy / Sell</th>
-                        <th>USD</th>
-                        <th>BTC</th>
-                        <th>Avg Buy</th>
-                        <th>Avg Sell</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr data-ng-repeat="exchange in trades.exchanges">
-                        <td> {{ exchange.name }}</td>
-                        <td> {{ exchange.total | number:0 }} </td>
-                        <td> {{ exchange.success | number:2 }}% </td>
-                        <td> {{ exchange.buy_orders | number:0 }} / {{ exchange.sell_orders | number:0 }}</td>
-                        <td> {{ exchange.usd | currency:"$":0 }} </td>
-                        <td> {{ exchange.btc | number:0 }}</td>
-                        <td> {{ exchange.avg_buy | currency:"$":0 }} </td>
-                        <td> {{ exchange.avg_sell | currency:"$":0 }}</td>
-                      </tr>
-                      <tr data-ng-repeat="stat in trades.stats">
-                        <td> Totals</td>
-                        <td> {{ stat.total | number:0 }} </td>
-                        <td {{ stat.success | number:2 }}% </td>
-                          <td> {{ stat.buy_orders | number:0 }} / {{ stat.sell_orders | number:0 }}</td>
-                          <td> <span class="label label-success">{{ stat.usd | currency:"$":0 }}</span> </td>
-                          <td> <span class="label label-danger">{{ stat.btc | number:0 }}</span></td>
-                          <td> {{ stat.avg_buy | currency:"$":0 }} </td>
-                          <td> {{ stat.avg_sell | currency:"$":0 }}</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-
-
-
-          </div>
-
-
-
-
-
-        </div>
-        <div class="clearfix"></div>
-
-        <!-- BEGIN BTC/CAD STATS -->
-        <div class="row">
-          <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-            <div class="dashboard-stat grey-cascade" id="index-up-down">
-              <div class="visual">
-              </div>
-              <div class="details">
-                <div class="number" id="index-change">Loading...</div>
-                <div class="desc">24 Hour Change</div>
-              </div>
-              <div class="more" id="index-high">24 Hour High: Loading...</div>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-            <div class="dashboard-stat blue">
-              <div class="visual"></div>
-              <div class="details">
-                <div class="number" id="index-volume">Loading...</div>
-                <div class="desc">24 Hour Volume</div>
-              </div>
-              <div class="more" id="index-low">24 Hour Low: Loading...</div>
             </div>
           </div>
         </div>
-        <!-- END DASHBOARD STATS -->
-        <div class="clearfix">
-        </div>
 
+      </div>
+      <!--End First Row -->
 
-
-
-        <div class="row">
-
-          <div class="col-md-6">
-
-            <!-- BEGIN CAD Price TABLE PORTLET-->
-            <div class="portlet box blue-madison">
-              <div class="portlet-title">
-                <div class="caption">CAD Price Index: <span class="number index-value" id="index-value">Loading...</span> </div>
-                <div class="tools">
-                  <a href="" class="fullscreen" data-original-title="" title=""> </a>
-                </div>
-              </div>
-              <div class="portlet-body">
-                <table class="table table-bordered table-hover" id="exchange_table">
-                  <thead>
-                    <tr>
-                      <th>Exchange</th>
-                      <th>Bid</th>
-                      <th>Ask</th>
-                      <th>Last</th>
-                      <th>Volume</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td colspan="5">Loading...</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+      <div class="row">
+        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+          <div class="dashboard-stat purple">
+            <div class="visual">
+              <i class="fa fa-btc"></i>
             </div>
-            <!-- END TABLE PORTLET-->
-          </div>
-
-          <div class="col-md-6">
-            <!-- BEGIN  TABLE PORTLET-->
-            <div class="portlet box purple-plum">
-              <div class="portlet-title">
-                <div class="caption">CAD Market Data Summary </div>
-              </div>
-              <div class="portlet-body">
-
-                <table class="table table-bordered table-hover" id="market_table">
-                  <tbody>
-                    <tr>
-                      <td colspan="2">Loading...</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+            <div class="details">
+              <div class="number index-value">{{btc.idx | currency:"$":2 }}</div>
+              <div class="desc">Index Value</div>
             </div>
-            <!-- END  TABLE PORTLET-->
-
-
+            <div class="more">Bitcoin Price Index</div>
           </div>
         </div>
-
-        <div class="clearfix">
-        </div>
-        <div class="row">
-          <div class="col-md-12 col-sm-12">
-            <!-- BEGIN PORTLET-->
-            <div class="portlet solid bordered grey-cararra">
-              <div class="portlet-title">
-                <div class="caption">Depth OrderBook BTC/CAD (Consolidated)
-                  <div id="webhook_refresh"><img src="/assets/images/loading.gif" alt="loading" /></div>
-                </div>
-              </div>
-              <div class="portlet-body">
-                <div id="site_statistics_loading">
-                  <img src="/assets/images/loading.gif" alt="loading" />
-                </div>
-                <div id="site_statistics_content" class="display-none">
-                  <div id="site_statistics" class="chart">
-                  </div>
-                </div>
-              </div>
-              <div class="note note-info">
-                <p>The order book is a consolidated list of the top 25 bid/asks from all supported exchanges. The information is automatically refreshed and provides a broad picture of the depth for arbitrage validation.
-                </p>
-              </div>
-
+        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+          <div class="lead dashboard-stat dashboard-stat-v2 green" ng-show="btc.margin">
+            <div class="visual">
+              <i class="fa fa-btc"></i>
             </div>
-            <!-- END PORTLET-->
+            <div class="details">
+              <div class="number">
+                Opportunity <b>{{ btc.margin |number:2 }}%</b>
+              </div>
+              <div class="desc">
+                Buy {{ btc.buy_market.name }} at <b>{{ btc.buy_market.ask | currency:"$":2 }}</b>, Sell {{ btc.sell_market.name }} at <b>{{ btc.sell_market.bid | currency:"$":2 }}</b>,
+              </div>
+            </div>
+            <div class="more">Bitcoin Arbitrage Strategy</div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <!-- BEGIN TABLE PORTLET-->
-            <div class="portlet box red">
-              <div class="portlet-title">
-                <div class="caption">Bids BTC/CAD </div>
-                <div class="tools">
-                  <a href="" class="fullscreen" data-original-title="" title=""> </a>
-                </div>
-              </div>
-              <div class="portlet-body">
-                <table class="table table-bordered table-hover table-striped" id="bid_table">
-                  <thead>
-                    <tr>
-                      <th>Price</th>
-                      <th>Amount</th>
-                      <th>Value</th>
-                      <th class="hidden-480">Cumulative</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td colspan="4">Loading...</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+          <div class="lead dashboard-stat dashboard-stat-v2 green" ng-hide="btc.margin">
+            <div class="visual">
+              <i class="fa fa-btc"></i>
             </div>
-            <!-- END TABLE PORTLET-->
+            <div class="details">
+              <div class="number">
+                0.00 %
+              </div>
+              <div class="desc">
+                No Opportunity Found.
+              </div>
 
-          </div>
-          <div class="col-md-6">
-            <!-- BEGIN BORDERED TABLE PORTLET-->
-            <div class="portlet box blue-madison">
-              <div class="portlet-title">
-                <div class="caption">Asks BTC/CAD</div>
-                <div class="tools">
-                  <a href="" class="fullscreen" data-original-title="" title=""> </a>
-                </div>
-              </div>
-              <div class="portlet-body">
-                <table class="table table-bordered table-hover table-striped" id="ask_table">
-                  <thead>
-                    <tr>
-                      <th>Price</th>
-                      <th>Amount</th>
-                      <th>Value</th>
-                      <th class="hidden-480">Cumulative</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td colspan="4">Loading...</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
             </div>
-            <!-- END BORDERED TABLE PORTLET-->
+            <div class="more">Bitcoin Arbitrage Strategy</div>
           </div>
         </div>
       </div>
+      <div class="clearfix"></div>
+      <div class="row">
+        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+          <div class="portlet box purple">
+            <div class="portlet-title">
+              <div class="caption">BTC/USD Markets </div>
+              <div class="tools">
+                <a href="" class="fullscreen" data-original-title="" title=""> </a>
+              </div>
+            </div>
+            <div class="portlet-body">
+              <div class="table-responsive">
+                <table class="table table-bordered table-hover table-striped">
+                  <thead>
+                    <tr>
+                      <th>Exchange</th>
+                      <th>%</th>
+                      <th>Bid</th>
+                      <th>Ask</th>
+                      <th>%</th>
+                      <th>Volume</th>
+                      <th>Updated</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr data-ng-repeat="market in btc.markets">
+                      <td>{{ market.name }}</td>
+                      <td ng-class="getClass(market.buy_take)"><b>{{ market.buy_take | number:2 }}%</b></td>
+                      <td>{{ market.bid | currency:"$":2 }}</td>
+                      <td>{{ market.ask | currency:"$":2 }}</td>
+                      <td ng-class="getClass(market.sell_take)"><b>{{ market.sell_take | number:2 }}%</b></td>
+                      <td>{{ market.volume | number:2 }} </td>
+                      <td>{{ market.updated | date:'HH:mm:ss' }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!--  <div class="note note-info">
+              <p>All percents are calculated in comparison with the Price Index above, and take account of the exchange's fees. But they do not automatically account for exchange trade volume discounts. </p>
+
+            </div>-->
+          <div class="portlet box purple">
+            <div class="portlet-title">
+              <div class="caption">Trade Engine Performance</div>
+              <div class="tools">
+                <a href="" class="fullscreen" data-original-title="Bot Performance" title="Trade Engine Performance"> </a>
+              </div>
+            </div>
+            <div class="portlet-body">
+              <div class="table-responsive">
+                <table class="table table-bordered table-hover table-striped">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Trades</th>
+                      <th>Profits</th>
+                      <th>Fees </th>
+                      <th>Avg Earn</th>
+                      <th>Route</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr data-ng-repeat="bot in trades.bots">
+                      <td> {{ $index + 1 }}</td>
+                      <td> {{ bot.trades }} </td>
+                      <td> {{ bot.profits | currency:"$":2 }} </td>
+                      <td> {{ bot.fees | currency :"$":2 }}</td>
+                      <td> {{ bot.avg_earn | currency:"$":2 }} </td>
+                      <td> {{ bot.name }} </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="dashboard-stat green">
+            <div class="visual">
+              <i class="fa fa-btc"></i>
+            </div>
+            <div class="details">
+              <div class="number">{{ btc.total_volume | number:0 }} BTC</div>
+              <div class="desc">Total Exchange Volume</div>
+            </div>
+            <div class="more">Last 24 Hours</div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+          <div class="portlet box blue">
+            <div class="portlet-title">
+              <div class="caption">Last Order By Exchange </div>
+              <div class="tools">
+                <a href="" class="fullscreen" data-original-title="" title=""> </a>
+              </div>
+            </div>
+            <div class="portlet-body">
+              <div class="table-responsive">
+                <table class="table table-bordered table-hover table-striped">
+                  <thead>
+                    <tr>
+                      <th>Exchange</th>
+                      <th>Order</th>
+                      <th>Price</th>
+                      <th>Amount</th>
+                      <th>Arbitrage</th>
+                      <th>Completed</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr data-ng-repeat="exchange in trades.exchanges | orderBy: '-updated' ">
+                      <td>{{ exchange.name}} ({{exchange.total}})</td>
+                      <td ng-class="getClass(exchange.order)">{{ exchange.order }}</td>
+                      <td ng-class="getClass(exchange.order)">{{ exchange.price | currency:"$":2 }}</td>
+                      <td ng-class="getClass(exchange.order)">{{ exchange.amount }} BTC</td>
+                      <td>{{ exchange.last_arbitrage }}</td>
+                      <td>{{ exchange.updated | date:'HH:mm:ss' }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="dashboard-stat red">
+            <div class="visual">
+              <i class="fa fa-btc"></i>
+            </div>
+            <div class="details">
+              <div class="number">{{ trades.total_trades | number:0 }} BTC</div>
+              <div class="desc">Total Trade Volume</div>
+            </div>
+            <div class="more">Bitcoin USD Arbitrage - Since Jan 19, 2018</div>
+          </div>
+
+          <div class="portlet box red">
+            <div class="portlet-title">
+              <div class="caption">Portfolio Performance by Exchange </div>
+              <div class="tools">
+                <a href="" class="fullscreen" data-original-title="" title=""> </a>
+              </div>
+            </div>
+            <div class="portlet-body">
+              <div class="table-responsive">
+                <table class="table table-bordered table-hover table-striped">
+                  <thead>
+                    <tr>
+                      <th>Exchange</th>
+                      <th>Orders</th>
+                      <th>Fill</th>
+                      <th>Buy / Sell</th>
+                      <th>USD</th>
+                      <th>BTC</th>
+                      <th>Avg Buy</th>
+                      <th>Avg Sell</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr data-ng-repeat="exchange in trades.exchanges">
+                      <td> {{ exchange.name }}</td>
+                      <td> {{ exchange.total | number:0 }} </td>
+                      <td> {{ exchange.success | number:2 }}% </td>
+                      <td> {{ exchange.buy_orders | number:0 }} / {{ exchange.sell_orders | number:0 }}</td>
+                      <td> {{ exchange.usd | currency:"$":0 }} </td>
+                      <td> {{ exchange.btc | number:0 }}</td>
+                      <td> {{ exchange.avg_buy | currency:"$":0 }} </td>
+                      <td> {{ exchange.avg_sell | currency:"$":0 }}</td>
+                    </tr>
+                    <tr data-ng-repeat="stat in trades.stats">
+                      <td> Totals</td>
+                      <td> {{ stat.total | number:0 }} </td>
+                      <td {{ stat.success | number:2 }}% </td>
+                        <td> {{ stat.buy_orders | number:0 }} / {{ stat.sell_orders | number:0 }}</td>
+                        <td> <span class="label label-success">{{ stat.usd | currency:"$":0 }}</span> </td>
+                        <td> <span class="label label-danger">{{ stat.btc | number:0 }}</span></td>
+                        <td> {{ stat.avg_buy | currency:"$":0 }} </td>
+                        <td> {{ stat.avg_sell | currency:"$":0 }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+
+
+
+
+
+      </div>
+      <div class="clearfix"></div>
+
+      <!-- BEGIN BTC/CAD STATS -->
+      <div class="row">
+        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+          <div class="dashboard-stat grey-cascade" id="index-up-down">
+            <div class="visual">
+            </div>
+            <div class="details">
+              <div class="number" id="index-change">Loading...</div>
+              <div class="desc">24 Hour Change</div>
+            </div>
+            <div class="more" id="index-high">24 Hour High: Loading...</div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+          <div class="dashboard-stat blue">
+            <div class="visual"></div>
+            <div class="details">
+              <div class="number" id="index-volume">Loading...</div>
+              <div class="desc">24 Hour Volume</div>
+            </div>
+            <div class="more" id="index-low">24 Hour Low: Loading...</div>
+          </div>
+        </div>
+      </div>
+      <!-- END DASHBOARD STATS -->
+      <div class="clearfix">
+      </div>
+
+
+
+
+      <div class="row">
+
+        <div class="col-md-6">
+
+          <!-- BEGIN CAD Price TABLE PORTLET-->
+          <div class="portlet box blue-madison">
+            <div class="portlet-title">
+              <div class="caption">CAD Price Index: <span class="number index-value" id="index-value">Loading...</span> </div>
+              <div class="tools">
+                <a href="" class="fullscreen" data-original-title="" title=""> </a>
+              </div>
+            </div>
+            <div class="portlet-body">
+              <table class="table table-bordered table-hover" id="exchange_table">
+                <thead>
+                  <tr>
+                    <th>Exchange</th>
+                    <th>Bid</th>
+                    <th>Ask</th>
+                    <th>Last</th>
+                    <th>Volume</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td colspan="5">Loading...</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- END TABLE PORTLET-->
+        </div>
+
+        <div class="col-md-6">
+          <!-- BEGIN  TABLE PORTLET-->
+          <div class="portlet box purple-plum">
+            <div class="portlet-title">
+              <div class="caption">CAD Market Data Summary </div>
+            </div>
+            <div class="portlet-body">
+
+              <table class="table table-bordered table-hover" id="market_table">
+                <tbody>
+                  <tr>
+                    <td colspan="2">Loading...</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- END  TABLE PORTLET-->
+
+
+        </div>
+      </div>
+
+      <div class="clearfix">
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-sm-12">
+          <!-- BEGIN PORTLET-->
+          <div class="portlet solid bordered grey-cararra">
+            <div class="portlet-title">
+              <div class="caption">Depth OrderBook BTC/CAD (Consolidated)
+                <div id="webhook_refresh"><img src="/assets/images/loading.gif" alt="loading" /></div>
+              </div>
+            </div>
+            <div class="portlet-body">
+              <div id="site_statistics_loading">
+                <img src="/assets/images/loading.gif" alt="loading" />
+              </div>
+              <div id="site_statistics_content" class="display-none">
+                <div id="site_statistics" class="chart">
+                </div>
+              </div>
+            </div>
+            <div class="note note-info">
+              <p>The order book is a consolidated list of the top 25 bid/asks from all supported exchanges. The information is automatically refreshed and provides a broad picture of the depth for arbitrage validation.
+              </p>
+            </div>
+
+          </div>
+          <!-- END PORTLET-->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <!-- BEGIN TABLE PORTLET-->
+          <div class="portlet box red">
+            <div class="portlet-title">
+              <div class="caption">Bids BTC/CAD </div>
+              <div class="tools">
+                <a href="" class="fullscreen" data-original-title="" title=""> </a>
+              </div>
+            </div>
+            <div class="portlet-body">
+              <table class="table table-bordered table-hover table-striped" id="bid_table">
+                <thead>
+                  <tr>
+                    <th>Price</th>
+                    <th>Amount</th>
+                    <th>Value</th>
+                    <th class="hidden-480">Cumulative</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td colspan="4">Loading...</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- END TABLE PORTLET-->
+
+        </div>
+        <div class="col-md-6">
+          <!-- BEGIN BORDERED TABLE PORTLET-->
+          <div class="portlet box blue-madison">
+            <div class="portlet-title">
+              <div class="caption">Asks BTC/CAD</div>
+              <div class="tools">
+                <a href="" class="fullscreen" data-original-title="" title=""> </a>
+              </div>
+            </div>
+            <div class="portlet-body">
+              <table class="table table-bordered table-hover table-striped" id="ask_table">
+                <thead>
+                  <tr>
+                    <th>Price</th>
+                    <th>Amount</th>
+                    <th>Value</th>
+                    <th class="hidden-480">Cumulative</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td colspan="4">Loading...</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- END BORDERED TABLE PORTLET-->
+        </div>
+      </div>
     </div>
-    <!-- END CONTENT -->
+  </div>
+  <!-- END CONTENT -->
   </div>
   <!-- END CONTAINER -->
   <!-- BEGIN FOOTER -->
