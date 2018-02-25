@@ -125,8 +125,18 @@ var BtcMonitor = function() {
 		self.routes = {};
 
 		self.routes['/updates'] = function(req, res) {
+			// Add headers
 			res.setHeader('Content-Type', 'application/json');
 			res.setHeader('Cache-Control', 'no-cache, no-store');
+			// Website you wish to allow to connect
+			res.setHeader('Access-Control-Allow-Origin', '*');
+			// Request methods you wish to allow
+			res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+			// Request headers you wish to allow
+			res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+			// Set to true if you need the website to include cookies in the requests sent
+			// to the API (e.g. in case you use sessions)
+			// res.setHeader('Access-Control-Allow-Credentials', true);
 			res.end(JSON.stringify({
 				markets: [self.gemini, self.gdax, self.stamp, self.kraken, self.finex, self.bittrex, self.binance],
 				idx: self.xbx.idx,
@@ -148,88 +158,68 @@ var BtcMonitor = function() {
 	self.initializeServer = function() {
 		self.createRoutes();
 		self.app = express();
+		self.app.use(rollbar.errorHandler());
+	});
 
-		// Add headers
-		self.app.use(function(req, res, next) {
+self.app.listen(6943);
 
-			// Website you wish to allow to connect
-			res.setHeader('Access-Control-Allow-Origin', '*');
-
-			// Request methods you wish to allow
-			res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-
-			// Request headers you wish to allow
-			res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-
-			// Set to true if you need the website to include cookies in the requests sent
-			// to the API (e.g. in case you use sessions)
-			res.setHeader('Access-Control-Allow-Credentials', true);
-
-			// Pass to next layer of middleware
-			next();
-			// Use the rollbar error handler to send exceptions to your rollbar account
-			self.app.use(rollbar.errorHandler());
-		});
-
-		self.app.listen(6943);
-
-		self.app.use(express.static('public'));
+self.app.use(express.static('public'));
 
 
 
 
-		//  Add handlers for the app (from the routes).
-		for (var r in self.routes) {
-			self.app.get(r, self.routes[r]);
+//  Add handlers for the app (from the routes).
+for (var r in self.routes) {
+	self.app.get(r, self.routes[r]);
 
-		}
-	};
+}
+};
 
 
 
 
 
 
-	/**
-	 *  Initializes the application.
-	 */
-	self.initialize = function() {
-		self.setupVariables();
-		self.populateCache();
-		self.setupTerminationHandlers();
+/**
+ *  Initializes the application.
+ */
+self.initialize = function() {
+	self.setupVariables();
+	self.populateCache();
+	self.setupTerminationHandlers();
 
-		// Create the express server and routes.
-		self.initializeServer();
-	};
+	// Create the express server and routes.
+	self.initializeServer();
+};
 
 
-	/**
-	 *  Start the server (starts up the sample application).
-	 */
-	self.start = function() {
-		//  Start the app on the specific interface (and port).
-		self.app.listen(self.port, self.ipaddress, function() {
-			console.log('%s: Node server started on %s:%d ...',
-				Date(Date.now()), self.ipaddress, self.port);
-		});
+/**
+ *  Start the server (starts up the sample application).
+ */
+self.start = function() {
+	//  Start the app on the specific interface (and port).
+	self.app.listen(self.port, self.ipaddress, function() {
+		console.log('%s: Node server started on %s:%d ...',
+			Date(Date.now()), self.ipaddress, self.port);
+	});
 
-		self.gdax = new gdax();
-		self.gemini = new gemini();
-		self.stamp = new stamp();
-		self.kraken = new kraken();
-		//self.quoine = new quoine();
-		//self.cex = new cex();
-		//self.quadriga = new quadriga();
-		self.finex = new finex();
-		self.bittrex = new bittrex();
-		// self.poloniex = new poloniex();
-		//self.liqui = new liqui();
-		self.binance = new binance();
+	self.gdax = new gdax();
+	self.gemini = new gemini();
+	self.stamp = new stamp();
+	self.kraken = new kraken();
+	//self.quoine = new quoine();
+	//self.cex = new cex();
+	//self.quadriga = new quadriga();
+	self.finex = new finex();
+	self.bittrex = new bittrex();
+	// self.poloniex = new poloniex();
+	//self.liqui = new liqui();
+	self.binance = new binance();
 
-		//self.hitbtc = new hitbtc();
-		//self.bitmex = new bitmex();
-		self.xbx = new xbx([self.gemini, self.gdax, self.stamp, self.kraken, self.finex, self.bittrex, self.binance]);
-	};
+	//self.hitbtc = new hitbtc();
+	//self.bitmex = new bitmex();
+	self.xbx = new xbx([self.gemini, self.gdax, self.stamp, self.kraken, self.finex, self.bittrex, self.binance]);
+};
 
 }; /*  BTC INDEX ARBITRAGE.  */
 
