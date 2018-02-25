@@ -159,67 +159,66 @@ var BtcMonitor = function() {
 		self.createRoutes();
 		self.app = express();
 		self.app.use(rollbar.errorHandler());
-	});
 
-self.app.listen(6943);
+		self.app.listen(6943);
 
-self.app.use(express.static('public'));
-
+		self.app.use(express.static('public'));
 
 
 
-//  Add handlers for the app (from the routes).
-for (var r in self.routes) {
-	self.app.get(r, self.routes[r]);
 
-}
-};
+		//  Add handlers for the app (from the routes).
+		for (var r in self.routes) {
+			self.app.get(r, self.routes[r]);
 
+		}
+	};
 
 
 
 
 
-/**
- *  Initializes the application.
- */
-self.initialize = function() {
-	self.setupVariables();
-	self.populateCache();
-	self.setupTerminationHandlers();
 
-	// Create the express server and routes.
-	self.initializeServer();
-};
+	/**
+	 *  Initializes the application.
+	 */
+	self.initialize = function() {
+		self.setupVariables();
+		self.populateCache();
+		self.setupTerminationHandlers();
+
+		// Create the express server and routes.
+		self.initializeServer();
+	};
 
 
-/**
- *  Start the server (starts up the sample application).
- */
-self.start = function() {
-	//  Start the app on the specific interface (and port).
-	self.app.listen(self.port, self.ipaddress, function() {
-		console.log('%s: Node server started on %s:%d ...',
-			Date(Date.now()), self.ipaddress, self.port);
-	});
+	/**
+	 *  Start the server (starts up the sample application).
+	 */
+	self.start = function() {
+		//  Start the app on the specific interface (and port).
+		self.app.listen(self.port, self.ipaddress, function() {
+			console.log('%s: Node server started on %s:%d ...',
+				Date(Date.now()), self.ipaddress, self.port);
+		});
 
-	self.gdax = new gdax();
-	self.gemini = new gemini();
-	self.stamp = new stamp();
-	self.kraken = new kraken();
-	//self.quoine = new quoine();
-	//self.cex = new cex();
-	//self.quadriga = new quadriga();
-	self.finex = new finex();
-	self.bittrex = new bittrex();
-	// self.poloniex = new poloniex();
-	//self.liqui = new liqui();
-	self.binance = new binance();
+		self.gdax = new gdax();
+		self.gemini = new gemini();
+		self.stamp = new stamp();
+		self.kraken = new kraken();
+		//self.quoine = new quoine();
+		//self.cex = new cex();
+		//self.quadriga = new quadriga();
+		self.finex = new finex();
+		self.bittrex = new bittrex();
+		// self.poloniex = new poloniex();
+		//self.liqui = new liqui();
+		self.binance = new binance();
 
-	//self.hitbtc = new hitbtc();
-	//self.bitmex = new bitmex();
-	self.xbx = new xbx([self.gemini, self.gdax, self.stamp, self.kraken, self.finex, self.bittrex, self.binance]);
-};
+		//self.hitbtc = new hitbtc();
+		//self.bitmex = new bitmex();
+		self.xbx = new xbx([self.gemini, self.gdax, self.stamp, self.kraken, self.finex, self.bittrex, self.binance]);
+	};
 
 }; /*  BTC INDEX ARBITRAGE.  */
 
