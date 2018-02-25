@@ -149,7 +149,11 @@ var BtcMonitor = function() {
 		};
 	};
 
-
+	app.use(function(req, res, next) {
+		res.header("Access-Control-Allow-Origin", "*");
+		res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+		next();
+	});
 
 	/**
 	 *  Initialize the server (express) and create the routes and register
@@ -159,9 +163,7 @@ var BtcMonitor = function() {
 		self.createRoutes();
 		self.app = express();
 		self.app.use(rollbar.errorHandler());
-
 		self.app.listen(6943);
-
 		self.app.use(express.static('public'));
 
 
