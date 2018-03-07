@@ -4,7 +4,7 @@ function BITMEX() {
 	this.name = 'Bitmex';
 	this.idx = 1;
 	this.fee = 0.00075;
-	this.timeout = 3000;
+	this.timeout = 2000;
 	this.updated = new Date();
 	try {
 		this.update();

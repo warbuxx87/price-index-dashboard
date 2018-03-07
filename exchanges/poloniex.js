@@ -4,7 +4,7 @@ function POLONIEX() {
 	this.name = 'Poloniex';
 	this.fee = 0.002;
 	this.idx = 1;
-	this.timeout = 3000;
+	this.timeout = 2000;
 	this.updated = new Date();
 	try {
 		this.update();

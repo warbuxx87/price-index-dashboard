@@ -4,7 +4,7 @@ function BINANCE() {
 	this.name = 'Binance';
 	this.idx = 1;
 	this.fee = 0.001;
-	this.timeout = 3000;
+	this.timeout = 2000;
 	this.updated = new Date();
 	try {
 		this.update();

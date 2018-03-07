@@ -4,7 +4,7 @@ function KRAKEN() {
 	this.name = 'Kraken';
 	this.idx = 1;
 	this.fee = 0.0026;
-	this.timeout = 3000;
+	this.timeout = 2000;
 	this.updated = new Date();
 	try {
 		this.update();

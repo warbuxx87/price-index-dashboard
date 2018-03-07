@@ -4,7 +4,7 @@ function LIQUI() {
 	this.name = 'Liqui.io';
 	this.idx = 1;
 	this.fee = 0.0025;
-	this.timeout = 3000;
+	this.timeout = 2000;
 	this.updated = new Date();
 	try {
 		this.update();

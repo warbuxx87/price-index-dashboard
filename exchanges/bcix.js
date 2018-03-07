@@ -3,7 +3,7 @@ const https = require('https');
 function BCIX() {
 	this.name = 'BCIX';
 	this.idx = 1;
-	this.timeout = 3000;
+	this.timeout = 2000;
 	this.updated = new Date();
 	try {
 		this.update();
