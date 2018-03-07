@@ -4,12 +4,13 @@ function FINEX() {
 	this.name = 'Bitfinex';
 	this.idx = 1;
 	this.fee = 0.002;
-	this.timeout = 8000;
+	this.timeout = 3000;
+	self.updated = new Date();
 	try {
 		this.update();
 	} catch (e) {
 		console.log(e);
-		this.timeout = 14000;
+		this.timeout = 7000;
 		setTimeout(this.update.bind(this), this.timeout);
 	}
 }

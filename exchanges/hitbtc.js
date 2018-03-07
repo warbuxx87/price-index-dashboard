@@ -4,11 +4,13 @@ function HITBTC() {
 	this.name = 'HitBTC';
 	this.idx = 1;
 	this.fee = 0.001;
-	this.timeout = 7000;
+	this.timeout = 3000;
+	self.updated = new Date();
 	try {
 		this.update();
 	} catch (e) {
 		console.log(e);
+		this.timeout = 7000;
 		setTimeout(this.update.bind(this), this.timeout);
 	}
 }

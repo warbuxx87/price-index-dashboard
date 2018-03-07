@@ -1,12 +1,13 @@
 const https = require('https');
 
 function XBX(index_acceptors) {
-	this.timeout = 7000;
+	this.timeout = 3000;
 	this.index_acceptors = index_acceptors;
 	try {
 		this.update();
 	} catch (e) {
 		console.log(e);
+		this.timeout = 7000;
 		setTimeout(this.update.bind(this), this.timeout);
 	}
 }
