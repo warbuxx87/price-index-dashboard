@@ -9,6 +9,7 @@ function QUAD() {
 		this.update();
 	} catch (e) {
 		console.log(e);
+		this.timeout = 10000;
 		setTimeout(this.update.bind(this), this.timeout);
 	}
 }
