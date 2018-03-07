@@ -4,7 +4,7 @@ function BCIX() {
 	this.name = 'BCIX';
 	this.idx = 1;
 	this.timeout = 3000;
-	self.updated = new Date();
+	this.updated = new Date();
 	try {
 		this.update();
 	} catch (e) {

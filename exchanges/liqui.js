@@ -5,7 +5,7 @@ function LIQUI() {
 	this.idx = 1;
 	this.fee = 0.0025;
 	this.timeout = 3000;
-	self.updated = new Date();
+	this.updated = new Date();
 	try {
 		this.update();
 	} catch (e) {
