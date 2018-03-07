@@ -3,8 +3,8 @@ const https = require('https');
 function GDAX() {
 	this.name = 'GDAX';
 	this.idx = 1;
-	this.updated = new Date(2000, 1, 1);
-	this.timeout = 6000;
+	this.fee = 0.0025;
+	this.timeout = 7000;
 	try {
 		this.update();
 	} catch (e) {
