@@ -223,7 +223,7 @@ var BtcMonitor = function() {
 		self.binance = new binance();
 		self.hitbtc = new hitbtc();
 		//self.bitmex = new bitmex();
-		self.xbx = new xbx([self.gemini, self.gdax, self.stamp, self.kraken, self.quoine, self.quadriga, self.cex, self.finex, self.bittrex, self.binance, self.poloniex, self.hitbtc, self.liqui, ]);
+		self.xbx = new xbx([self.gemini, self.gdax, self.stamp, self.kraken, self.quoine, self.quadriga, self.cex, self.finex, self.bittrex, self.binance, self.poloniex, self.hitbtc, self.liqui]);
 	};
 
 }; /*  BTC INDEX ARBITRAGE.  */
