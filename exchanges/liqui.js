@@ -47,7 +47,7 @@ LIQUI.prototype.update = function() {
 		});
 	}
 
-	https.request(options, callback).end();
+	https.request(options, callback);
 
 	setTimeout(function() {
 		self.update();
