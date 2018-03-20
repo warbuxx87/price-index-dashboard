@@ -42,7 +42,9 @@ LIQUI.prototype.update = function() {
 			self.buy_take = (self.ask * 1.0025 - self.idx) / self.idx * 100;
 			self.sell_take = (self.bid / 1.0025 - self.idx) / self.idx * 100;
 			self.updated = new Date();
-		}).on("error", function(e) { //e is the error
+		});
+
+		response.on("error", function(e) { //e is the error
 			console.error(e.message);
 		});
 	}

@@ -45,6 +45,10 @@ BITTREX.prototype.update = function() {
 			self.sell_take = (self.bid / 1.0025 - self.idx) / self.idx * 100;
 			self.updated = new Date();
 		});
+
+		response.on("error", function(e) { //e is the error
+			console.error(e.message);
+		});
 	}
 
 	https.request(options, callback).end();
