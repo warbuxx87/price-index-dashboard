@@ -30,10 +30,6 @@ LIQUI.prototype.update = function() {
 			str += chunk;
 		});
 
-		//creating an error event to catch errors from the var request.
-		response.on("error", function(e) { //e is the error
-			console.error(e.message);
-		})
 
 		response.on('end', function() {
 			var data = JSON.parse(str);
@@ -46,6 +42,8 @@ LIQUI.prototype.update = function() {
 			self.buy_take = (self.ask * 1.0025 - self.idx) / self.idx * 100;
 			self.sell_take = (self.bid / 1.0025 - self.idx) / self.idx * 100;
 			self.updated = new Date();
+		}).on("error", function(e) { //e is the error
+			console.error(e.message);
 		});
 	}
 
