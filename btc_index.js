@@ -142,7 +142,7 @@ var BtcMonitor = function() {
 			// to the API (e.g. in case you use sessions)
 			// res.setHeader('Access-Control-Allow-Credentials', true);
 			res.end(JSON.stringify({
-				markets: [self.gemini, self.gdax, self.stamp, self.kraken, self.quoine, self.quadriga, self.cex, self.finex, self.bittrex, self.binance, self.poloniex, self.liqui, self.hitbtc],
+				markets: [self.gemini, self.gdax, self.stamp, self.kraken, self.quoine, self.quadriga, self.cex, self.finex, self.bittrex, self.binance, self.poloniex, self.hitbtc],
 				idx: self.xbx.idx,
 			}));
 		};
