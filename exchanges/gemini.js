@@ -25,9 +25,16 @@ GEM.prototype.update = function() {
 
 	callback = function(response) {
 		var str = '';
+
+		//another chunk of data has been recieved, so append it to `str`
 		response.on('data', function(chunk) {
 			str += chunk;
 		});
+
+		//creating an error event to catch errors from the var request.
+		response.on("error", function(e) { //e is the error
+			console.error(e.message);
+		})
 
 		response.on('end', function() {
 			var data = JSON.parse(str);
@@ -43,7 +50,7 @@ GEM.prototype.update = function() {
 		});
 	}
 
-	https.request(options, callback).end();
+	https.request(options, callback);
 
 	setTimeout(function() {
 		self.update();
