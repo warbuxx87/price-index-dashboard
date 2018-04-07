@@ -50,7 +50,7 @@ GEM.prototype.update = function() {
 		});
 	}
 
-	https.request(options, callback);
+	https.request(options, callback).end();
 
 	setTimeout(function() {
 		self.update();
