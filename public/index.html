@@ -15,8 +15,8 @@
     gtag('config', 'UA-114448847-1');
   </script>
   <!-- Start of HubSpot Embed Code -->
-<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/1948713.js"></script>
-<!-- End of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/1948713.js"></script>
+  <!-- End of HubSpot Embed Code -->
 
   <meta charset="utf-8">
   <title>Alkemi - Arbitrage Monitor</title>
@@ -60,6 +60,33 @@
 
         <!-- BEGIN First Row -->
         <div class="row">
+          <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+            <div class="dashboard-stat2 ">
+              <div class="display">
+                <div class="number">
+                  <h3 class="font-blue-sharp">
+                   <small class="font-blue-sharp">$</small>
+                   <span data-counter="counterup" data-value="{{ ( balance.usd + ( balance.btc * btc.idx )) | number:2 }}">{{( balance.usd + (balance.btc * btc.idx)) | number:2 }}</span>
+                  </h3>
+                  <small>Overall Performance</small>
+                </div>
+                <div class="icon">
+                  <i class="icon-pie-chart font-blue-sharp"></i>
+                </div>
+              </div>
+              <div class="progress-info">
+                <div class="progress">
+                  <span style="width:{{p}}%;" class="progress-bar progress-bar-success blue-sharp">
+                  <span class="sr-only">Overall Performance</span>
+                  </span>
+                </div>
+                <div class="status">
+                  <div class="status-title"> # of Days </div>
+                  <div class="status-number"> {{ days }} Days </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
             <div class="dashboard-stat2 ">
               <div class="display">
