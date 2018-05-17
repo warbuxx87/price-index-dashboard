@@ -95,7 +95,7 @@
                     <small class="font-green-sharp">$</small>
                     <span data-counter="counterup" data-value="{{ balance.usd | number:0 }}">{{ balance.usd | number:0 }}</span>
                   </h3>
-                  <small>USD Net Return ({{ balance.usd / btc.idx | number:2 }} btc)</small>
+                  <small>USD Net Earnings ({{ balance.usd / btc.idx | number:2 }} btc)</small>
                 </div>
                 <div class="icon">
                   <i class="fa fa-money font-green-sharp"></i>
@@ -121,7 +121,7 @@
                   <h3 class="font-yellow-gold">
                     <span data-counter="counterup" data-value="{{ balance.btc | number:0 }}">{{ balance.btc | number:0 }}</span>
                   </h3>
-                  <small>BTC Net Return ({{ balance.btc * btc.idx | currency:"$":0 }})</small>
+                  <small>BTC Net Earnings ({{ balance.btc * btc.idx | currency:"$":0 }})</small>
                 </div>
                 <div class="icon">
                   <i class="fa fa-btc font-yellow-gold"></i>
