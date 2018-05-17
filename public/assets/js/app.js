@@ -44,8 +44,24 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 	var upd_trades = function() {
 		var total_profit = 0;
 		var total_trades = 0;
+		var total_avg_daily = 0;
 		var usd = 0;
 		var btc = 0;
+
+		// Portfolio Daily Performance
+		var date = new Date();
+		d = date.getDate();
+		m = date.getMonth();
+		//subtract the current month
+		m = m - 1;
+		// multiply number of months times 30 days + add days in current month
+		days = m * 30 + d;
+		// total days portfolio active 48 = day of year portfolio started
+		days = days - 48;
+
+		// days running
+		$scope.days = days;
+
 		$http.get('https://api.alkemi.ai')
 			.then(function(response) {
 				$scope.trades = response.data;
@@ -65,6 +81,8 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 				}
 				if (total_profit != 0) {
 					$scope.trades.total_profit = total_profit;
+					total_avg_daily = total_profit / days;
+					$scope.trades.total_profit = total_avg_daily;
 				}
 				if (total_trades) {
 					$scope.trades.total_trades = total_trades;
@@ -87,17 +105,6 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 		if (value == 0) return "";
 		return value > 0 ? 'green' : 'red';
 	};
-
-	var d = new Date();
-	d = d.getDate();
-	d = 48 - d;
-	d = 30 - d;
-
-	// days remaining in cycle
-	$scope.d = d;
-	// percent of cycle completed
-	$scope.p = d * 3.33;
-
 
 	upd_btc();
 	upd_trades();
