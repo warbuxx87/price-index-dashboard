@@ -83,7 +83,7 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 					$scope.trades.total_profit = total_profit;
 					total_avg_daily = total_profit / days;
 					$scope.trades.total_avg_daily = total_avg_daily;
-					$scope.p = d / 30;
+					$scope.p = d / 30 * 100;
 				}
 				if (total_trades) {
 					$scope.trades.total_trades = total_trades;
