@@ -82,7 +82,7 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 				if (total_profit != 0) {
 					$scope.trades.total_profit = total_profit;
 					total_avg_daily = total_profit / days;
-					$scope.trades.total_profit = total_avg_daily;
+					$scope.trades.total_avg_daily = total_avg_daily;
 				}
 				if (total_trades) {
 					$scope.trades.total_trades = total_trades;
