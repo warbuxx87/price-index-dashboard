@@ -144,6 +144,7 @@ var BtcMonitor = function() {
 			res.end(JSON.stringify({
 				markets: [self.gemini, self.gdax, self.stamp, self.kraken, self.quoine, self.quadriga, self.cex, self.finex, self.bittrex, self.binance, self.poloniex, self.hitbtc],
 				idx: self.xbx.idx,
+				self.xbx.daily
 			}));
 		};
 

@@ -31,7 +31,9 @@ XBX.prototype.update = function() {
 
 		response.on('end', function() {
 			var data = JSON.parse(str);
+			var daily = data.xbx / data.xbx_24h_ago - 1;
 			self.idx = data.xbx;
+			self.daily = daily;
 			for (var i = 0; i < self.index_acceptors.length; i++)
 				self.index_acceptors[i].idx = self.idx;
 		});
