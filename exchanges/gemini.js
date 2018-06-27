@@ -31,30 +31,38 @@ GEM.prototype.update = function() {
 			str += chunk;
 		});
 
-		//creating an error event to catch errors from the var request.
-		response.on("error", function(e) { //e is the error
-			console.error(e.message);
-		})
-
 		response.on('end', function() {
-			var data = JSON.parse(str);
-			self.bid = parseFloat(data.bid);
-			self.ask = parseFloat(data.ask);
-			self.last = parseFloat(data.last);
-			self.volume = parseFloat(data.volume.BTC);
-			self.buy_make = ((self.bid + 0.01) * 1.0025 - self.idx) / self.idx * 100;
-			self.sell_make = ((self.ask - 0.01) / 1.0025 - self.idx) / self.idx * 100;
-			self.buy_take = (self.ask * 1.0025 - self.idx) / self.idx * 100;
-			self.sell_take = (self.bid / 1.0025 - self.idx) / self.idx * 100;
-			self.updated = new Date();
+				try {
+					var data = JSON.parse(str);
+					self.bid = parseFloat(data.bid);
+					self.ask = parseFloat(data.ask);
+					self.last = parseFloat(data.last);
+					self.volume = parseFloat(data.volume.BTC);
+					self.buy_make = ((self.bid + 0.01) * 1.0025 - self.idx) / self.idx * 100;
+					self.sell_make = ((self.ask - 0.01) / 1.0025 - self.idx) / self.idx * 100;
+					self.buy_take = (self.ask * 1.0025 - self.idx) / self.idx * 100;
+					self.sell_take = (self.bid / 1.0025 - self.idx) / self.idx * 100;
+					self.updated = new Date();
+				} catch (error) {
+					self.bid = null;
+					self.ask = null;
+					self.last = null;
+					self.volume = null;
+					self.buy_make = null;
+					self.sell_make = null;
+					self.buy_take = null;
+					self.sell_take = null;
+					self.updated = new Date();
+				}
+			}
 		});
-	}
+}
 
-	https.request(options, callback).end();
+https.request(options, callback).end();
 
-	setTimeout(function() {
-		self.update();
-	}, self.timeout);
+setTimeout(function() {
+	self.update();
+}, self.timeout);
 };
 
 module.exports = GEM;
