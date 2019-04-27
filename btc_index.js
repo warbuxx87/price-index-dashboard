@@ -14,17 +14,17 @@ var gdax = require('./exchanges/gdax');
 var gemini = require('./exchanges/gemini');
 var stamp = require('./exchanges/stamp');
 var kraken = require('./exchanges/kraken');
-var quoine = require('./exchanges/quoine');
-var cex = require('./exchanges/cex');
+//var quoine = require('./exchanges/quoine');
+//var cex = require('./exchanges/cex');
 
 // USDT exchanges
 var finex = require('./exchanges/finex');
 var bittrex = require('./exchanges/bittrex');
 var poloniex = require('./exchanges/poloniex');
-var liqui = require('./exchanges/liqui');
+//var liqui = require('./exchanges/liqui');
 var binance = require('./exchanges/binance');
 var hitbtc = require('./exchanges/hitbtc');
-var bitmex = require('./exchanges/bitmex');
+//var bitmex = require('./exchanges/bitmex');
 
 
 
@@ -141,7 +141,7 @@ var BtcMonitor = function() {
 			// to the API (e.g. in case you use sessions)
 			// res.setHeader('Access-Control-Allow-Credentials', true);
 			res.end(JSON.stringify({
-				markets: [self.gemini, self.gdax, self.stamp, self.kraken, self.quoine, self.cex, self.finex, self.bittrex, self.binance, self.poloniex, self.hitbtc],
+				markets: [self.gemini, self.gdax, self.stamp, self.kraken, self.finex, self.bittrex, self.binance, self.poloniex, self.hitbtc],
 				idx: self.xbx.idx,
 				daily: self.xbx.daily
 			}));
@@ -213,8 +213,8 @@ var BtcMonitor = function() {
 		self.gemini = new gemini();
 		self.stamp = new stamp();
 		self.kraken = new kraken();
-		self.quoine = new quoine();
-		self.cex = new cex();
+		//self.quoine = new quoine();
+		//self.cex = new cex();
 		self.finex = new finex();
 		self.bittrex = new bittrex();
 		self.poloniex = new poloniex();
@@ -222,7 +222,7 @@ var BtcMonitor = function() {
 		self.binance = new binance();
 		self.hitbtc = new hitbtc();
 		//self.bitmex = new bitmex();
-		self.xbx = new xbx([self.gemini, self.gdax, self.stamp, self.kraken, self.quoine, self.cex, self.finex, self.bittrex, self.binance, self.poloniex, self.hitbtc]);
+		self.xbx = new xbx([self.gemini, self.gdax, self.stamp, self.kraken, self.finex, self.bittrex, self.binance, self.poloniex, self.hitbtc]);
 	};
 
 }; /*  BTC INDEX ARBITRAGE.  */
