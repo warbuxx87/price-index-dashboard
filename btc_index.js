@@ -23,7 +23,7 @@ var bittrex = require('./exchanges/bittrex');
 var poloniex = require('./exchanges/poloniex');
 //var liqui = require('./exchanges/liqui');
 var binance = require('./exchanges/binance');
-var hitbtc = require('./exchanges/hitbtc');
+//var hitbtc = require('./exchanges/hitbtc');
 //var bitmex = require('./exchanges/bitmex');
 
 
@@ -141,7 +141,7 @@ var BtcMonitor = function() {
 			// to the API (e.g. in case you use sessions)
 			// res.setHeader('Access-Control-Allow-Credentials', true);
 			res.end(JSON.stringify({
-				markets: [self.gemini, self.gdax, self.stamp, self.kraken, self.finex, self.bittrex, self.binance, self.poloniex, self.hitbtc],
+				markets: [self.gemini, self.gdax, self.stamp, self.kraken, self.finex, self.bittrex, self.binance, self.poloniex],
 				idx: self.xbx.idx,
 				daily: self.xbx.daily
 			}));
@@ -220,9 +220,9 @@ var BtcMonitor = function() {
 		self.poloniex = new poloniex();
 		//self.liqui = new liqui();
 		self.binance = new binance();
-		self.hitbtc = new hitbtc();
+		//self.hitbtc = new hitbtc();
 		//self.bitmex = new bitmex();
-		self.xbx = new xbx([self.gemini, self.gdax, self.stamp, self.kraken, self.finex, self.bittrex, self.binance, self.poloniex, self.hitbtc]);
+		self.xbx = new xbx([self.gemini, self.gdax, self.stamp, self.kraken, self.finex, self.bittrex, self.binance, self.poloniex]);
 	};
 
 }; /*  BTC INDEX ARBITRAGE.  */
