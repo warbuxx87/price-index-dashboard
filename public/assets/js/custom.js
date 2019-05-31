@@ -87,25 +87,25 @@ ws.onclose = function() {
 	log('DISCONNECT');
 };
 ws.onmessage = function(t) {
-log('MESSAGE: ' + t.data);
-var e = "New Trade from " + t.data,
-	n = t.volume + " BTC traded at $" + t.price + " for $" + t.value;
-toastr.options = {
-	closeButton: !0,
-	debug: !1,
-	positionClass: "toast-bottom-right",
-	onclick: null,
-	showDuration: "1000",
-	hideDuration: "1000",
-	timeOut: "10000",
-	extendedTimeOut: "1000",
-	showEasing: "swing",
-	hideEasing: "linear",
-	showMethod: "fadeIn",
-	hideMethod: "fadeOut"
-};
-toastr[t.level](n, e)
-}), $.fn.toggleClick = function() {
+	log('MESSAGE: ' + t.data);
+	var e = "New Trade from " + t.data,
+		n = t.volume + " BTC traded at $" + t.price + " for $" + t.value;
+	toastr.options = {
+		closeButton: !0,
+		debug: !1,
+		positionClass: "toast-bottom-right",
+		onclick: null,
+		showDuration: "1000",
+		hideDuration: "1000",
+		timeOut: "10000",
+		extendedTimeOut: "1000",
+		showEasing: "swing",
+		hideEasing: "linear",
+		showMethod: "fadeIn",
+		hideMethod: "fadeOut"
+	};
+	toastr[t.level](n, e)
+}, $.fn.toggleClick = function() {
 	var t = arguments,
 		e = 0;
 	return this.click(function() {
