@@ -80,7 +80,7 @@ jQuery(document).ready(function() {
 	}, 15e3)
 });
 var client = new Fpp.Client("ws://trade2.alkemi.ai:1234"),
-	channel = client.Channel("nginx");
+	channel = client.Channel("315a2076-61ce-41b9-bdb6-3de8fd0c0681");
 channel.on("data", function(t) {
 	var e = "New Trade from " + t,
 		n = t.volume + " BTC traded at $" + t.price + " for $" + t.value;
