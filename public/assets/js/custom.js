@@ -84,6 +84,15 @@ function log(msg) {
 	document.getElementById('log').textContent += msg + '\n';
 }
 
+function cleanlog(msg) {
+	if msg.includes("order of 1 BTC on SIMULATED") {
+		document.getElementById('log').textContent += msg + '\n';
+		return msg;
+	}
+}
+
+
+
 
 var ws = new WebSocket("wss://trade2.alkemi.ai:8889");
 ws.onopen = function() {
@@ -93,7 +102,7 @@ ws.onclose = function() {
 	log('DISCONNECT');
 };
 ws.onmessage = function(t) {
-	log('MESSAGE: ' + t.data);
+	cleanlog('MESSAGE: ' + t.data);
 	var e = "New Trade from " + t.data;
 	var n = t.data + " BTC traded at $" + t.exchange + " for $" + t.Price;
 	t.level = 0;
