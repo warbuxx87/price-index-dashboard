@@ -99,7 +99,7 @@ ws.onmessage = function(t) {
 	if (t.data.includes("order of 1 BTC on SIMULATED")) {
 		t.date = t.data.toString().substr(0, 11);
 		t.time = t.data.toString().substr(12, 20);
-		t.exchange = t.data.toString().substr(103, 113);
+		t.exchange = t.data.toString().substr(103, 110);
 		if (t.data.includes("buy")) {
 			t.level = "success";
 			t.order = "bought";
