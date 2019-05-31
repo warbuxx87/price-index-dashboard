@@ -79,7 +79,13 @@ jQuery(document).ready(function() {
 		t()
 	}, 15e3)
 });
-var ws = new WebSocket("wss://trade2.alkemi.ai:1234");
+// helper function: log message to screen
+function log(msg) {
+	document.getElementById('log').textContent += msg + '\n';
+}
+
+
+var ws = new WebSocket("wss://trade2.alkemi.ai:8888");
 ws.onopen = function() {
 	log('CONNECT');
 };
