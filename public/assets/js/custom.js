@@ -84,13 +84,6 @@ function log(msg) {
 	document.getElementById('log').textContent += msg + '\n';
 }
 
-function cleanlog(msg) {
-	if msg.includes("order of 1 BTC on SIMULATED") {
-		document.getElementById('log').textContent += msg + '\n';
-		return msg;
-	}
-}
-
 
 
 
@@ -102,25 +95,30 @@ ws.onclose = function() {
 	log('DISCONNECT');
 };
 ws.onmessage = function(t) {
-	cleanlog('MESSAGE: ' + t.data);
-	var e = "New Trade from " + t.data;
-	var n = t.data + " BTC traded at $" + t.exchange + " for $" + t.Price;
-	t.level = 0;
-	toastr.options = {
-		closeButton: !0,
-		debug: !1,
-		positionClass: "toast-bottom-right",
-		onclick: null,
-		showDuration: "1000",
-		hideDuration: "1000",
-		timeOut: "10000",
-		extendedTimeOut: "1000",
-		showEasing: "swing",
-		hideEasing: "linear",
-		showMethod: "fadeIn",
-		hideMethod: "fadeOut"
-	};
-	toastr["success"](n, e)
+	if t.data.includes("order of 1 BTC on SIMULATED") {
+
+		log('MESSAGE: ' + t.data);
+		var e = "New Trade from " + t.data;
+		var n = t.data + " BTC traded at $" + t.exchange + " for $" + t.Price;
+		t.level = 0;
+		toastr.options = {
+			closeButton: !0,
+			debug: !1,
+			positionClass: "toast-bottom-right",
+			onclick: null,
+			showDuration: "1000",
+			hideDuration: "1000",
+			timeOut: "10000",
+			extendedTimeOut: "1000",
+			showEasing: "swing",
+			hideEasing: "linear",
+			showMethod: "fadeIn",
+			hideMethod: "fadeOut"
+		};
+		toastr["success"](n, e)
+
+	}
+
 }, $.fn.toggleClick = function() {
 	var t = arguments,
 		e = 0;
