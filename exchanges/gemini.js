@@ -3,7 +3,8 @@ const https = require('https');
 function GEM() {
 	this.name = 'Gemini';
 	this.idx = 1;
-	this.fee = 0.0025;
+	//this.fee = 0.0025;
+	this.fee = 0.00;
 	this.timeout = 2000;
 	try {
 		this.update();

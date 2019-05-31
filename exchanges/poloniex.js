@@ -2,7 +2,8 @@ const https = require('https');
 
 function POLONIEX() {
 	this.name = 'Poloniex';
-	this.fee = 0.002;
+	//this.fee = 0.002;
+	this.fee = 0.00;
 	this.idx = 1;
 	this.timeout = 2000;
 	this.updated = new Date();

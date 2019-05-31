@@ -3,7 +3,8 @@ const https = require('https');
 function FINEX() {
 	this.name = 'Bitfinex';
 	this.idx = 1;
-	this.fee = 0.002;
+	//this.fee = 0.002;
+	this.fee = 0.00;
 	this.timeout = 4000;
 	this.updated = new Date();
 	try {

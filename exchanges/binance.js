@@ -3,7 +3,8 @@ const https = require('https');
 function BINANCE() {
 	this.name = 'Binance';
 	this.idx = 1;
-	this.fee = 0.001;
+	//this.fee = 0.001;
+	this.fee = 0.00;
 	this.timeout = 2000;
 	this.updated = new Date();
 	try {

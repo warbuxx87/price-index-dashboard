@@ -3,7 +3,8 @@ const https = require('https');
 function STAMP() {
 	this.name = 'BitStamp';
 	this.idx = 1;
-	this.fee = 0.0025;
+	//this.fee = 0.0025;
+	this.fee = 0.00;
 	this.timeout = 2000;
 	this.updated = new Date();
 	try {
