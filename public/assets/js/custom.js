@@ -96,10 +96,12 @@ ws.onclose = function() {
 };
 ws.onmessage = function(t) {
 	if (t.data.includes("order of 1 BTC on SIMULATED")) {
-
+		t.date = t.data.toString().substr(0, 11);
+		t.time = t.data.toString().substr(12, 20);
+		t.exchange = t.data.toString().substr(104, 114);
 		log('MESSAGE: ' + t.data);
-		var e = "New Trade from " + t.data;
-		var n = t.data + " BTC traded at $" + t.exchange + " for $" + t.Price;
+		var e = "New Trade on " + t.date;
+		var n = "1 BTC traded at " + t.exchange + " for $" + t.Price;
 		t.level = 0;
 		toastr.options = {
 			closeButton: !0,
