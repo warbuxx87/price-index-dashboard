@@ -360,7 +360,7 @@
                         <td ng-class="getClass(exchange.order)">{{ exchange.price | currency:"$":2 }}</td>
                         <td ng-class="getClass(exchange.order)">{{ exchange.amount }} BTC</td>
                         <td>{{ exchange.last_arbitrage }}</td>
-                        <td>{{ exchange.updated | date:'HH:mm:ss' }}</td>
+                        <td>{{ exchange.updated * 1000 | date:'HH:mm:ss' }}</td>
                       </tr>
                     </tbody>
                   </table>
