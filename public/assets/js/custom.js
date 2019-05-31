@@ -108,7 +108,7 @@ ws.onmessage = function(t) {
 			t.level = "error";
 			t.order = "sold";
 		};
-		var e = "New Trade at " + t.time + " " + t.date;
+		var e = t.date + " " + t.time;
 		var n = "1 BTC " + t.order + " at " + t.exchange + " for $" + t.Price;
 		toastr.options = {
 			closeButton: !0,
