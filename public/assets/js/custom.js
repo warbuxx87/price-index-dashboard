@@ -113,7 +113,7 @@ ws.onmessage = function(t) {
 		toastr.options = {
 			closeButton: !0,
 			debug: !1,
-			positionClass: "toast-bottom-right",
+			positionClass: "toast-bottom-left",
 			onclick: null,
 			showDuration: "1000",
 			hideDuration: "1000",
