@@ -95,12 +95,12 @@ ws.onclose = function() {
 	log('DISCONNECT');
 };
 ws.onmessage = function(t) {
+	log('MESSAGE: ' + t.data);
 	if (t.data.includes("order of 1 BTC on SIMULATED")) {
 		t.date = t.data.toString().substr(0, 11);
 		t.time = t.data.toString().substr(12, 20);
-		t.exchange = t.data.toString().substr(104, 114);
-		log('MESSAGE: ' + t.data);
-		var e = "New Trade on " + t.date;
+		t.exchange = t.data.toString().substr(103, 113);
+		var e = "New Trade at " + t.time + " " + t.date;
 		var n = "1 BTC traded at " + t.exchange + " for $" + t.Price;
 		t.level = 0;
 		toastr.options = {
