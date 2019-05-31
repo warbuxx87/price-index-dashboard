@@ -79,26 +79,32 @@ jQuery(document).ready(function() {
 		t()
 	}, 15e3)
 });
-var client = new Fpp.Client("http://trade2.alkemi.ai:1234"),
-	channel = client.Channel("315a2076-61ce-41b9-bdb6-3de8fd0c0681");
-channel.on("data", function(t) {
-	var e = "New Trade from " + t,
-		n = t.volume + " BTC traded at $" + t.price + " for $" + t.value;
-	toastr.options = {
-		closeButton: !0,
-		debug: !1,
-		positionClass: "toast-bottom-right",
-		onclick: null,
-		showDuration: "1000",
-		hideDuration: "1000",
-		timeOut: "10000",
-		extendedTimeOut: "1000",
-		showEasing: "swing",
-		hideEasing: "linear",
-		showMethod: "fadeIn",
-		hideMethod: "fadeOut"
+var ws = new WebSocket("ws://trade2.alkemi.ai:1234"),
+	ws.onopen = function() {
+		log('CONNECT');
 	};
-	toastr[t.level](n, e)
+ws.onclose = function() {
+	log('DISCONNECT');
+};
+ws.onmessage = function(t) {
+log('MESSAGE: ' + t.data);
+var e = "New Trade from " + t.data,
+	n = t.volume + " BTC traded at $" + t.price + " for $" + t.value;
+toastr.options = {
+	closeButton: !0,
+	debug: !1,
+	positionClass: "toast-bottom-right",
+	onclick: null,
+	showDuration: "1000",
+	hideDuration: "1000",
+	timeOut: "10000",
+	extendedTimeOut: "1000",
+	showEasing: "swing",
+	hideEasing: "linear",
+	showMethod: "fadeIn",
+	hideMethod: "fadeOut"
+};
+toastr[t.level](n, e)
 }), $.fn.toggleClick = function() {
 	var t = arguments,
 		e = 0;
