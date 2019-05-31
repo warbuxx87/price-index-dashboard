@@ -79,7 +79,7 @@ jQuery(document).ready(function() {
 		t()
 	}, 15e3)
 });
-var ws = new WebSocket("ws://trade2.alkemi.ai:1234");
+var ws = new WebSocket("wss://trade2.alkemi.ai:1234");
 ws.onopen = function() {
 	log('CONNECT');
 };
