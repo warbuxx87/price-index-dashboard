@@ -111,7 +111,7 @@ ws.onmessage = function(t) {
 		showMethod: "fadeIn",
 		hideMethod: "fadeOut"
 	};
-	toastr(n, e)
+	toastr["success"](n, e)
 }, $.fn.toggleClick = function() {
 	var t = arguments,
 		e = 0;
