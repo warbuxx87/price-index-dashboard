@@ -109,7 +109,7 @@ ws.onmessage = function(t) {
 			t.order = "sold";
 		};
 		var e = "New Trade at " + t.time + " " + t.date;
-		var n = "1 BTC " + t.order " at " + t.exchange + " for $" + t.Price;
+		var n = "1 BTC " + t.order + " at " + t.exchange + " for $" + t.Price;
 		toastr.options = {
 			closeButton: !0,
 			debug: !1,
