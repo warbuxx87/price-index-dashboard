@@ -95,7 +95,7 @@ ws.onclose = function() {
 	log('DISCONNECT');
 };
 ws.onmessage = function(t) {
-	if t.data.includes("order of 1 BTC on SIMULATED") {
+	if (t.data.includes("order of 1 BTC on SIMULATED")) {
 
 		log('MESSAGE: ' + t.data);
 		var e = "New Trade from " + t.data;
