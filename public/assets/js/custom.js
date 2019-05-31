@@ -102,12 +102,14 @@ ws.onmessage = function(t) {
 		t.exchange = t.data.toString().substr(103, 113);
 		if (t.data.includes("buy")) {
 			t.level = "success";
+			t.order = "bought";
 		};
 		if (t.data.includes("sell")) {
 			t.level = "error";
+			t.order = "sold";
 		};
 		var e = "New Trade at " + t.time + " " + t.date;
-		var n = "1 BTC traded at " + t.exchange + " for $" + t.Price;
+		var n = "1 BTC " + t.order " at " + t.exchange + " for $" + t.Price;
 		toastr.options = {
 			closeButton: !0,
 			debug: !1,
