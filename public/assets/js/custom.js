@@ -94,8 +94,8 @@ ws.onclose = function() {
 };
 ws.onmessage = function(t) {
 	log('MESSAGE: ' + t.data);
-	var e = "New Trade from " + t.data,
-		var n = t.data + " BTC traded at $" + t.exchange + " for $" + t.Price;
+	var e = "New Trade from " + t.data;
+	var n = t.data + " BTC traded at $" + t.exchange + " for $" + t.Price;
 	toastr.options = {
 		closeButton: !0,
 		debug: !1,
