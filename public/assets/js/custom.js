@@ -85,7 +85,7 @@ function log(msg) {
 }
 
 
-var ws = new WebSocket("wss://trade2.alkemi.ai:8888");
+var ws = new WebSocket("wss://trade2.alkemi.ai:8889");
 ws.onopen = function() {
 	log('CONNECT');
 };
