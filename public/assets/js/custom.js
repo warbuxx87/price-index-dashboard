@@ -111,7 +111,7 @@ ws.onmessage = function(t) {
 	if (t.data.includes("Executed")) {
 		t.date = t.data.toString().slice(0, 11);
 		t.time = t.data.toString().slice(12, 20);
-		t.exchange = t.data.toString().slice(90, 98);
+		t.exchange = t.data.toString().slice(100, 108);
 		console.log(t.exchange);
 		t.amount = "1 BTC ";
 		t.price = "8500"
