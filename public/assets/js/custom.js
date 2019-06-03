@@ -96,15 +96,16 @@ ws.onclose = function() {
 };
 ws.onmessage = function(t) {
 	// exchange data hash identifier
-	t.data = t.data.replace('b29d0acb-9a6e-49f2-8fd8-a137559f834c', 'Binance');
-	t.data = t.data.replace('6af0fee7-3ec5-4272-83c9-b56ffc6b2b73', 'Gemini');
-	t.data = t.data.replace('ac055696-cafd-42e9-90a8-fb7ff62c488c', 'GDAX');
-	t.data = t.data.replace('ea529fcb-ad7a-4ede-b808-62aa2de0a268', 'Poloniex');
-	t.data = t.data.replace('ae8941ca-f26c-48a6-a58c-d93f66464895', 'Bitstamp');
-	t.data = t.data.replace('b34314bd-376b-47ce-b807-0d38885ed6e8', 'Bitfinex');
-	t.data = t.data.replace('00944920-a28f-4366-b65d-d61e6bef27ee', 'Bittrex');
-	t.data = t.data.replace('1fb3443b-33e9-4ab7-9cc4-2cdc088b8f49', 'Kraken');
-	log('EVENT: ' + t.data);
+	var res = "";
+	res = t.data.replace('b29d0acb-9a6e-49f2-8fd8-a137559f834c', 'Binance');
+	res = t.data.replace('6af0fee7-3ec5-4272-83c9-b56ffc6b2b73', 'Gemini');
+	res = t.data.replace('ac055696-cafd-42e9-90a8-fb7ff62c488c', 'GDAX');
+	res = t.data.replace('ea529fcb-ad7a-4ede-b808-62aa2de0a268', 'Poloniex');
+	res = t.data.replace('ae8941ca-f26c-48a6-a58c-d93f66464895', 'Bitstamp');
+	res = t.data.replace('b34314bd-376b-47ce-b807-0d38885ed6e8', 'Bitfinex');
+	res = t.data.replace('00944920-a28f-4366-b65d-d61e6bef27ee', 'Bittrex');
+	res = t.data.replace("1fb3443b-33e9-4ab7-9cc4-2cdc088b8f49", "Kraken");
+	log('EVENT: ' + res);
 	if (t.data.includes("order of 1 BTC on SIMULATED")) {
 		t.date = t.data.toString().substr(0, 11);
 		t.time = t.data.toString().substr(12, 20);
