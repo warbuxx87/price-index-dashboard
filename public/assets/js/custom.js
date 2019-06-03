@@ -112,8 +112,8 @@ ws.onmessage = function(t) {
 		t.date = t.data.toString().substr(0, 11);
 		t.time = t.data.toString().substr(12, 20);
 		t.exchange = t.data.toString().substr(103, 110);
-		t.Amount = "1 BTC";
-		if (res.includes("buy")) {
+		t.amount = "1 BTC";
+		if (t.data.includes("buy")) {
 			t.level = "success";
 			t.order = "bought";
 		};
@@ -122,7 +122,7 @@ ws.onmessage = function(t) {
 			t.order = "sold";
 		};
 		var e = t.date + " " + t.time;
-		var n = "1 BTC " + t.order + " at " + t.exchange;
+		var n = t.amount + t.order + " at " + t.exchange;
 		toastr.options = {
 			closeButton: !0,
 			debug: !1,
