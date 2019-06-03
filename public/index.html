@@ -48,7 +48,7 @@
 
 <body ng-controller="MainCtrl" class="page-header-fixed page-quick-sidebar-over-content page-full-width page-footer">
   <div class="page-header navbar center">
-    <span><img src="/assets/images/logo_wh.svg"/></span>
+    <span><img src="/assets/images/logo_wh.svg" /></span>
   </div>
 
   <!-- BEGIN CONTAINER -->
@@ -65,8 +65,8 @@
               <div class="display">
                 <div class="number">
                   <h3 class="font-blue-sharp">
-                   <small class="font-blue-sharp">$</small>
-                   <span data-counter="counterup" data-value="{{ ( balance.usd + ( balance.btc * btc.idx )) | number:2 }}">{{( balance.usd + (balance.btc * btc.idx)) | number:2 }}</span>
+                    <small class="font-blue-sharp">$</small>
+                    <span data-counter="counterup" data-value="{{ ( balance.usd + ( balance.btc * btc.idx )) | number:2 }}">{{( balance.usd + (balance.btc * btc.idx)) | number:2 }}</span>
                   </h3>
                   <small>Overall Performance</small>
                 </div>
@@ -77,7 +77,7 @@
               <div class="progress-info">
                 <div class="progress">
                   <span style="width:{{p}}%;" class="progress-bar progress-bar-success blue-sharp">
-                  <span class="sr-only">Overall Performance</span>
+                    <span class="sr-only">Overall Performance</span>
                   </span>
                 </div>
                 <div class="status">
@@ -92,8 +92,8 @@
               <div class="display">
                 <div class="number">
                   <h3 class="font-yellow-gold">
-                   <small class="font-yellow-gold">$</small>
-                   <span data-counter="counterup" data-value="{{ ( balance.usd + ( balance.btc * btc.idx )) / day | number:2 }}">{{( balance.usd + (balance.btc * btc.idx)) / days | number:2 }}</span>
+                    <small class="font-yellow-gold">$</small>
+                    <span data-counter="counterup" data-value="{{ ( balance.usd + ( balance.btc * btc.idx )) / day | number:2 }}">{{( balance.usd + (balance.btc * btc.idx)) / days | number:2 }}</span>
                   </h3>
                   <small>Average Daily Performance</small>
                 </div>
@@ -104,7 +104,7 @@
               <div class="progress-info">
                 <div class="progress">
                   <span style="width:{{p}}%;" class="progress-bar progress-bar-danger yellow-gold">
-                  <span class="sr-only">Cycle FEB 18, 2018</span>
+                    <span class="sr-only">Cycle FEB 18, 2018</span>
                   </span>
                 </div>
                 <div class="status">
@@ -131,7 +131,7 @@
               <div class="progress-info">
                 <div class="progress">
                   <span style="width: {{ ((balance.usd) / ((balance.btc * btc.idx) + balance.usd)) * 100 }}%;" class="progress-bar progress-bar-success green-sharp">
-                  <span class="sr-only"> {{ ((balance.usd) / ((balance.btc * btc.idx) + balance.usd)) * 100 | number:2 }}% weight</span>
+                    <span class="sr-only"> {{ ((balance.usd) / ((balance.btc * btc.idx) + balance.usd)) * 100 | number:2 }}% weight</span>
                   </span>
                 </div>
                 <div class="status">
@@ -157,7 +157,7 @@
               <div class="progress-info">
                 <div class="progress">
                   <span style="width: {{ ((balance.btc * btc.idx) / ((balance.btc * btc.idx) + balance.usd)) * 100 | number:2 }}%;" class="progress-bar progress-bar-success yellow-gold">
-                  <span class="sr-only">{{ ((balance.btc * btc.idx) / ((balance.btc * btc.idx) + balance.usd)) * 100 | number:2 }} % weight</span>
+                    <span class="sr-only">{{ ((balance.btc * btc.idx) / ((balance.btc * btc.idx) + balance.usd)) * 100 | number:2 }} % weight</span>
                   </span>
                 </div>
                 <div class="status">
@@ -431,191 +431,10 @@
 
           </div>
 
-
-
-
-
         </div>
         <div class="clearfix"></div>
 
-        <!-- BEGIN BTC/CAD STATS -->
-        <div class="row">
-          <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-            <div class="dashboard-stat grey-cascade" id="index-up-down">
-              <div class="visual">
-              </div>
-              <div class="details">
-                <div class="number" id="index-change">Loading...</div>
-                <div class="desc">24 Hour Change</div>
-              </div>
-              <div class="more" id="index-high">24 Hour High: Loading...</div>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-            <div class="dashboard-stat blue">
-              <div class="visual"></div>
-              <div class="details">
-                <div class="number" id="index-volume">Loading...</div>
-                <div class="desc">24 Hour Volume</div>
-              </div>
-              <div class="more" id="index-low">24 Hour Low: Loading...</div>
-            </div>
-          </div>
-        </div>
-        <!-- END DASHBOARD STATS -->
-        <div class="clearfix">
-        </div>
 
-
-
-
-        <div class="row">
-
-          <div class="col-md-6">
-
-            <!-- BEGIN CAD Price TABLE PORTLET-->
-            <div class="portlet box blue-madison">
-              <div class="portlet-title">
-                <div class="caption">CAD Price Index: <span class="number index-value" id="index-value">Loading...</span> </div>
-                <div class="tools">
-                  <a href="" class="fullscreen" data-original-title="" title=""> </a>
-                </div>
-              </div>
-              <div class="portlet-body">
-                <table class="table table-bordered table-hover" id="exchange_table">
-                  <thead>
-                    <tr>
-                      <th>Exchange</th>
-                      <th>Bid</th>
-                      <th>Ask</th>
-                      <th class="hidden-480">Last</th>
-                      <th class="hidden-480">Volume</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td colspan="5">Loading...</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <!-- END TABLE PORTLET-->
-          </div>
-
-          <div class="col-md-6">
-            <!-- BEGIN  TABLE PORTLET-->
-            <div class="portlet box purple-plum">
-              <div class="portlet-title">
-                <div class="caption">CAD Market Data Summary </div>
-              </div>
-              <div class="portlet-body">
-
-                <table class="table table-bordered table-hover" id="market_table">
-                  <tbody>
-                    <tr>
-                      <td colspan="2">Loading...</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <!-- END  TABLE PORTLET-->
-
-
-          </div>
-        </div>
-
-        <div class="clearfix">
-        </div>
-        <div class="row">
-          <div class="col-md-12 col-sm-12">
-            <!-- BEGIN PORTLET-->
-            <div class="portlet solid bordered grey-cararra">
-              <div class="portlet-title">
-                <div class="caption">Depth OrderBook BTC/CAD (Consolidated)
-                  <div id="webhook_refresh"><img src="/assets/images/loading.gif" alt="loading" /></div>
-                </div>
-              </div>
-              <div class="portlet-body">
-                <div id="site_statistics_loading">
-                  <img src="/assets/images/loading.gif" alt="loading" />
-                </div>
-                <div id="site_statistics_content" class="display-none">
-                  <div id="site_statistics" class="chart">
-                  </div>
-                </div>
-              </div>
-              <div class="note note-info">
-                <p>The order book is a consolidated list of the top 25 bid/asks from all supported exchanges. The information is automatically refreshed and provides a broad picture of the depth for arbitrage validation.
-                </p>
-              </div>
-
-            </div>
-            <!-- END PORTLET-->
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <!-- BEGIN TABLE PORTLET-->
-            <div class="portlet box red">
-              <div class="portlet-title">
-                <div class="caption">Bids BTC/CAD </div>
-                <div class="tools">
-                  <a href="" class="fullscreen" data-original-title="" title=""> </a>
-                </div>
-              </div>
-              <div class="portlet-body">
-                <table class="table table-bordered table-hover table-striped" id="bid_table">
-                  <thead>
-                    <tr>
-                      <th>Price</th>
-                      <th>Amount</th>
-                      <th>Value</th>
-                      <th class="hidden-480">Cumulative</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td colspan="4">Loading...</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <!-- END TABLE PORTLET-->
-
-          </div>
-          <div class="col-md-6">
-            <!-- BEGIN BORDERED TABLE PORTLET-->
-            <div class="portlet box blue-madison">
-              <div class="portlet-title">
-                <div class="caption">Asks BTC/CAD</div>
-                <div class="tools">
-                  <a href="" class="fullscreen" data-original-title="" title=""> </a>
-                </div>
-              </div>
-              <div class="portlet-body">
-                <table class="table table-bordered table-hover table-striped" id="ask_table">
-                  <thead>
-                    <tr>
-                      <th>Price</th>
-                      <th>Amount</th>
-                      <th>Value</th>
-                      <th class="hidden-480">Cumulative</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td colspan="4">Loading...</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <!-- END BORDERED TABLE PORTLET-->
-          </div>
-        </div>
       </div>
       <pre id="log"></pre>
     </div>
@@ -630,8 +449,8 @@
     </div>
     <div class="page-footer-tools">
       <span class="go-top">
-            <i class="fa fa-angle-up"></i>
-        </span>
+        <i class="fa fa-angle-up"></i>
+      </span>
     </div>
   </div>
   <!-- END FOOTER -->
@@ -675,44 +494,6 @@
   <script src="/assets/js/page.js"></script>
   <script src="/assets/js/orderbook.js" type="text/javascript"></script>
   <script src="/assets/js/custom.js" type="text/javascript"></script>
-  <script>
-    $.getJSON("https://api.cbix.ca/v1/orderbook?limit=50", function(e) {
-      var t = e.data.bids,
-        n = e.data.asks,
-        r = "",
-        i = "";
-      t.forEach(function(e) {
-        var t = e.price,
-          n = e.amount,
-          i = e.value,
-          s = e.cumulative;
-        r += "<tr><td>$" + t.toFixed(2) + "</td><td>" + n.toFixed(8) + "</td><td>$" + i.toFixed(2) + '</td><td class="hidden-480">' + s.toFixed(2) + " BTC</td></tr>"
-      }), n.forEach(function(e) {
-        var t = e.price,
-          n = e.amount,
-          r = e.value,
-          s = e.cumulative;
-        i += "<tr><td>$" + t.toFixed(2) + "</td><td>" + n.toFixed(8) + "</td><td>$" + r.toFixed(2) + '</td><td class="hidden-480">' + s.toFixed(2) + " BTC</td></tr>"
-      }), $("#bid_table tbody").html(r), $("#ask_table tbody").html(i)
-    });
-    var client = new Fpp.Client("https://8ebb747b.fanoutcdn.com/fpp");
-    var channel = client.Channel("orderbook");
-    channel.on("data", function(e) {
-      var t = e.asks,
-        n = e.bids,
-        r = "",
-        i = "";
-      t.forEach(function(e) {
-        r += "<tr><td>$" + e.price.toFixed(2) + "</td><td>" + e.amount.toFixed(8) + "</td><td>$" + e.value.toFixed(2) + '</td><td class="hidden-480">' + e.cumulative.toFixed(2) + " BTC</td></tr>"
-      });
-      n.forEach(function(e) {
-        i += "<tr><td>$" + e.price.toFixed(2) + "</td><td>" + e.amount.toFixed(8) + "</td><td>$" + e.value.toFixed(2) + '</td><td class="hidden-480">' + e.cumulative.toFixed(2) + " BTC</td></tr>"
-      });
-      $("#bid_table tbody").html(i);
-      $("#ask_table tbody").html(r);
-      Index.initCharts(n, t)
-    })
-  </script>
   <!-- END JAVASCRIPTS -->
 
 
