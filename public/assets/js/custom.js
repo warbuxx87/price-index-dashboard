@@ -109,7 +109,7 @@ ws.onmessage = function(t) {
 	res = res.replace("1fb3443b-33e9-4ab7-9cc4-2cdc088b8f49", "Kraken");
 	log('EVENT: ' + res);
 	if (t.data.includes("Executed")) {
-		slim = t.data.toString().slice(0, 112);
+		slim = t.data.toString().slice(0, 111);
 		t.date = t.data.toString().slice(0, 11);
 		t.time = t.data.toString().slice(12, 20);
 		t.amount = "1 BTC ";
