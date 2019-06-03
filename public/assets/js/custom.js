@@ -109,7 +109,7 @@ ws.onmessage = function(t) {
 	res = res.replace("1fb3443b-33e9-4ab7-9cc4-2cdc088b8f49", "Kraken");
 	log('EVENT: ' + res);
 	if (t.data.includes("Executed")) {
-		t.data = t.data.toString().slice(0, 112);
+		slim = t.data.toString().slice(0, 112);
 		t.date = t.data.toString().slice(0, 11);
 		t.time = t.data.toString().slice(12, 20);
 		t.amount = "1 BTC ";
@@ -117,12 +117,12 @@ ws.onmessage = function(t) {
 		if (t.data.includes("buy")) {
 			t.level = "success";
 			t.order = "bought";
-			t.exchange = t.data.toString().slice(-10);
+			t.exchange = slim.slice(-10);
 		};
 		if (t.data.includes("sell")) {
 			t.level = "error";
 			t.order = "sold";
-			t.exchange = t.data.toString().slice(-10);
+			t.exchange = slim.slice(-10);
 		};
 		var e = t.date + " " + t.time + " $" + t.price;
 		var n = t.amount + t.order + " at " + t.exchange;
