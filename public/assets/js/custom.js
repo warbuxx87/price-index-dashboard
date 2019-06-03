@@ -97,7 +97,7 @@ ws.onclose = function() {
 ws.onmessage = function(t) {
 	// exchange data hash identifier
 	var res = String(t.data);
-	res = res.replace('IEAB - ', '');
+	res = res.replace(' IEAB - ', '');
 	res = res.replace('SIMULATED', '');
 	res = res.replace('b29d0acb-9a6e-49f2-8fd8-a137559f834c', 'Binance');
 	res = res.replace('6af0fee7-3ec5-4272-83c9-b56ffc6b2b73', 'Gemini');
