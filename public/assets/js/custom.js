@@ -117,12 +117,12 @@ ws.onmessage = function(t) {
 		if (t.data.includes("buy")) {
 			t.level = "success";
 			t.order = "bought";
-			t.exchange = slim.slice(100);
+			t.exchange = slim.slice(102);
 		};
 		if (t.data.includes("sell")) {
 			t.level = "error";
 			t.order = "sold";
-			t.exchange = slim.slice(100);
+			t.exchange = slim.slice(103);
 		};
 		var e = t.date + " " + t.time + " $" + t.price;
 		var n = t.amount + t.order + " at " + t.exchange;
