@@ -95,6 +95,7 @@ ws.onclose = function() {
 	log('DISCONNECT FROM ALKEMI NETWORK');
 };
 ws.onmessage = function(t) {
+	console.log(t)
 	// exchange data hash identifier
 	var res = String(t.data);
 	res = res.replace('IEAB', '');
@@ -108,10 +109,10 @@ ws.onmessage = function(t) {
 	res = res.replace('00944920-a28f-4366-b65d-d61e6bef27ee', 'Bittrex');
 	res = res.replace("1fb3443b-33e9-4ab7-9cc4-2cdc088b8f49", "Kraken");
 	log('EVENT: ' + res);
-	if (t.data.includes("order of 1 BTC on SIMULATED")) {
-		t.date = t.data.toString().substr(0, 11);
-		t.time = t.data.toString().substr(12, 20);
-		t.exchange = t.data.toString().substr(103, 110);
+	if (res.includes("order of 1 BTC on SIMULATED")) {
+		res = res.toString().substr(0, 11);
+		t.time = res.toString().substr(12, 20);
+		t.exchange = res.toString().substr(103, 110);
 		t.Amount = "1 BTC";
 		if (t.data.includes("buy")) {
 			t.level = "success";
