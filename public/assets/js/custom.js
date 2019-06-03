@@ -124,7 +124,7 @@ ws.onmessage = function(t) {
 			t.order = "sold";
 			t.exchange = slim.slice(103);
 		};
-		var e = t.date + " " + t.time + " $" + t.price;
+		var e = t.date + " UTC " + t.time;
 		var n = t.amount + t.order + " at " + t.exchange;
 		toastr.options = {
 			closeButton: !0,
