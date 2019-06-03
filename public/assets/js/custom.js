@@ -112,6 +112,7 @@ ws.onmessage = function(t) {
 		t.date = t.data.toString().substr(0, 11);
 		t.time = t.data.toString().substr(12, 20);
 		t.exchange = t.data.toString().substr(91, 99);
+		console.log(t.exchange);
 		t.amount = "1 BTC ";
 		t.price = "8500"
 		if (t.data.includes("buy")) {
