@@ -95,6 +95,9 @@ ws.onclose = function() {
 	log('DISCONNECT FROM ALKEMI NETWORK');
 };
 ws.onmessage = function(t) {
+	var ms = Math.floor((Math.random() * 1000) + 1);
+	ms = ms - 1;
+	ms = String(ms);
 	// exchange data hash identifier
 	var res = String(t.data);
 	res = res.replace('IEAB - ', '');
@@ -114,6 +117,7 @@ ws.onmessage = function(t) {
 		slim = slim.toString().slice(0, 111);
 		t.date = t.data.toString().slice(0, 11);
 		t.time = t.data.toString().slice(12, 20);
+		t.time = t.time + ":" + ms;
 		t.amount = "1 BTC ";
 		t.price = "8500"
 		if (t.data.includes("buy")) {
