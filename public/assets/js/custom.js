@@ -97,7 +97,7 @@ ws.onclose = function() {
 ws.onmessage = function(t) {
 	// exchange data hash identifier
 	var res = String(t.data);
-	res = res.replace('IEAB', '');
+	res = res.replace('IEAB - ', '');
 	res = res.replace('SIMULATED', '');
 	res = res.replace('b29d0acb-9a6e-49f2-8fd8-a137559f834c', 'Binance');
 	res = res.replace('6af0fee7-3ec5-4272-83c9-b56ffc6b2b73', 'Gemini');
@@ -108,7 +108,7 @@ ws.onmessage = function(t) {
 	res = res.replace('00944920-a28f-4366-b65d-d61e6bef27ee', 'Bittrex');
 	res = res.replace("1fb3443b-33e9-4ab7-9cc4-2cdc088b8f49", "Kraken");
 	log('EVENT: ' + res);
-	if (t.data.includes("order of 1 BTC on SIMULATED")) {
+	if (t.data.includes("order of 1 BTC on")) {
 		t.date = t.data.toString().substr(0, 11);
 		t.time = t.data.toString().substr(12, 20);
 		t.exchange = t.data.toString().substr(103, 110);
