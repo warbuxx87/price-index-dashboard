@@ -109,9 +109,9 @@ ws.onmessage = function(t) {
 	res = res.replace("1fb3443b-33e9-4ab7-9cc4-2cdc088b8f49", "Kraken");
 	log('EVENT: ' + res);
 	if (t.data.includes("Executed")) {
-		t.date = t.data.toString().substr(0, 11);
-		t.time = t.data.toString().substr(12, 20);
-		t.exchange = "KRAKEN";
+		t.date = t.data.toString().slice(0, 11);
+		t.time = t.data.toString().slice(12, 20);
+		t.exchange = t.data.toString().slice(90, 98);
 		console.log(t.exchange);
 		t.amount = "1 BTC ";
 		t.price = "8500"
