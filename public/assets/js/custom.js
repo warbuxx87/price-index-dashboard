@@ -111,17 +111,19 @@ ws.onmessage = function(t) {
 	if (t.data.includes("Executed")) {
 		t.date = t.data.toString().slice(0, 11);
 		t.time = t.data.toString().slice(12, 20);
-		t.exchange = t.data.toString().slice(100, 108);
+
 		console.log(t.exchange);
 		t.amount = "1 BTC ";
 		t.price = "8500"
 		if (t.data.includes("buy")) {
 			t.level = "success";
 			t.order = "bought";
+			t.exchange = t.data.toString().slice(103, 109);
 		};
 		if (t.data.includes("sell")) {
 			t.level = "error";
 			t.order = "sold";
+			t.exchange = t.data.toString().slice(104, 110);
 		};
 		var e = t.date + " " + t.time + " $" + t.price;
 		var n = t.amount + t.order + " at " + t.exchange;
