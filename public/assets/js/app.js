@@ -49,15 +49,13 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 		var btc = 0;
 
 		// Portfolio Daily Performance
-		var date = new Date();
-		d = date.getDate();
-		m = date.getMonth();
-		//subtract the current month
-		m = m - 1;
-		// multiply number of months times 30 days + add days in current month
-		days = m * 30 + d;
-		// total days portfolio active 48 ( now 162 ) = day of year portfolio started
-		days = days - 162;
+		var now = new Date();
+		var start = new Date(now.getFullYear(), 0, 0);
+		var diff = now - start;
+		var oneDay = 1000 * 60 * 60 * 24;
+		var day = Math.floor(diff / oneDay);
+		var days = day - 161;
+		//console.log('Day of year: ' + day);
 
 		// days running
 		$scope.days = days;
