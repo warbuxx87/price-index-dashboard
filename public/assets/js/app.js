@@ -56,8 +56,8 @@ app.controller('MainCtrl', ['$http', '$scope', function($http, $scope) {
 		m = m - 1;
 		// multiply number of months times 30 days + add days in current month
 		days = m * 30 + d;
-		// total days portfolio active 48 = day of year portfolio started
-		days = days + 365 - 48;
+		// total days portfolio active 48 ( now 162 ) = day of year portfolio started
+		days = days - 162;
 
 		// days running
 		$scope.days = days;
