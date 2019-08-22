@@ -53,7 +53,6 @@ var BtcMonitor = function() {
 		if (typeof self.ipaddress === "undefined") {
 			//  Log errors but continue w/ 127.0.0.1 - this
 			//  allows us to run/test the app locally.
-			console.warn('No OPENSHIFT_NODEJS_IP var, using 127.0.0.1');
 			self.ipaddress = "127.0.0.1";
 		};
 	};
