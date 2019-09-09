@@ -45,5 +45,5 @@ pipelines:
               APPLICATION_NAME:      'btc.alkemi.ai'
               COMMAND:               'deploy-only'
               VERSION_LABEL:         'btc-index-$BITBUCKET_BUILD_NUMBER'
-              ENVIRONMENT_NAME:      'btc-index-prod'
+              ENVIRONMENT_NAME:      'btc-index-prod2'
               WAIT:                  'true'
