@@ -18,7 +18,6 @@ https://btc.alkemi.ai/
 * http://okcoin.com/
 * http://itbit.com/
 * http://bitstamp.com/
-* http://quadrigacx.com/
 * http://quoine.com/
 * http://kraken.com/
 * http://coinbase.com/
@@ -26,5 +25,3 @@ https://btc.alkemi.ai/
 * http://bittrex.com/
 * http://poloniex.com/
 * http://binance.com/
-* http://liqui.com/
-

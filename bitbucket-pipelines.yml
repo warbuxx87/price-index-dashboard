@@ -1,15 +1,50 @@
-# This is a sample build configuration for JavaScript.
-# Check our guides at https://confluence.atlassian.com/x/14UWN for more examples.
-# Only use spaces to indent your .yml configuration.
-# -----
-# You can specify a custom docker image from Docker Hub as your build environment.
-image: node:6.9.4
+image:                               atlassian/default-image:2
 
 pipelines:
   default:
     - step:
-        caches:
-          - node
-        script: # Modify the commands below to build your repository.
-          - npm install
-          - npm test
+        name:                        "Build and Test"
+        script:
+          - echo "Build, Upload and Test!"
+          - dir="exchanges" "public" "trades"
+          - zip -r application.zip Dockerfile README.md btc_index.js package.json .dockerignore $dir
+          - pipe:                    atlassian/aws-elasticbeanstalk-deploy:0.2.3
+            variables:
+              AWS_ACCESS_KEY_ID:     $AWS_ACCESS_KEY_ID
+              AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+              AWS_DEFAULT_REGION:    $AWS_DEFAULT_REGION
+              APPLICATION_NAME:      'btc.alkemi.ai'
+              COMMAND:               'upload-only'
+              ZIP_FILE:              'application.zip'
+              VERSION_LABEL:         'btc-index-$BITBUCKET_BUILD_NUMBER'
+    - step:
+        name:                        "Deploy to Staging"
+        deployment:                  staging
+        script:
+        - echo "Deployment!"
+        - pipe:                      atlassian/aws-elasticbeanstalk-deploy:0.2.3
+          variables:
+            AWS_ACCESS_KEY_ID:       $AWS_ACCESS_KEY_ID
+            AWS_SECRET_ACCESS_KEY:   $AWS_SECRET_ACCESS_KEY
+            AWS_DEFAULT_REGION:      $AWS_DEFAULT_REGION
+            APPLICATION_NAME:        'btc.alkemi.ai'
+            COMMAND:                 'deploy-only'
+            VERSION_LABEL:           'btc-index-$BITBUCKET_BUILD_NUMBER'
+            ENVIRONMENT_NAME:        'btc-index-staging'
+            WAIT:                    'true'
+    - step:
+        name:                        "Deploy to Production"
+        deployment:                  production
+        trigger:                     manual
+        script:
+          - echo "Deployment to Production!"
+          - pipe:                    atlassian/aws-elasticbeanstalk-deploy:0.2.3
+            variables:
+              AWS_ACCESS_KEY_ID:     $AWS_ACCESS_KEY_ID
+              AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+              AWS_DEFAULT_REGION:    $AWS_DEFAULT_REGION
+              APPLICATION_NAME:      'btc.alkemi.ai'
+              COMMAND:               'deploy-only'
+              VERSION_LABEL:         'btc-index-$BITBUCKET_BUILD_NUMBER'
+              ENVIRONMENT_NAME:      'btc-index-prod'
+              WAIT:                  'true'
